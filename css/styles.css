@@ -1,75 +1,185 @@
 /* ==========================================================
    NOMENCLÁTOR DE TRÁFICO
-   styles.css
-   Diseño Mobile First
+   V2 - Base del diseño
    ========================================================== */
 
-/* ==========================
+/* ==========================================================
    VARIABLES
-========================== */
+========================================================== */
 
 :root{
 
-    --bg:#0f172a;
-    --surface:#1e293b;
-    --surface-hover:#334155;
+    color-scheme:dark;
+
+    --bg:#0b1220;
+    --surface:#111827;
+    --surface-2:#1e293b;
+    --surface-3:#273549;
 
     --primary:#2563eb;
     --primary-hover:#3b82f6;
+    --primary-soft:rgba(37,99,235,.12);
 
     --success:#16a34a;
-    --danger:#dc2626;
+    --warning:#f59e0b;
+    --danger:#ef4444;
 
     --text:#f8fafc;
-    --text-secondary:#cbd5e1;
+    --text-secondary:#94a3b8;
+    --text-muted:#64748b;
 
-    --border:#334155;
+    --border:rgba(255,255,255,.08);
 
+    --radius-xs:10px;
+    --radius-sm:14px;
     --radius:18px;
+    --radius-lg:26px;
+
+    --shadow-sm:
+        0 2px 8px rgba(0,0,0,.15);
 
     --shadow:
-        0 8px 20px rgba(0,0,0,.25);
+        0 12px 35px rgba(0,0,0,.25);
+
+    --shadow-lg:
+        0 20px 60px rgba(0,0,0,.35);
+
+    --transition:.25s cubic-bezier(.4,0,.2,1);
 
 }
 
+/* ==========================================================
+   TEMA CLARO
+========================================================== */
 
-/* ==========================
+body[data-theme="light"]{
+
+    color-scheme:light;
+
+    --bg:#f3f6fb;
+
+    --surface:#ffffff;
+
+    --surface-2:#f8fafc;
+
+    --surface-3:#eef2f7;
+
+    --text:#0f172a;
+
+    --text-secondary:#475569;
+
+    --text-muted:#64748b;
+
+    --border:rgba(15,23,42,.08);
+
+    --shadow-sm:
+        0 2px 8px rgba(15,23,42,.08);
+
+    --shadow:
+        0 10px 30px rgba(15,23,42,.10);
+
+    --shadow-lg:
+        0 18px 40px rgba(15,23,42,.12);
+
+}
+
+/* ==========================================================
    RESET
-========================== */
+========================================================== */
 
-*{
+*,
+*::before,
+*::after{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
+
 }
 
 html{
 
     scroll-behavior:smooth;
 
+    -webkit-text-size-adjust:100%;
+
 }
 
 body{
+
+    min-height:100vh;
 
     background:var(--bg);
 
     color:var(--text);
 
-    font-family:
+    font-family:"Inter",system-ui,sans-serif;
 
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        sans-serif;
+    transition:
+
+        background var(--transition),
+
+        color var(--transition);
 
 }
 
+/* ==========================================================
+   ELEMENTOS
+========================================================== */
 
-/* ==========================
+button{
+
+    font:inherit;
+
+}
+
+input{
+
+    font:inherit;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+.hidden{
+
+    display:none !important;
+
+}
+
+/* ==========================================================
+   APP
+========================================================== */
+
+.app{
+
+    width:min(100%,900px);
+
+    margin:auto;
+
+    min-height:100vh;
+
+}
+
+/* ==========================================================
    HEADER
-========================== */
+========================================================== */
 
 .header{
 
@@ -77,81 +187,270 @@ body{
 
     top:0;
 
-    z-index:999;
+    z-index:1000;
+
+    padding:18px 18px 14px;
+
+    background:rgba(11,18,32,.80);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+
+    transition:all var(--transition);
+
+}
+
+body[data-theme="light"] .header{
+
+    background:rgba(243,246,251,.85);
+
+}
+
+.header-row{
 
     display:flex;
 
     align-items:center;
 
-    gap:15px;
+    justify-content:space-between;
 
-    padding:18px;
+    gap:16px;
 
-    background:var(--bg);
+}
 
-    border-bottom:1px solid var(--border);
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    min-width:0;
 
 }
 
 .logo{
 
-    font-size:34px;
+    width:56px;
+
+    height:56px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:30px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    box-shadow:var(--shadow);
+
+    flex-shrink:0;
+
+}
+
+.title{
+
+    min-width:0;
 
 }
 
 .title h1{
 
-    font-size:1.4rem;
+    font-size:1.35rem;
+
+    font-weight:700;
+
+    letter-spacing:-.5px;
+
+    white-space:nowrap;
 
 }
 
-.title small{
+.title p{
+
+    margin-top:4px;
 
     color:var(--text-secondary);
 
-}
-
-
-/* ==========================
-   BUSCADOR
-========================== */
-
-.search-container{
-
-    padding:16px;
+    font-size:.88rem;
 
 }
 
-#searchInput{
 
-    width:100%;
+/* ==========================================================
+   BOTÓN TEMA
+========================================================== */
+
+.icon-button{
+
+    width:48px;
+
+    height:48px;
 
     border:none;
 
-    outline:none;
-
-    padding:15px;
-
-    border-radius:15px;
-
-    font-size:16px;
+    border-radius:50%;
 
     background:var(--surface);
 
     color:var(--text);
 
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:all .30s;
+
+    box-shadow:var(--shadow-sm);
+
+    flex-shrink:0;
+
+}
+
+.icon-button:hover{
+
+    transform:rotate(180deg);
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.icon-button:active{
+
+    transform:scale(.92);
+
+}
+
+.material-symbols-rounded{
+
+    font-size:24px;
+
+    user-select:none;
+
+}
+
+
+/* ==========================================================
+   BUSCADOR
+========================================================== */
+
+.search-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:18px;
+
+    padding:14px 16px;
+
+    border-radius:18px;
+
+    background:var(--surface);
+
+    border:1px solid transparent;
+
+    transition:all var(--transition);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.search-box:focus-within{
+
+    border-color:var(--primary);
+
+    box-shadow:
+
+        0 0 0 4px var(--primary-soft);
+
+}
+
+.search-icon{
+
+    color:var(--text-muted);
+
+}
+
+#searchInput{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    color:var(--text);
+
+    font-size:15px;
+
 }
 
 #searchInput::placeholder{
 
-    color:#94a3b8;
+    color:var(--text-muted);
+
+}
+
+.clear-search{
+
+    width:36px;
+
+    height:36px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:transparent;
+
+    color:var(--text-secondary);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:.20s;
+
+}
+
+.clear-search:hover{
+
+    background:var(--surface-3);
 
 }
 
 
-/* ==========================
+/* ==========================================================
    FILTROS
-========================== */
+========================================================== */
 
 .filters{
 
@@ -159,14 +458,13 @@ body{
 
     gap:10px;
 
+    margin-top:18px;
+
     overflow-x:auto;
 
-    padding:
-
-        0 16px
-        16px;
-
     scrollbar-width:none;
+
+    padding-bottom:4px;
 
 }
 
@@ -180,27 +478,31 @@ body{
 
     border:none;
 
-    cursor:pointer;
-
-    padding:
-
-        10px 18px;
-
     border-radius:999px;
+
+    padding:11px 18px;
 
     background:var(--surface);
 
-    color:var(--text);
+    color:var(--text-secondary);
+
+    cursor:pointer;
 
     white-space:nowrap;
 
-    transition:.25s;
+    font-weight:600;
+
+    transition:all var(--transition);
+
+    box-shadow:var(--shadow-sm);
 
 }
 
 .filter:hover{
 
-    background:var(--surface-hover);
+    background:var(--surface-3);
+
+    color:var(--text);
 
 }
 
@@ -208,123 +510,309 @@ body{
 
     background:var(--primary);
 
+    color:white;
+
+    box-shadow:
+
+        0 6px 18px rgba(37,99,235,.35);
+
 }
-
-
-/* ==========================
+/* ==========================================================
    RESULTADOS
-========================== */
+========================================================== */
 
-#results{
+.results{
 
-    padding:
+    padding:20px 18px 120px;
 
-        0 16px
-        90px;
+    display:grid;
+
+    gap:18px;
 
 }
 
 
-/* ==========================
+/* ==========================================================
    TARJETAS
-========================== */
+========================================================== */
 
 .card{
 
     background:var(--surface);
 
-    border-radius:var(--radius);
+    border:1px solid var(--border);
 
-    margin-bottom:16px;
+    border-radius:24px;
 
     overflow:hidden;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:
+
+        transform .25s,
+
+        box-shadow .25s,
+
+        border-color .25s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-2px);
 
     box-shadow:var(--shadow);
 
 }
 
+.card.open{
+
+    border-color:rgba(37,99,235,.35);
+
+}
+
+
+/* ==========================================================
+   CABECERA TARJETA
+========================================================== */
 
 .card-header{
 
     width:100%;
 
-    background:none;
-
     border:none;
 
-    color:white;
+    background:none;
+
+    color:inherit;
+
+    cursor:pointer;
+
+    padding:20px;
 
     display:flex;
 
     justify-content:space-between;
 
-    align-items:center;
+    align-items:flex-start;
 
-    padding:18px;
-
-    cursor:pointer;
+    gap:20px;
 
     text-align:left;
 
 }
 
+.card-info{
+
+    flex:1;
+
+    min-width:0;
+
+}
 
 .badge{
 
-    display:inline-block;
+    display:inline-flex;
 
-    background:var(--primary);
+    align-items:center;
 
-    padding:
+    justify-content:center;
 
-        4px
-        10px;
+    padding:6px 12px;
 
     border-radius:999px;
 
-    font-size:.75rem;
+    font-size:.72rem;
 
-    margin-right:8px;
+    font-weight:700;
+
+    color:#fff;
+
+    letter-spacing:.4px;
+
+    margin-bottom:12px;
+
+}
+
+
+/* Colores de cada norma */
+
+.badge.rgc{
+
+    background:#2563eb;
+
+}
+
+.badge.rgv{
+
+    background:#16a34a;
+
+}
+
+.badge.rgcond{
+
+    background:#9333ea;
+
+}
+
+.badge.lsv{
+
+    background:#dc2626;
+
+}
+
+.badge.default{
+
+    background:#475569;
 
 }
 
 .article{
 
-    font-weight:600;
+    display:block;
+
+    font-size:1.12rem;
+
+    font-weight:700;
+
+    color:var(--text);
+
+}
+
+.card-price{
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+    color:var(--success);
+
+    white-space:nowrap;
 
 }
 
 
-.price{
+/* ==========================================================
+   TEXTO PREVIO
+========================================================== */
 
-    font-size:1.1rem;
+.card-preview{
+
+    padding:0 20px 18px;
+
+    color:var(--text-secondary);
+
+    line-height:1.6;
+
+    display:-webkit-box;
+
+    -webkit-box-orient:vertical;
+
+    -webkit-line-clamp:2;
+
+    overflow:hidden;
 
 }
 
+
+/* ==========================================================
+   CUERPO
+========================================================== */
 
 .card-body{
 
-    display:none;
+    display:grid;
 
-    padding:
+    grid-template-rows:0fr;
 
-        0
-        18px
-        18px;
+    transition:grid-template-rows .35s ease;
 
 }
-
 
 .card.open .card-body{
 
-    display:block;
+    grid-template-rows:1fr;
+
+}
+
+.card-body>*{
+
+    overflow:hidden;
+
+}
+
+.card-content{
+
+    padding:0 20px 20px;
 
 }
 
 
+/* ==========================================================
+   GRID INFORMACIÓN
+========================================================== */
+
+.detail-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+    margin-bottom:18px;
+
+}
+
+.detail-item{
+
+    background:var(--surface-2);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:14px;
+
+}
+
+.detail-item span{
+
+    display:block;
+
+    font-size:.72rem;
+
+    color:var(--text-muted);
+
+    margin-bottom:6px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.6px;
+
+}
+
+.detail-item strong{
+
+    font-size:.95rem;
+
+}
+
+
+/* ==========================================================
+   DESCRIPCIÓN
+========================================================== */
+
 .description{
 
-    line-height:1.6;
+    background:var(--surface-2);
+
+    border-radius:18px;
+
+    padding:18px;
+
+    line-height:1.7;
 
     color:var(--text-secondary);
 
@@ -333,142 +821,68 @@ body{
 }
 
 
-/* ==========================
-   DETALLES
-========================== */
+/* ==========================================================
+   PANEL IMPORTES
+========================================================== */
 
-.details{
+.price-panel{
 
     display:grid;
 
     grid-template-columns:
 
-        repeat(3,1fr);
+        1fr
 
-    gap:10px;
+        1fr
 
-}
+        auto;
 
+    gap:14px;
 
-.details div{
-
-    background:rgba(255,255,255,.04);
-
-    padding:14px;
-
-    border-radius:14px;
-
-    text-align:center;
+    align-items:stretch;
 
 }
 
+.price-panel>div{
 
-.details span{
+    background:var(--surface-2);
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    padding:16px;
+
+}
+
+.price-panel span{
 
     display:block;
 
-    color:var(--text-secondary);
+    font-size:.72rem;
 
-    font-size:.8rem;
+    color:var(--text-muted);
 
-    margin-bottom:6px;
+    margin-bottom:8px;
+
+    text-transform:uppercase;
+
+}
+
+.price-panel strong{
+
+    font-size:1.15rem;
 
 }
 
 
-.details strong{
+/* ==========================================================
+   CÍRCULO PUNTOS
+========================================================== */
 
-    font-size:1rem;
+.points-circle{
 
-}
-
-
-/* ==========================
-   PUNTOS
-========================== */
-
-.puntos{
-
-    display:inline-flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    width:38px;
-
-    height:38px;
-
-    border-radius:50%;
-
-    background:var(--danger);
-
-}
-
-
-/* ==========================
-   EMPTY
-========================== */
-
-.empty{
-
-    text-align:center;
-
-    padding:40px;
-
-    color:var(--text-secondary);
-
-}
-
-.empty-icon{
-
-    font-size:60px;
-
-    margin-bottom:15px;
-
-}
-
-.hidden{
-
-    display:none;
-
-}
-
-
-/* ==========================
-   NAV
-========================== */
-
-.bottom-nav{
-
-    position:fixed;
-
-    bottom:0;
-
-    left:0;
-
-    width:100%;
-
-    background:var(--surface);
-
-    display:flex;
-
-    justify-content:space-around;
-
-    border-top:1px solid var(--border);
-
-    padding:8px 0;
-
-}
-
-
-.nav-button{
-
-    background:none;
-
-    border:none;
-
-    color:var(--text-secondary);
+    width:90px;
 
     display:flex;
 
@@ -476,41 +890,91 @@ body{
 
     align-items:center;
 
-    gap:4px;
+    justify-content:center;
+
+    background:linear-gradient(
+
+        135deg,
+
+        #dc2626,
+
+        #b91c1c
+
+    ) !important;
+
+    color:white;
+
+}
+
+.points-circle span{
+
+    color:white;
+
+    margin-bottom:4px;
+
+}
+
+.points-circle strong{
+
+    font-size:2rem;
+
+}
+
+
+/* ==========================================================
+   ACCIONES
+========================================================== */
+
+.card-actions{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+    margin-top:22px;
+
+}
+
+.action-btn{
+
+    border:none;
+
+    background:var(--surface-2);
+
+    color:var(--text);
+
+    border-radius:16px;
+
+    padding:14px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
 
     cursor:pointer;
 
-    font-size:20px;
+    transition:.25s;
 
 }
 
+.action-btn:hover{
 
-.nav-button span{
+    background:var(--primary);
 
-    font-size:.70rem;
-
-}
-
-
-.nav-button.active{
-
-    color:var(--primary);
+    color:white;
 
 }
 
+.action-btn .material-symbols-rounded{
 
-/* ==========================
-   TABLETS
-========================== */
-
-@media (min-width:768px){
-
-    #results{
-
-        max-width:900px;
-
-        margin:auto;
-
-    }
+    font-size:22px;
 
 }
