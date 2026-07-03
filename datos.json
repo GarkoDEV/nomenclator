@@ -1,0 +1,102 @@
+[
+    {
+        "norma": "RGC",
+        "articulo": "48",
+        "apartado": "1",
+        "opcion": "5A",
+        "texto": "Circular superando la velocidad máxima permitida en vía urbana.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "118",
+        "apartado": "1",
+        "opcion": "1A",
+        "texto": "No utilizar el cinturón de seguridad correctamente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "99",
+        "apartado": "2",
+        "opcion": "2B",
+        "texto": "Utilizar el teléfono móvil durante la conducción sujetándolo con la mano.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 6
+    },
+    {
+        "norma": "RGV",
+        "articulo": "25",
+        "apartado": "1",
+        "opcion": "1",
+        "texto": "Circular con un vehículo que carece de ITV en vigor.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "12",
+        "apartado": "3",
+        "opcion": "1",
+        "texto": "Circular con neumáticos que presentan un desgaste superior al permitido.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "3",
+        "apartado": "1",
+        "opcion": "1",
+        "texto": "Conducir un vehículo careciendo del permiso correspondiente.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 4
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "1",
+        "apartado": "2",
+        "opcion": "1",
+        "texto": "No llevar consigo el permiso de conducción cuando sea obligatorio.",
+        "importe": 10,
+        "importe_reducido": 10,
+        "puntos": 0
+    },
+    {
+        "norma": "LSV",
+        "articulo": "76",
+        "apartado": "Z",
+        "opcion": "1",
+        "texto": "Conducir utilizando manualmente dispositivos de telefonía móvil.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 6
+    },
+    {
+        "norma": "LSV",
+        "articulo": "77",
+        "apartado": "H",
+        "opcion": "2",
+        "texto": "Conducir bajo la influencia de bebidas alcohólicas.",
+        "importe": 1000,
+        "importe_reducido": 500,
+        "puntos": 6
+    },
+    {
+        "norma": "LSV",
+        "articulo": "76",
+        "apartado": "U",
+        "opcion": "4",
+        "texto": "No hacer uso del casco de protección siendo obligatorio.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    }
+]
