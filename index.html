@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Nomenclátor de Tráfico</title>
+
+    <meta name="theme-color" content="#0f172a">
+    <meta name="description"
+        content="Consulta offline del nomenclátor de infracciones de tráfico">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Icono -->
+    <link rel="icon" href="icons/favicon.png">
+
+    <!-- Apple -->
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ==========================
+         CABECERA
+    =========================== -->
+
+    <header class="header">
+
+        <div class="logo">
+            🚔
+        </div>
+
+        <div class="title">
+
+            <h1>Nomenclátor</h1>
+
+            <small>Consulta de infracciones</small>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================
+         BUSCADOR
+    =========================== -->
+
+    <section class="search-container">
+
+        <input
+            id="searchInput"
+            type="search"
+            placeholder="Buscar artículo, norma o palabra..."
+            autocomplete="off">
+
+    </section>
+
+
+    <!-- ==========================
+         FILTROS
+    =========================== -->
+
+    <section class="filters">
+
+        <button class="filter active" data-filter="TODOS">
+            Todos
+        </button>
+
+        <button class="filter" data-filter="RGC">
+            RGC
+        </button>
+
+        <button class="filter" data-filter="RGV">
+            RGV
+        </button>
+
+        <button class="filter" data-filter="RGCOND">
+            RGCOND
+        </button>
+
+        <button class="filter" data-filter="LSV">
+            LSV
+        </button>
+
+    </section>
+
+
+    <!-- ==========================
+         RESULTADOS
+    =========================== -->
+
+    <main id="results">
+
+        <!-- app.js generará aquí las tarjetas -->
+
+    </main>
+
+
+
+    <!-- ==========================
+         SIN RESULTADOS
+    =========================== -->
+
+    <section
+        id="emptyState"
+        class="empty hidden">
+
+        <div class="empty-icon">
+            🔍
+        </div>
+
+        <h2>
+            Sin resultados
+        </h2>
+
+        <p>
+            Prueba otra búsqueda.
+        </p>
+
+    </section>
+
+
+
+    <!-- ==========================
+         BARRA INFERIOR
+    =========================== -->
+
+    <nav class="bottom-nav">
+
+        <button class="nav-button active">
+
+            🏠
+
+            <span>Inicio</span>
+
+        </button>
+
+        <button class="nav-button">
+
+            ⭐
+
+            <span>Favoritos</span>
+
+        </button>
+
+        <button class="nav-button">
+
+            ⚙️
+
+            <span>Ajustes</span>
+
+        </button>
+
+    </nav>
+
+
+
+    <!-- ==========================
+         PLANTILLA CARD
+         (se usa desde JavaScript)
+    =========================== -->
+
+    <template id="cardTemplate">
+
+        <article class="card">
+
+            <button class="card-header">
+
+                <div>
+
+                    <span class="badge norma">
+                        RGC
+                    </span>
+
+                    <span class="article">
+                        Art. 48
+                    </span>
+
+                </div>
+
+                <strong class="price">
+                    200 €
+                </strong>
+
+            </button>
+
+            <div class="card-body">
+
+                <p class="description"></p>
+
+                <div class="details">
+
+                    <div>
+
+                        <span>Importe</span>
+
+                        <strong class="importe"></strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>Reducido</span>
+
+                        <strong class="reducido"></strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>Puntos</span>
+
+                        <strong class="puntos"></strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </template>
+
+
+
+    <!-- ==========================
+         JAVASCRIPT
+    =========================== -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
