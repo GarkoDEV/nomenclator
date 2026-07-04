@@ -55,11 +55,7 @@
 
         <div class="header-left">
 
-            <div class="logo">
-
-                🚔
-
-            </div>
+            <div class="logo">🚔</div>
 
             <div class="header-text">
 
@@ -71,17 +67,72 @@
 
         </div>
 
-        <button
-            id="themeButton"
-            class="icon-button theme-button"
-            aria-label="Cambiar tema"
-            title="Cambiar tema">
+        <div class="header-actions">
 
-            <span class="material-symbols-rounded">dark_mode</span>
+            <button
+                id="favoritesBtn"
+                class="icon-button favorites-button"
+                aria-label="Ver favoritos"
+                title="Mis favoritos (0)">
 
-        </button>
+                <span class="material-symbols-rounded">favorite</span>
+                <span class="badge-count">0</span>
+
+            </button>
+
+            <button
+                id="themeButton"
+                class="icon-button theme-button"
+                aria-label="Cambiar tema"
+                title="Cambiar tema">
+
+                <span class="material-symbols-rounded">dark_mode</span>
+
+            </button>
+
+        </div>
 
     </header>
+
+    <!-- ========================================= -->
+    <!-- ESTADÍSTICAS -->
+    <!-- ========================================= -->
+
+    <section id="statsSection" class="stats-section">
+
+        <div class="stat-card">
+            <div class="stat-icon">📋</div>
+            <div class="stat-content">
+                <span class="stat-label">Total</span>
+                <strong id="statTotal" class="stat-value">0</strong>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">💰</div>
+            <div class="stat-content">
+                <span class="stat-label">Importe Promedio</span>
+                <strong id="statAvgPrice" class="stat-value">0€</strong>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">📍</div>
+            <div class="stat-content">
+                <span class="stat-label">Puntos Máx</span>
+                <strong id="statMaxPoints" class="stat-value">0</strong>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">⭐</div>
+            <div class="stat-content">
+                <span class="stat-label">Favoritos</span>
+                <strong id="statFavorites" class="stat-value">0</strong>
+            </div>
+        </div>
+
+    </section>
 
     <!-- ========================================= -->
     <!-- BUSCADOR -->
@@ -110,40 +161,92 @@
     </section>
 
     <!-- ========================================= -->
-    <!-- FILTROS -->
+    <!-- FILTROS BÁSICOS -->
     <!-- ========================================= -->
 
-    <section
-        id="filters"
-        class="filters">
+    <section id="filters" class="filters"></section>
 
-        <!-- Generado por JavaScript -->
+    <!-- ========================================= -->
+    <!-- BUSCADOR AVANZADO (COLLAPSIBLE) -->
+    <!-- ========================================= -->
+
+    <div class="advanced-search-toggle">
+
+        <button id="advancedToggle" class="toggle-btn">
+            <span class="material-symbols-rounded">tune</span>
+            Búsqueda avanzada
+            <span class="material-symbols-rounded toggle-icon">expand_more</span>
+        </button>
+
+    </div>
+
+    <section id="advancedSearch" class="advanced-search hidden">
+
+        <div class="advanced-filters">
+
+            <div class="filter-group">
+                <label for="priceRange">Rango de importe: <span id="priceValue">0€ - 1000€</span></label>
+                <input
+                    type="range"
+                    id="priceRange"
+                    class="slider"
+                    min="0"
+                    max="1000"
+                    value="1000"
+                    step="50">
+            </div>
+
+            <div class="filter-group">
+                <label for="pointsRange">Rango de puntos: <span id="pointsValue">0 - 6</span></label>
+                <input
+                    type="range"
+                    id="pointsRange"
+                    class="slider"
+                    min="0"
+                    max="6"
+                    value="6"
+                    step="1">
+            </div>
+
+            <div class="filter-group checkbox">
+                <label for="severeOnly">
+                    <input type="checkbox" id="severeOnly">
+                    <span>Solo infracciones graves (>4 puntos)</span>
+                </label>
+            </div>
+
+            <button id="resetAdvanced" class="btn-reset">Limpiar filtros</button>
+
+        </div>
 
     </section>
+
+    <!-- ========================================= -->
+    <!-- HISTORIAL DE BÚSQUEDAS -->
+    <!-- ========================================= -->
+
+    <div id="searchHistory" class="search-history hidden">
+        <span class="history-label">Búsquedas recientes:</span>
+        <div id="historyChips" class="history-chips"></div>
+    </div>
 
     <!-- ========================================= -->
     <!-- RESULTADOS -->
     <!-- ========================================= -->
 
-    <main
-        id="results"
-        class="results">
-
-    </main>
+    <main id="results" class="results"></main>
 
     <!-- ========================================= -->
     <!-- ESTADO VACÍO -->
     <!-- ========================================= -->
 
-    <section
-        id="emptyState"
-        class="empty hidden">
+    <section id="emptyState" class="empty hidden">
 
         <span class="material-symbols-rounded empty-icon">search_off</span>
 
         <h2>Sin resultados</h2>
 
-        <p>Prueba otra búsqueda o selecciona otro filtro</p>
+        <p>Prueba otra búsqueda o ajusta los filtros</p>
 
     </section>
 
@@ -199,76 +302,68 @@
 
         </button>
 
+        <button class="favorite-btn" aria-label="Añadir a favoritos" title="Favorito">
+            <span class="material-symbols-rounded">favorite</span>
+        </button>
+
         <div class="card-body">
 
             <div class="detail-grid">
 
                 <div class="detail-item">
-
                     <span class="detail-label">Norma</span>
-
                     <strong class="detailNorma"></strong>
-
                 </div>
 
                 <div class="detail-item">
-
                     <span class="detail-label">Artículo</span>
-
                     <strong class="detailArticulo"></strong>
-
                 </div>
 
                 <div class="detail-item">
-
                     <span class="detail-label">Apartado</span>
-
                     <strong class="detailApartado"></strong>
-
                 </div>
 
                 <div class="detail-item">
-
                     <span class="detail-label">Opción</span>
-
                     <strong class="detailOpcion"></strong>
-
                 </div>
 
             </div>
 
             <div class="description-section">
-
                 <p class="description"></p>
-
             </div>
 
             <div class="price-grid">
 
                 <div class="price-item">
-
                     <span class="price-label">Importe</span>
-
                     <strong class="importe"></strong>
-
                 </div>
 
                 <div class="price-item">
-
                     <span class="price-label">Reducido</span>
-
                     <strong class="reducido"></strong>
-
                 </div>
 
                 <div class="price-item points-item">
-
                     <span class="price-label">Puntos</span>
-
                     <strong class="puntos"></strong>
-
                 </div>
 
+            </div>
+
+            <div class="card-actions">
+                <button class="action-btn copy-btn" title="Copiar">
+                    <span class="material-symbols-rounded">content_copy</span>
+                    Copiar
+                </button>
+                <button class="action-btn share-btn" title="Compartir">
+                    <span class="material-symbols-rounded">share</span>
+                    Compartir
+                </button>
             </div>
 
         </div>
