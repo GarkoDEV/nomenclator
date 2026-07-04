@@ -1,99 +1,86 @@
-/* ==========================================================
-   NOMENCLÁTOR DE TRÁFICO v3
-   GarkoDEV
-   Mobile First + Godot WebView
-========================================================== */
+/*==================================================
+    NOMENCLÁTOR DE TRÁFICO
+    GarkoDEV
+    styles.css v1.0
+==================================================*/
 
-/* ==========================================================
-   VARIABLES
-========================================================== */
+
+/*==================================================
+    GOOGLE FONT
+==================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+
+/*==================================================
+    VARIABLES
+==================================================*/
 
 :root{
 
-    color-scheme:dark;
+    /* Colores */
 
     --primary:#2563EB;
-    --primary-light:#3B82F6;
     --primary-dark:#1D4ED8;
 
-    --success:#22C55E;
+    --success:#16A34A;
     --warning:#F59E0B;
-    --danger:#EF4444;
+    --danger:#DC2626;
 
-    --bg:#0B1220;
+    --bg:#0F172A;
+    --surface:#162033;
+    --surface-light:#1E293B;
 
-    --surface:#111827;
-
-    --surface-2:#1E293B;
-
-    --surface-3:#334155;
+    --border:#2D3B52;
 
     --text:#F8FAFC;
-
-    --text-secondary:#CBD5E1;
-
+    --text-soft:#CBD5E1;
     --text-muted:#94A3B8;
 
-    --border:rgba(255,255,255,.08);
+    /* Tema claro */
+
+    --light-bg:#F4F7FB;
+    --light-surface:#FFFFFF;
+    --light-surface-2:#EEF2F7;
+    --light-border:#D7DEE7;
+
+    --light-text:#0F172A;
+    --light-soft:#475569;
+
+    /* Radios */
+
+    --radius-xs:8px;
+    --radius-sm:12px;
+    --radius-md:18px;
+    --radius-lg:24px;
+    --radius-xl:32px;
+
+    /* Sombras */
 
     --shadow-sm:
-        0 2px 8px rgba(0,0,0,.18);
+
+        0 2px 8px rgba(0,0,0,.08);
 
     --shadow:
-        0 12px 30px rgba(0,0,0,.28);
+
+        0 8px 30px rgba(0,0,0,.18);
 
     --shadow-lg:
-        0 20px 60px rgba(0,0,0,.35);
 
-    --radius-sm:14px;
+        0 18px 45px rgba(0,0,0,.25);
 
-    --radius:20px;
+    /* Animaciones */
 
-    --radius-lg:28px;
-
-    --transition:.25s cubic-bezier(.4,0,.2,1);
+    --speed:.25s;
 
 }
 
-/* ==========================================================
-   TEMA CLARO
-========================================================== */
 
-body.light{
+/*==================================================
+    RESET
+==================================================*/
 
-    color-scheme:light;
-
-    --bg:#EEF3F9;
-
-    --surface:#FFFFFF;
-
-    --surface-2:#F8FAFC;
-
-    --surface-3:#E2E8F0;
-
-    --text:#0F172A;
-
-    --text-secondary:#475569;
-
-    --text-muted:#64748B;
-
-    --border:rgba(15,23,42,.08);
-
-    --shadow-sm:
-        0 2px 8px rgba(15,23,42,.08);
-
-    --shadow:
-        0 10px 25px rgba(15,23,42,.10);
-
-}
-
-/* ==========================================================
-   RESET
-========================================================== */
-
-*,
-*::before,
-*::after{
+*{
 
     margin:0;
 
@@ -103,15 +90,24 @@ body.light{
 
 }
 
+*::before,
+*::after{
+
+    box-sizing:border-box;
+
+}
+
 html{
 
     scroll-behavior:smooth;
 
-    -webkit-text-size-adjust:100%;
+    -webkit-tap-highlight-color:transparent;
 
 }
 
 body{
+
+    min-height:100vh;
 
     background:var(--bg);
 
@@ -119,17 +115,45 @@ body{
 
     font-family:"Inter",sans-serif;
 
-    transition:
+    font-size:16px;
 
-        background var(--transition),
-
-        color var(--transition);
-
-    min-height:100vh;
+    line-height:1.45;
 
     overflow-x:hidden;
 
+    transition:
+
+        background .25s,
+
+        color .25s;
+
 }
+
+
+/*==================================================
+    TEMA CLARO
+==================================================*/
+
+body.light{
+
+    --bg:var(--light-bg);
+
+    --surface:var(--light-surface);
+
+    --surface-light:var(--light-surface-2);
+
+    --border:var(--light-border);
+
+    --text:var(--light-text);
+
+    --text-soft:var(--light-soft);
+
+}
+
+
+/*==================================================
+    ELEMENTOS
+==================================================*/
 
 button{
 
@@ -137,9 +161,13 @@ button{
 
     border:none;
 
-    outline:none;
+    background:none;
 
     cursor:pointer;
+
+    user-select:none;
+
+    -webkit-user-select:none;
 
 }
 
@@ -147,9 +175,11 @@ input{
 
     font:inherit;
 
+    border:none;
+
     outline:none;
 
-    border:none;
+    background:none;
 
 }
 
@@ -161,355 +191,239 @@ img{
 
 }
 
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+
+/*==================================================
+    SCROLLBAR
+==================================================*/
+
+*{
+
+    scrollbar-width:thin;
+
+    scrollbar-color:var(--primary) transparent;
+
+}
+
+::-webkit-scrollbar{
+
+    width:7px;
+
+    height:7px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+
+/*==================================================
+    APP
+==================================================*/
+
+.app{
+
+    width:min(100%,900px);
+
+    margin:auto;
+
+    padding:
+
+        max(18px,env(safe-area-inset-top))
+        18px
+        calc(90px + env(safe-area-inset-bottom));
+
+}
+
+
+/*==================================================
+    SELECCIÓN
+==================================================*/
+
+::selection{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+/*==================================================
+    FOCUS
+==================================================*/
+
+button:focus-visible,
+
+input:focus-visible{
+
+    outline:3px solid rgba(37,99,235,.30);
+
+    outline-offset:2px;
+
+}
+
+
+/*==================================================
+    TRANSICIONES
+==================================================*/
+
+button,
+
+input,
+
+.card,
+
+.badge,
+
+.icon-button{
+
+    transition:
+
+        background var(--speed),
+
+        color var(--speed),
+
+        border-color var(--speed),
+
+        transform var(--speed),
+
+        box-shadow var(--speed);
+
+}
+
+
+/*==================================================
+    UTILIDADES
+==================================================*/
+
 .hidden{
 
     display:none !important;
 
 }
 
-/* ==========================================================
-   APP
-========================================================== */
+.text-center{
 
-#app{
-
-    width:min(100%,900px);
-
-    margin:auto;
-
-    min-height:100vh;
-
-    padding-bottom:90px;
+    text-align:center;
 
 }
 
-/* ==========================================================
-   HEADER
-========================================================== */
+.flex{
+
+    display:flex;
+
+}
+
+.grid{
+
+    display:grid;
+
+}
+
+.w-100{
+
+    width:100%;
+
+}
+
+/*==================================================
+    HEADER
+==================================================*/
 
 .header{
 
-    position:sticky;
-
-    top:0;
-
-    z-index:999;
-
-    padding:18px;
-
-    background:rgba(11,18,32,.82);
-
-    backdrop-filter:blur(18px);
-
-    -webkit-backdrop-filter:blur(18px);
-
-    border-bottom:1px solid var(--border);
-
-}
-
-body.light .header{
-
-    background:rgba(255,255,255,.88);
-
-}
-
-.brand{
-
     display:flex;
-
-    align-items:center;
 
     justify-content:space-between;
 
-    gap:16px;
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:24px;
 
 }
 
-.brand-icon{
-
-    width:60px;
-
-    height:60px;
-
-    border-radius:20px;
+.header-left{
 
     display:flex;
 
     align-items:center;
 
-    justify-content:center;
+    gap:16px;
 
-    background:linear-gradient(
-
-        135deg,
-
-        var(--primary),
-
-        var(--primary-dark)
-
-    );
-
-    font-size:30px;
-
-    box-shadow:var(--shadow);
+    flex:1;
 
 }
 
-.brand h1{
+.logo{
 
-    font-size:1.35rem;
+    width:64px;
 
-    font-weight:700;
+    height:64px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #3B82F6
+    );
+
+    color:#fff;
+
+    font-size:32px;
+
+    box-shadow:var(--shadow);
+
+    flex-shrink:0;
+
+}
+
+.header h1{
+
+    font-size:1.55rem;
+
+    font-weight:800;
 
     letter-spacing:-.5px;
 
 }
 
-.brand p{
+.header p{
 
     margin-top:4px;
-
-    color:var(--text-muted);
-
-    font-size:.9rem;
-
-}
-
-/* ==========================================================
-   BOTÓN TEMA
-========================================================== */
-
-.icon-button{
-
-    width:48px;
-
-    height:48px;
-
-    border-radius:50%;
-
-    background:var(--surface);
-
-    color:var(--text);
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    box-shadow:var(--shadow-sm);
-
-    transition:all .3s;
-
-}
-
-.icon-button:hover{
-
-    background:var(--primary);
-
-    color:white;
-
-    transform:rotate(180deg);
-
-}
-
-.icon-button:active{
-
-    transform:scale(.90);
-
-}
-
-/* ==========================================================
-   BUSCADOR
-========================================================== */
-
-.search{
-
-    margin:18px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-    background:var(--surface);
-
-    border:1px solid transparent;
-
-    border-radius:22px;
-
-    padding:16px 18px;
-
-    box-shadow:var(--shadow-sm);
-
-    transition:all var(--transition);
-
-}
-
-.search:focus-within{
-
-    border-color:var(--primary);
-
-    box-shadow:
-
-        0 0 0 4px rgba(37,99,235,.15);
-
-}
-
-.search .material-symbols-rounded{
-
-    color:var(--text-muted);
-
-    font-size:24px;
-
-    flex-shrink:0;
-
-}
-
-#searchInput{
-
-    flex:1;
-
-    background:transparent;
-
-    color:var(--text);
-
-    font-size:16px;
-
-    font-weight:500;
-
-}
-
-#searchInput::placeholder{
-
-    color:var(--text-muted);
-
-}
-
-#clearSearch{
-
-    width:38px;
-
-    height:38px;
-
-    border-radius:50%;
-
-    background:transparent;
-
-    color:var(--text-muted);
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    transition:all .20s;
-
-}
-
-#clearSearch:hover{
-
-    background:var(--surface-2);
-
-    color:var(--text);
-
-}
-
-#clearSearch:active{
-
-    transform:scale(.92);
-
-}
-
-
-/* ==========================================================
-   FILTROS
-========================================================== */
-
-.chips{
-
-    display:flex;
-
-    gap:12px;
-
-    overflow-x:auto;
-
-    padding:0 18px 18px;
-
-    scrollbar-width:none;
-
-    -webkit-overflow-scrolling:touch;
-
-}
-
-.chips::-webkit-scrollbar{
-
-    display:none;
-
-}
-
-.chips button{
-
-    flex-shrink:0;
-
-    height:42px;
-
-    padding:0 18px;
-
-    border-radius:999px;
-
-    background:var(--surface);
-
-    color:var(--text-secondary);
-
-    border:1px solid var(--border);
-
-    font-weight:600;
-
-    transition:all var(--transition);
-
-}
-
-.chips button:hover{
-
-    background:var(--surface-2);
-
-}
-
-.chips button.active{
-
-    background:var(--primary);
-
-    border-color:var(--primary);
-
-    color:#fff;
-
-    box-shadow:
-
-        0 8px 20px rgba(37,99,235,.28);
-
-}
-
-
-/* ==========================================================
-   CONTADOR
-========================================================== */
-
-.stats{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:0 20px 16px;
-
-}
-
-.stats span{
 
     color:var(--text-muted);
 
@@ -517,80 +431,73 @@ body.light .header{
 
 }
 
-.stats strong{
 
-    color:var(--text);
+/*==================================================
+    BOTÓN ICONO
+==================================================*/
 
-}
+.icon-button{
 
+    width:52px;
 
-/* ==========================================================
-   RESULTADOS
-========================================================== */
+    height:52px;
 
-.results{
+    border-radius:18px;
 
     display:flex;
 
-    flex-direction:column;
+    justify-content:center;
 
-    gap:18px;
+    align-items:center;
 
-    padding:0 18px 120px;
+    background:var(--surface);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.icon-button:hover{
+
+    background:var(--surface-light);
+
+}
+
+.icon-button:active{
+
+    transform:scale(.95);
+
+}
+
+.icon-button .material-symbols-rounded{
+
+    font-size:28px;
 
 }
 
 
-/* ==========================================================
-   SCROLL
-========================================================== */
+/*==================================================
+    BUSCADOR
+==================================================*/
 
-::-webkit-scrollbar{
+.search-box{
 
-    width:8px;
+    display:flex;
 
-    height:8px;
+    align-items:center;
 
-}
+    gap:14px;
 
-::-webkit-scrollbar-thumb{
+    height:58px;
 
-    background:rgba(255,255,255,.15);
+    padding:0 18px;
 
-    border-radius:999px;
+    margin-bottom:20px;
 
-}
-
-body.light ::-webkit-scrollbar-thumb{
-
-    background:rgba(0,0,0,.18);
-
-}
-
-
-/* ==========================================================
-   SELECCIÓN DE TEXTO
-========================================================== */
-
-::selection{
-
-    background:var(--primary);
-
-    color:#fff;
-
-}
-
-/* ==========================================================
-   TARJETAS
-========================================================== */
-
-.card{
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:26px;
+    border-radius:20px;
 
     background:var(--surface);
 
@@ -598,50 +505,213 @@ body.light ::-webkit-scrollbar-thumb{
 
     box-shadow:var(--shadow-sm);
 
+}
+
+.search-box .material-symbols-rounded{
+
+    color:var(--text-muted);
+
+    font-size:24px;
+
+}
+
+.search-box input{
+
+    flex:1;
+
+    height:100%;
+
+    color:var(--text);
+
+    font-size:1rem;
+
+}
+
+.search-box input::placeholder{
+
+    color:var(--text-muted);
+
+}
+
+.search-box button{
+
+    width:34px;
+
+    height:34px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:var(--text-muted);
+
+}
+
+.search-box button:hover{
+
+    background:rgba(255,255,255,.06);
+
+}
+
+
+/*==================================================
+    FILTROS
+==================================================*/
+
+.filters{
+
+    display:flex;
+
+    gap:12px;
+
+    overflow-x:auto;
+
+    padding-bottom:8px;
+
+    margin-bottom:24px;
+
+    scrollbar-width:none;
+
+}
+
+.filters::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.filters button{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:11px 20px;
+
+    border-radius:999px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    color:var(--text-soft);
+
+    white-space:nowrap;
+
+    font-size:.92rem;
+
+    font-weight:600;
+
+    flex-shrink:0;
+
+}
+
+.filters button:hover{
+
+    background:var(--surface-light);
+
+}
+
+.filters button.active{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    border-color:var(--primary);
+
+    box-shadow:
+
+        0 6px 20px rgba(37,99,235,.35);
+
+}
+
+.filters button:active{
+
+    transform:scale(.96);
+
+}
+
+
+/*==================================================
+    CONTADOR
+==================================================*/
+
+#resultsCounter{
+
+    transition:.2s;
+
+}
+
+/*==================================================
+    RESULTADOS
+==================================================*/
+
+.results{
+
+    display:grid;
+
+    gap:18px;
+
+}
+
+
+/*==================================================
+    CARD
+==================================================*/
+
+.card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-sm);
+
     transition:
 
-        transform .25s,
+        transform .22s,
 
-        box-shadow .25s,
+        box-shadow .22s,
 
-        border-color .25s;
+        border-color .22s;
 
 }
 
 .card:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(-2px);
 
     box-shadow:var(--shadow);
 
 }
 
-.card:active{
-
-    transform:scale(.99);
-
-}
-
 .card.open{
 
-    border-color:rgba(37,99,235,.35);
+    border-color:var(--primary);
 
 }
 
 
-/* ==========================================================
-   CABECERA
-========================================================== */
+/*==================================================
+    CABECERA CARD
+==================================================*/
 
 .card-header{
 
     width:100%;
-
-    background:none;
-
-    color:inherit;
-
-    padding:22px;
 
     display:flex;
 
@@ -651,109 +721,84 @@ body.light ::-webkit-scrollbar-thumb{
 
     gap:18px;
 
+    padding:20px;
+
+    color:inherit;
+
     text-align:left;
 
 }
 
-.card-info{
+.card-main{
 
     flex:1;
 
 }
 
 
-/* ==========================================================
-   BADGES
-========================================================== */
+/*==================================================
+    BADGES
+==================================================*/
 
 .badge{
 
     display:inline-flex;
 
-    align-items:center;
-
     justify-content:center;
 
-    padding:7px 14px;
+    align-items:center;
+
+    min-width:56px;
+
+    height:30px;
+
+    padding:0 14px;
 
     border-radius:999px;
 
-    font-size:.72rem;
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:.78rem;
 
     font-weight:700;
 
     letter-spacing:.5px;
 
-    color:white;
-
-    margin-bottom:14px;
-
-}
-
-/* RGC */
-
-.badge.rgc{
-
-    background:#2563EB;
-
-}
-
-/* RGV */
-
-.badge.rgv{
-
-    background:#16A34A;
-
-}
-
-/* RGCOND */
-
-.badge.rgcond{
-
-    background:#9333EA;
-
-}
-
-/* LSV */
-
-.badge.lsv{
-
-    background:#DC2626;
-
-}
-
-/* Otros */
-
-.badge.default{
-
-    background:#475569;
+    margin-bottom:12px;
 
 }
 
 
-/* ==========================================================
-   ARTÍCULO
-========================================================== */
+/*==================================================
+    ARTÍCULO
+==================================================*/
 
 .article{
 
-    display:block;
-
-    font-size:1.15rem;
+    font-size:1.18rem;
 
     font-weight:700;
 
-    color:var(--text);
-
     margin-bottom:8px;
+
+    color:var(--text);
 
 }
 
-.card-preview{
 
-    color:var(--text-secondary);
+/*==================================================
+    TEXTO PREVIO
+==================================================*/
 
-    line-height:1.6;
+.preview{
+
+    color:var(--text-soft);
+
+    font-size:.94rem;
+
+    line-height:1.5;
 
     display:-webkit-box;
 
@@ -766,55 +811,61 @@ body.light ::-webkit-scrollbar-thumb{
 }
 
 
-/* ==========================================================
-   IMPORTE
-========================================================== */
+/*==================================================
+    PRECIO
+==================================================*/
 
-.card-price{
+.price{
 
-    color:var(--success);
+    display:flex;
 
-    font-size:1.55rem;
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:86px;
+
+    padding:10px 14px;
+
+    border-radius:16px;
+
+    background:rgba(37,99,235,.12);
+
+    color:var(--primary);
 
     font-weight:800;
 
-    white-space:nowrap;
+    font-size:1.1rem;
 
 }
 
 
-/* ==========================================================
-   CUERPO
-========================================================== */
+/*==================================================
+    CUERPO CARD
+==================================================*/
 
 .card-body{
 
-    display:grid;
+    display:none;
 
-    grid-template-rows:0fr;
+    padding:0 20px 20px;
 
-    transition:grid-template-rows .35s ease;
+    border-top:1px solid var(--border);
+
+    animation:fadeCard .25s ease;
 
 }
 
 .card.open .card-body{
 
-    grid-template-rows:1fr;
-
-}
-
-.card-content{
-
-    overflow:hidden;
-
-    padding:0 22px 22px;
+    display:block;
 
 }
 
 
-/* ==========================================================
-   GRID
-========================================================== */
+/*==================================================
+    GRID DETALLES
+==================================================*/
 
 .detail-grid{
 
@@ -824,251 +875,197 @@ body.light ::-webkit-scrollbar-thumb{
 
     gap:14px;
 
-    margin-bottom:20px;
+    margin:20px 0;
 
 }
 
-.detail-item{
+.detail-grid div{
 
-    padding:16px;
-
-    background:var(--surface-2);
+    background:var(--surface-light);
 
     border-radius:18px;
 
-    border:1px solid var(--border);
+    padding:14px;
 
 }
 
-.detail-item span{
+.detail-grid span{
 
     display:block;
 
-    font-size:.72rem;
-
-    text-transform:uppercase;
-
     color:var(--text-muted);
 
-    margin-bottom:8px;
+    font-size:.78rem;
 
-    letter-spacing:.6px;
-
-}
-
-.detail-item strong{
-
-    font-size:1rem;
+    margin-bottom:6px;
 
 }
 
+.detail-grid strong{
 
-/* ==========================================================
-   DESCRIPCIÓN
-========================================================== */
+    font-size:.95rem;
+
+    font-weight:700;
+
+}
+
+
+/*==================================================
+    DESCRIPCIÓN
+==================================================*/
 
 .description{
 
-    background:var(--surface-2);
+    line-height:1.75;
 
-    border-radius:18px;
+    color:var(--text-soft);
 
-    padding:18px;
-
-    line-height:1.8;
-
-    color:var(--text-secondary);
-
-    margin-bottom:20px;
+    margin-bottom:22px;
 
 }
 
 
-/* ==========================================================
-   PANEL ECONÓMICO
-========================================================== */
+/*==================================================
+    GRID IMPORTES
+==================================================*/
 
-.price-panel{
+.price-grid{
 
     display:grid;
 
     grid-template-columns:
 
-        repeat(2,1fr)
-
-        90px;
+        repeat(3,1fr);
 
     gap:14px;
 
 }
 
-.price-panel>div{
+.price-grid div{
 
-    background:var(--surface-2);
+    background:var(--surface-light);
 
     border-radius:18px;
 
     padding:16px;
 
-    border:1px solid var(--border);
+    text-align:center;
 
 }
 
-.price-panel span{
+.price-grid span{
 
     display:block;
 
     color:var(--text-muted);
 
-    font-size:.72rem;
+    font-size:.78rem;
 
     margin-bottom:8px;
 
-    text-transform:uppercase;
+}
+
+.price-grid strong{
+
+    font-size:1rem;
+
+    font-weight:700;
 
 }
 
-.price-panel strong{
 
-    font-size:1.15rem;
+/*==================================================
+    PUNTOS
+==================================================*/
 
-}
-
-
-/* ==========================================================
-   PUNTOS
-========================================================== */
-
-.points-circle{
+.points{
 
     display:flex;
 
     flex-direction:column;
 
+    align-items:center;
+
+}
+
+.points strong{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    display:flex;
+
     justify-content:center;
 
     align-items:center;
 
-    background:
+    background:var(--danger);
 
-        linear-gradient(
+    color:#fff;
 
-            135deg,
-
-            #DC2626,
-
-            #991B1B
-
-        ) !important;
-
-    color:white;
-
-}
-
-.points-circle span{
-
-    color:white;
-
-}
-
-.points-circle strong{
-
-    font-size:2rem;
+    font-size:1.1rem;
 
     font-weight:800;
 
 }
 
 
-/* ==========================================================
-   ACCIONES
-========================================================== */
+/*==================================================
+    ANIMACIÓN
+==================================================*/
 
-.card-actions{
+@keyframes fadeCard{
 
-    display:grid;
+    from{
 
-    grid-template-columns:repeat(3,1fr);
+        opacity:0;
 
-    gap:14px;
+        transform:translateY(-8px);
 
-    margin-top:24px;
+    }
 
-}
+    to{
 
-.action-btn{
+        opacity:1;
 
-    display:flex;
+        transform:translateY(0);
 
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:8px;
-
-    padding:16px;
-
-    background:var(--surface-2);
-
-    color:var(--text);
-
-    border-radius:18px;
-
-    transition:all .25s;
+    }
 
 }
 
-.action-btn:hover{
-
-    background:var(--primary);
-
-    color:white;
-
-}
-
-.action-btn .material-symbols-rounded{
-
-    font-size:24px;
-
-}
-
-/* ==========================================================
-   EMPTY STATE
-========================================================== */
+/*==================================================
+    EMPTY STATE
+==================================================*/
 
 .empty{
 
     display:flex;
 
+    flex-direction:column;
+
     justify-content:center;
 
     align-items:center;
 
-    min-height:50vh;
-
-    padding:40px 24px;
-
-}
-
-.empty-content{
-
-    width:100%;
-
-    max-width:360px;
-
     text-align:center;
+
+    padding:60px 20px;
+
+    color:var(--text-soft);
 
 }
 
 .empty-icon{
 
-    font-size:80px;
+    font-size:72px;
 
-    color:var(--text-muted);
+    margin-bottom:18px;
 
-    margin-bottom:20px;
+    color:var(--primary);
 
 }
 
@@ -1076,62 +1073,30 @@ body.light ::-webkit-scrollbar-thumb{
 
     font-size:1.4rem;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 
 }
 
 .empty p{
 
-    color:var(--text-secondary);
+    max-width:320px;
 
-    line-height:1.7;
-
-    margin-bottom:24px;
-
-}
-
-.primary-button{
-
-    width:100%;
-
-    height:52px;
-
-    border-radius:18px;
-
-    background:var(--primary);
-
-    color:white;
-
-    font-weight:700;
-
-    transition:.25s;
-
-}
-
-.primary-button:hover{
-
-    background:var(--primary-light);
-
-}
-
-.primary-button:active{
-
-    transform:scale(.98);
+    line-height:1.6;
 
 }
 
 
-/* ==========================================================
-   FAB
-========================================================== */
+/*==================================================
+    FAB
+==================================================*/
 
 .fab{
 
     position:fixed;
 
-    right:18px;
+    right:22px;
 
-    bottom:95px;
+    bottom:22px;
 
     width:58px;
 
@@ -1141,25 +1106,23 @@ body.light ::-webkit-scrollbar-thumb{
 
     background:var(--primary);
 
-    color:white;
+    color:#fff;
 
     display:flex;
 
-    align-items:center;
-
     justify-content:center;
+
+    align-items:center;
 
     box-shadow:var(--shadow);
 
-    z-index:100;
-
-    transition:.25s;
+    z-index:1000;
 
 }
 
 .fab:hover{
 
-    transform:translateY(-3px);
+    background:var(--primary-dark);
 
 }
 
@@ -1169,140 +1132,16 @@ body.light ::-webkit-scrollbar-thumb{
 
 }
 
+.fab .material-symbols-rounded{
 
-/* ==========================================================
-   BOTTOM BAR
-========================================================== */
-
-.bottomBar{
-
-    position:fixed;
-
-    left:0;
-
-    right:0;
-
-    bottom:0;
-
-    height:72px;
-
-    display:flex;
-
-    justify-content:space-around;
-
-    align-items:center;
-
-    background:rgba(17,24,39,.90);
-
-    backdrop-filter:blur(18px);
-
-    -webkit-backdrop-filter:blur(18px);
-
-    border-top:1px solid var(--border);
-
-    z-index:1000;
-
-}
-
-body.light .bottomBar{
-
-    background:rgba(255,255,255,.90);
-
-}
-
-.bottomBar button{
-
-    flex:1;
-
-    height:100%;
-
-    background:none;
-
-    color:var(--text-muted);
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:4px;
-
-    transition:.25s;
-
-}
-
-.bottomBar button.active{
-
-    color:var(--primary);
-
-}
-
-.bottomBar .material-symbols-rounded{
-
-    font-size:26px;
-
-}
-
-.bottomBar small{
-
-    font-size:.72rem;
-
-    font-weight:600;
+    font-size:30px;
 
 }
 
 
-/* ==========================================================
-   MODAL
-========================================================== */
-
-.modal{
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.55);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:flex-end;
-
-    padding:20px;
-
-    z-index:2000;
-
-}
-
-.modal-content{
-
-    width:100%;
-
-    max-width:650px;
-
-    max-height:90vh;
-
-    overflow:auto;
-
-    background:var(--surface);
-
-    border-radius:28px 28px 0 0;
-
-    padding:24px;
-
-    animation:modalUp .25s ease;
-
-}
-
-
-/* ==========================================================
-   TOAST
-========================================================== */
+/*==================================================
+    TOAST
+==================================================*/
 
 .toast{
 
@@ -1310,29 +1149,29 @@ body.light .bottomBar{
 
     left:50%;
 
-    bottom:90px;
+    bottom:95px;
 
-    transform:translateX(-50%) translateY(100px);
+    transform:translateX(-50%) translateY(30px);
 
-    min-width:220px;
-
-    max-width:90%;
-
-    background:#111;
+    background:#111827;
 
     color:#fff;
 
-    padding:14px 20px;
+    padding:14px 22px;
 
     border-radius:999px;
 
-    text-align:center;
+    font-size:.92rem;
 
     opacity:0;
 
-    transition:.30s;
+    pointer-events:none;
 
-    z-index:3000;
+    transition:.25s;
+
+    z-index:2000;
+
+    box-shadow:var(--shadow);
 
 }
 
@@ -1345,125 +1184,11 @@ body.light .bottomBar{
 }
 
 
-/* ==========================================================
-   ANIMACIONES
-========================================================== */
+/*==================================================
+    RIPPLE TÁCTIL
+==================================================*/
 
-@keyframes modalUp{
-
-    from{
-
-        transform:translateY(100%);
-
-    }
-
-    to{
-
-        transform:translateY(0);
-
-    }
-
-}
-
-@keyframes fadeIn{
-
-    from{
-
-        opacity:0;
-
-    }
-
-    to{
-
-        opacity:1;
-
-    }
-
-}
-
-.card{
-
-    animation:fadeIn .25s ease;
-
-}
-
-
-/* ==========================================================
-   RESPONSIVE
-========================================================== */
-
-@media(min-width:768px){
-
-    .search{
-
-        margin:22px;
-
-    }
-
-    .results{
-
-        padding:0 22px 120px;
-
-    }
-
-    .chips{
-
-        padding:0 22px 22px;
-
-    }
-
-}
-
-@media(min-width:1024px){
-
-    .bottomBar{
-
-        left:50%;
-
-        transform:translateX(-50%);
-
-        width:900px;
-
-        border-radius:20px 20px 0 0;
-
-    }
-
-}
-
-
-/* ==========================================================
-   UTILIDADES
-========================================================== */
-
-.no-select{
-
-    user-select:none;
-
-}
-
-.clickable{
-
-    cursor:pointer;
-
-}
-
-.text-center{
-
-    text-align:center;
-
-}
-
-.w-100{
-
-    width:100%;
-
-}
-
-/* ==========================================================
-   EFECTOS
-========================================================== */
-
-.ripple{
+button{
 
     position:relative;
 
@@ -1471,7 +1196,7 @@ body.light .bottomBar{
 
 }
 
-.ripple::after{
+button::after{
 
     content:"";
 
@@ -1483,20 +1208,20 @@ body.light .bottomBar{
 
     opacity:0;
 
-    transition:opacity .25s;
+    transition:opacity .2s;
 
 }
 
-.ripple:active::after{
+button:active::after{
 
     opacity:1;
 
 }
 
 
-/* ==========================================================
-   LOADING
-========================================================== */
+/*==================================================
+    CARGANDO
+==================================================*/
 
 .loading{
 
@@ -1506,19 +1231,19 @@ body.light .bottomBar{
 
     align-items:center;
 
-    padding:50px 20px;
+    padding:60px;
 
 }
 
 .spinner{
 
-    width:42px;
+    width:44px;
 
-    height:42px;
+    height:44px;
 
     border-radius:50%;
 
-    border:4px solid var(--surface-3);
+    border:4px solid var(--surface-light);
 
     border-top-color:var(--primary);
 
@@ -1537,167 +1262,140 @@ body.light .bottomBar{
 }
 
 
-/* ==========================================================
-   BADGES DE COLOR
-========================================================== */
+/*==================================================
+    TABLET
+==================================================*/
 
-.norma-rgc{
+@media (min-width:768px){
 
-    background:#2563EB !important;
+    .results{
 
-}
+        grid-template-columns:repeat(2,1fr);
 
-.norma-rgv{
-
-    background:#16A34A !important;
-
-}
-
-.norma-rgcond{
-
-    background:#9333EA !important;
-
-}
-
-.norma-lsv{
-
-    background:#DC2626 !important;
-
-}
-
-.norma-default{
-
-    background:#64748B !important;
+    }
 
 }
 
 
-/* ==========================================================
-   SCROLLBAR
-========================================================== */
+/*==================================================
+    ESCRITORIO
+==================================================*/
 
-*{
+@media (min-width:1200px){
 
-    scrollbar-width:thin;
+    .app{
 
-    scrollbar-color:var(--primary) transparent;
+        max-width:1200px;
 
-}
+    }
 
-::-webkit-scrollbar{
+    .results{
 
-    width:8px;
+        grid-template-columns:repeat(3,1fr);
 
-    height:8px;
-
-}
-
-::-webkit-scrollbar-track{
-
-    background:transparent;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:var(--surface-3);
-
-    border-radius:999px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-    background:var(--primary);
+    }
 
 }
 
 
-/* ==========================================================
-   FOCUS ACCESIBLE
-========================================================== */
+/*==================================================
+    REDUCIR ANIMACIONES
+==================================================*/
 
-button:focus-visible,
+@media (prefers-reduced-motion:reduce){
 
-input:focus-visible{
+    *{
 
-    outline:3px solid rgba(37,99,235,.35);
+        animation:none !important;
 
-    outline-offset:2px;
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+/*==================================================
+    NORMAS (COLORES)
+==================================================*/
+
+.badge.rgc{
+
+    background:#2563EB;
+
+}
+
+.badge.rgv{
+
+    background:#16A34A;
+
+}
+
+.badge.rgcond{
+
+    background:#9333EA;
+
+}
+
+.badge.lsv{
+
+    background:#DC2626;
+
+}
+
+.badge.default{
+
+    background:#64748B;
 
 }
 
 
-/* ==========================================================
-   SELECCIÓN
-========================================================== */
+/*==================================================
+    EFECTOS
+==================================================*/
 
-::selection{
+.card:hover .badge{
 
-    background:var(--primary);
+    transform:scale(1.05);
 
-    color:#fff;
+}
+
+.card:hover .price{
+
+    transform:translateY(-2px);
 
 }
 
 
-/* ==========================================================
-   TRANSICIONES GLOBALES
-========================================================== */
+/*==================================================
+    ESTADOS
+==================================================*/
 
-button,
+.disabled{
 
-input,
+    pointer-events:none;
 
-.card,
-
-.badge,
-
-.action-btn,
-
-.icon-button{
-
-    transition:
-
-        background .25s,
-
-        color .25s,
-
-        border-color .25s,
-
-        box-shadow .25s,
-
-        transform .25s;
+    opacity:.45;
 
 }
 
+.invisible{
 
-/* ==========================================================
-   IMÁGENES
-========================================================== */
-
-img{
-
-    max-width:100%;
-
-    height:auto;
-
-    user-select:none;
-
-    -webkit-user-drag:none;
+    visibility:hidden;
 
 }
-
-
-/* ==========================================================
-   UTILIDADES
-========================================================== */
 
 .hidden{
 
     display:none !important;
 
 }
+
+
+/*==================================================
+    UTILIDADES
+==================================================*/
 
 .flex{
 
@@ -1780,17 +1478,30 @@ img{
 }
 
 
-/* ==========================================================
-   RENDIMIENTO WEBVIEW
-========================================================== */
+/*==================================================
+    SELECCIÓN
+==================================================*/
 
-.card,
+::selection{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+
+/*==================================================
+    OPTIMIZACIÓN WEBVIEW
+==================================================*/
 
 .header,
 
-.bottomBar,
+.card,
 
-.modal-content{
+.fab,
+
+.toast{
 
     will-change:transform;
 
@@ -1801,42 +1512,109 @@ img{
 }
 
 
-/* ==========================================================
-   SAFE AREA (Android / iPhone)
-========================================================== */
+/*==================================================
+    SAFE AREA
+==================================================*/
 
 .header{
 
-    padding-top:max(18px, env(safe-area-inset-top));
+    padding-top:max(0px,env(safe-area-inset-top));
 
 }
 
-.bottomBar{
+.fab{
 
-    padding-bottom:env(safe-area-inset-bottom);
+    bottom:calc(22px + env(safe-area-inset-bottom));
 
 }
 
 
-/* ==========================================================
-   DESACTIVAR ANIMACIONES
-========================================================== */
+/*==================================================
+    IMPRESIÓN
+==================================================*/
 
-@media (prefers-reduced-motion:reduce){
+@media print{
 
-    *{
+    body{
 
-        animation:none !important;
+        background:#fff;
 
-        transition:none !important;
+        color:#000;
 
-        scroll-behavior:auto !important;
+    }
+
+    .search-box,
+
+    .filters,
+
+    .fab,
+
+    .toast{
+
+        display:none !important;
+
+    }
+
+    .card{
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+
+        box-shadow:none;
+
+        border:1px solid #ddd;
 
     }
 
 }
 
 
-/* ==========================================================
-   FIN DEL ARCHIVO
-========================================================== */
+/*==================================================
+    MODO OSCURO DEL SISTEMA
+==================================================*/
+
+@media (prefers-color-scheme:dark){
+
+    body.auto{
+
+        --bg:#0F172A;
+
+        --surface:#162033;
+
+        --surface-light:#1E293B;
+
+        --border:#2D3B52;
+
+        --text:#F8FAFC;
+
+        --text-soft:#CBD5E1;
+
+    }
+
+}
+
+@media (prefers-color-scheme:light){
+
+    body.auto{
+
+        --bg:#F4F7FB;
+
+        --surface:#FFFFFF;
+
+        --surface-light:#EEF2F7;
+
+        --border:#D7DEE7;
+
+        --text:#0F172A;
+
+        --text-soft:#475569;
+
+    }
+
+}
+
+
+/*==================================================
+    FIN DEL ARCHIVO
+==================================================*/
