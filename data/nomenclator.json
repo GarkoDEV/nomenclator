@@ -5358,5 +5358,305 @@
         "importe": 80,
         "importe_reducido": 40,
         "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "32",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No haber efectuado, el titular del vehículo reseñado, la notificación de transferencia en el plazo reglamentario.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "32",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "No haber efectuado, el adquirente del vehículo reseñado, la solicitud de renovación del permiso de circulación.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "32",
+        "apartado": "6",
+        "opcion": "A",
+        "texto": "No haber notificado el fallecimiento del titular del vehículo reseñado o no haber solicitado el adjudicatario la expedición de su permiso de circulación dentro del plazo legalmente establecido.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "33",
+        "apartado": "6",
+        "opcion": "A",
+        "texto": "No haber efectuado, la compraventa, el cambio de titularidad a su nombre transcurrido más de un año desde que se ha producido la baja temporal del vehículo sin haberse transmitido a un tercero.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "34",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "Circular con el vehículo reseñado cuando ha sido dado de baja.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "40",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "Circular con permiso de circulación para matrícula turística caducado.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "42",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular con el vehículo reseñado sin haber obtenido el permiso temporal correspondiente.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "43",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular con permiso temporal para particulares caducado.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "44",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular con un permiso temporal para uso de empresas, por un vehículo no matriculado en España, caducado.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "45",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular con un permiso temporal para uso de empresas, por un vehículo no matriculado en España, sin haber formalizado el correspondiente boletín de circulación.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "46",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular con un permiso temporal para uso de empresas sin el conductor o el acompañante reglamentarios, o superando el límite de personas reglamentarias.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "46",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Circular el vehículo reseñado al amparo de placas temporales de empresa, para finalidades distintas de las establecidas reglamentariamente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "46",
+        "apartado": "3",
+        "opcion": "B",
+        "texto": "Circular, el vehículo reseñado, al amparo de placas temporales de empresa, llevando carga útil o cuando ya ha sido adquirido para su uso.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "48",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular con un permiso temporal para uso de empresas, por un vehículo matriculado en España, caducado.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "48",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "Circular con un permiso temporal para uso de empresas, por un vehículo matriculado en España, sin haber cumplimentado el correspondiente boletín de circulación.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "49",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No ajustarse a las placas de matrícula del vehículo reseñado a las prescripciones reglamentarias.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "LRCSCVM",
+        "articulo": "2",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No tener concertado el seguro obligatorio de responsabilidad civil, el vehículo reseñado, cuya conducción se autoriza mediante licencia de conducción.",
+        "importe": 650,
+        "importe_reducido": 325,
+        "puntos": 0
+    },
+    {
+        "norma": "LRCSCVM",
+        "articulo": "2",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "No tener concertado el seguro obligatorio de responsabilidad civil, el vehículo reseñado, cuya conducción se autoriza mediante permiso de conducción de la clase AM.",
+        "importe": 1000,
+        "importe_reducido": 500,
+        "puntos": 0
+    },
+    {
+        "norma": "LRCSCVM",
+        "articulo": "2",
+        "apartado": "1",
+        "opcion": "C",
+        "texto": "No tener concertado el seguro obligatorio de responsabilidad civil, el vehículo reseñado, cuya conducción se autoriza mediante permiso de conducción de las clases A2, A1 o A.",
+        "importe": 1250,
+        "importe_reducido": 625,
+        "puntos": 0
+    },
+    {
+        "norma": "LRCSCVM",
+        "articulo": "2",
+        "apartado": "1",
+        "opcion": "D",
+        "texto": "No tener concertado el seguro obligatorio de responsabilidad civil, el vehículo reseñado, cuya conducción se autoriza mediante permiso de conducción de las clases B y B+E.",
+        "importe": 1500,
+        "importe_reducido": 750,
+        "puntos": 0
+    },
+    {
+        "norma": "LRCSCVM",
+        "articulo": "2",
+        "apartado": "1",
+        "opcion": "E",
+        "texto": "No tener concertado el seguro obligatorio de responsabilidad civil, el vehículo reseñado, cuya conducción se autoriza mediante permiso de conducción de las clases C1, C1+E, C y C+E.",
+        "importe": 2800,
+        "importe_reducido": 1400,
+        "puntos": 0
+    },
+    {
+        "norma": "LRCSCVM",
+        "articulo": "2",
+        "apartado": "1",
+        "opcion": "F",
+        "texto": "No tener concertado el seguro obligatorio de responsabilidad civil, el vehículo reseñado, cuya conducción se autoriza mediante permiso de conducción de las clases D1, D1+E, D y D+E.",
+        "importe": 2800,
+        "importe_reducido": 1400,
+        "puntos": 0
+    },
+    {
+        "norma": "LRCSCVM",
+        "articulo": "2",
+        "apartado": "1",
+        "opcion": "G",
+        "texto": "Circular el vehículo personal ligero sin que conste que el propietario tenga suscrito y mantenga en vigor un contrato de seguro que cubra la responsabilidad civil derivada de su circulación.",
+        "importe": 350,
+        "importe_reducido": 175,
+        "puntos": 0
+    },
+    {
+        "norma": "LRCSCVM",
+        "articulo": "2",
+        "apartado": "1",
+        "opcion": "H",
+        "texto": "Circular el vehículo reseñado sin que conste que el propietario tenga suscrito y mantenga en vigor un contrato de seguro que cubra la responsabilidad civil derivada de su circulación.",
+        "importe": 800,
+        "importe_reducido": 400,
+        "puntos": 0
+    },
+    {
+        "norma": "REPC",
+        "articulo": "9",
+        "apartado": "b",
+        "opcion": "A",
+        "texto": "Abandonar, el profesor de una escuela de conductores, el doble mando del vehículo en la enseñanza práctica.",
+        "importe": 3000,
+        "importe_reducido": 0,
+        "puntos": 0
+    },
+    {
+        "norma": "REPC",
+        "articulo": "9",
+        "apartado": "b",
+        "opcion": "B",
+        "texto": "Seguir de forma simultánea, el profesor de una escuela de conductores, las evoluciones de varios vehículos en la enseñanza práctica.",
+        "importe": 3000,
+        "importe_reducido": 0,
+        "puntos": 0
+    },
+    {
+        "norma": "REPC",
+        "articulo": "9",
+        "apartado": "e",
+        "opcion": "A",
+        "texto": "No llevar la autorización de ejercicio, el profesor de una escuela de conductores, cuando imparte la enseñanza.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "REPC",
+        "articulo": "16",
+        "apartado": "c",
+        "opcion": "A",
+        "texto": "No reunir el vehículo dedicado a la enseñanza de la conducción las condiciones técnicas generales exigidas reglamentariamente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "REPC",
+        "articulo": "16",
+        "apartado": "d",
+        "opcion": "A",
+        "texto": "No tener, un vehículo de una escuela de conductores destinado a las prácticas correspondientes a la prueba de control de aptitudes y comportamientos en vías abiertas al tráfico general, un doble mando eficaz.",
+        "importe": 3000,
+        "importe_reducido": 0,
+        "puntos": 0
+    },
+    {
+        "norma": "REPC",
+        "articulo": "40",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "No llevar la ficha de clases prácticas, el profesor de una escuela de conductores, durante las clases prácticas.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
     }
 ]
