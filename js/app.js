@@ -1,266 +1,299 @@
 /* ==========================================================
    NOMENCLÁTOR DE TRÁFICO
+   GarkoDEV
    app.js
 ========================================================== */
 
-let datos = [];
+"use strict";
 
-let filtroActual = "TODOS";
+/* ==========================================================
+   BASE DE DATOS (TEMPORAL)
+   Más adelante se cargará desde data/nomenclator.json
+========================================================== */
 
-const resultados = document.getElementById("results");
-const buscador = document.getElementById("searchInput");
-const emptyState = document.getElementById("emptyState");
+const DATABASE = [
 
-const botones = document.querySelectorAll(".filter");
+    {
+        norma:"RGC",
+        articulo:"48",
+        apartado:"1",
+        opcion:"5A",
+        texto:"Circular superando la velocidad máxima permitida en vía urbana.",
+        importe:200,
+        importe_reducido:100,
+        puntos:4
+    },
 
-/*==========================================================
-    NORMALIZAR TEXTO
-==========================================================*/
+    {
+        norma:"RGC",
+        articulo:"18",
+        apartado:"2",
+        opcion:"3B",
+        texto:"Conducir utilizando manualmente un teléfono móvil.",
+        importe:200,
+        importe_reducido:100,
+        puntos:6
+    },
 
-function normalizar(texto){
+    {
+        norma:"RGV",
+        articulo:"15",
+        apartado:"1",
+        opcion:"1",
+        texto:"Circular con neumáticos en mal estado.",
+        importe:200,
+        importe_reducido:100,
+        puntos:0
+    }
 
-    return texto
-        .toString()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g,"")
-        .toLowerCase();
+];
 
-}
+/* ==========================================================
+   APLICACIÓN
+========================================================== */
 
+const App = {
 
-/*==========================================================
-    CARGAR JSON
-==========================================================*/
+    /* ---------------------------- */
 
-async function cargarDatos(){
+    data:[],
 
-    try{
+    filtered:[],
 
-        const respuesta = await fetch("datos.json");
+    currentFilter:"TODOS",
 
-        datos = await respuesta.json();
+    query:"",
 
-        render();
+    favorites:[],
 
-    }catch(error){
+    history:[],
 
-        console.error(error);
+    settings:{
+
+        theme:"dark"
+
+    },
+
+    /* ---------------------------- */
+
+    elements:{},
+
+    /* ======================================================
+       INICIO
+    ====================================================== */
+
+    init(){
+
+        console.log("🚔 Nomenclátor iniciado");
+
+        this.cacheDOM();
+
+        this.loadSettings();
+
+        this.loadData();
+
+        this.bindEvents();
+
+        this.updateStats();
+
+    },
+
+    /* ======================================================
+       CACHE DOM
+    ====================================================== */
+
+    cacheDOM(){
+
+        this.elements.results=
+            document.getElementById("results");
+
+        this.elements.search=
+            document.getElementById("searchInput");
+
+        this.elements.filters=
+            document.getElementById("filters");
+
+        this.elements.empty=
+            document.getElementById("empty");
+
+        this.elements.stats=
+            document.getElementById("statsText");
+
+        this.elements.theme=
+            document.getElementById("themeButton");
+
+        this.elements.toast=
+            document.getElementById("toast");
+
+    },
+
+    /* ======================================================
+       CARGAR DATOS
+    ====================================================== */
+
+    loadData(){
+
+        this.data=[...DATABASE];
+
+        this.filtered=[...DATABASE];
+
+    },
+
+    /* ======================================================
+       AJUSTES
+    ====================================================== */
+
+    loadSettings(){
+
+        const settings=
+
+            localStorage.getItem("nomenclator-settings");
+
+        if(settings){
+
+            this.settings=JSON.parse(settings);
+
+        }
+
+        this.applyTheme();
+
+    },
+
+    saveSettings(){
+
+        localStorage.setItem(
+
+            "nomenclator-settings",
+
+            JSON.stringify(this.settings)
+
+        );
+
+    },
+
+    /* ======================================================
+       TEMA
+    ====================================================== */
+
+    applyTheme(){
+
+        if(this.settings.theme==="light"){
+
+            document.body.classList.add("light");
+
+        }else{
+
+            document.body.classList.remove("light");
+
+        }
+
+        this.updateThemeIcon();
+
+    },
+
+    toggleTheme(){
+
+        this.settings.theme=
+
+            this.settings.theme==="dark"
+
+            ? "light"
+
+            : "dark";
+
+        this.applyTheme();
+
+        this.saveSettings();
+
+        this.toast(
+
+            this.settings.theme==="dark"
+
+            ? "🌙 Tema oscuro"
+
+            : "☀️ Tema claro"
+
+        );
+
+    },
+
+    updateThemeIcon(){
+
+        const icon=
+
+            this.elements.theme.querySelector("span");
+
+        icon.textContent=
+
+            this.settings.theme==="dark"
+
+            ? "light_mode"
+
+            : "dark_mode";
+
+    },
+
+    /* ======================================================
+       ESTADÍSTICAS
+    ====================================================== */
+
+    updateStats(){
+
+        this.elements.stats.textContent=
+
+            `${this.filtered.length} infracciones`;
+
+    },
+
+    /* ======================================================
+       EVENTOS
+    ====================================================== */
+
+    bindEvents(){
+
+        this.elements.theme.addEventListener(
+
+            "click",
+
+            ()=>this.toggleTheme()
+
+        );
+
+    },
+
+    /* ======================================================
+       TOAST
+    ====================================================== */
+
+    toast(message){
+
+        const toast=this.elements.toast;
+
+        toast.textContent=message;
+
+        toast.classList.add("show");
+
+        clearTimeout(this.toastTimer);
+
+        this.toastTimer=setTimeout(()=>{
+
+            toast.classList.remove("show");
+
+        },2000);
 
     }
 
-}
+};
 
-cargarDatos();
+/* ==========================================================
+   START
+========================================================== */
 
+document.addEventListener(
 
-/*==========================================================
-    BUSCADOR
-==========================================================*/
+    "DOMContentLoaded",
 
-buscador.addEventListener("input",render);
+    ()=>App.init()
 
+);
 
-/*==========================================================
-    FILTROS
-==========================================================*/
-
-botones.forEach(boton=>{
-
-    boton.addEventListener("click",()=>{
-
-        botones.forEach(b=>b.classList.remove("active"));
-
-        boton.classList.add("active");
-
-        filtroActual=boton.dataset.filter;
-
-        render();
-
-    });
-
-});
-
-
-/*==========================================================
-    RENDER
-==========================================================*/
-
-function render(){
-
-    resultados.innerHTML="";
-
-    const texto=normalizar(buscador.value);
-
-    const fragment=document.createDocumentFragment();
-
-    const lista=datos.filter(item=>{
-
-        const coincideFiltro=
-
-            filtroActual==="TODOS"
-
-            ||
-
-            item.norma===filtroActual;
-
-        const contenido=normalizar(
-
-            item.norma+" "+
-
-            item.articulo+" "+
-
-            item.apartado+" "+
-
-            item.opcion+" "+
-
-            item.texto+" "+
-
-            item.importe+" "+
-
-            item.puntos
-
-        );
-
-        return coincideFiltro && contenido.includes(texto);
-
-    });
-
-    emptyState.classList.toggle(
-
-        "hidden",
-
-        lista.length>0
-
-    );
-
-    lista.forEach(item=>{
-
-        fragment.appendChild(
-
-            crearCard(item)
-
-        );
-
-    });
-
-    resultados.appendChild(fragment);
-
-}
-
-
-/*==========================================================
-    CREAR TARJETA
-==========================================================*/
-
-function crearCard(item){
-
-    const card=document.createElement("article");
-
-    card.className="card";
-
-    card.innerHTML=`
-
-        <button class="card-header">
-
-            <div>
-
-                <span class="badge">
-
-                    ${item.norma}
-
-                </span>
-
-                <span class="article">
-
-                    Art. ${item.articulo}
-
-                </span>
-
-            </div>
-
-            <strong>
-
-                ${item.importe} €
-
-            </strong>
-
-        </button>
-
-        <div class="card-body">
-
-            <p class="description">
-
-                ${item.texto}
-
-            </p>
-
-            <div class="details">
-
-                <div>
-
-                    <span>Importe</span>
-
-                    <strong>
-
-                        ${item.importe} €
-
-                    </strong>
-
-                </div>
-
-                <div>
-
-                    <span>Reducido</span>
-
-                    <strong>
-
-                        ${item.importe_reducido} €
-
-                    </strong>
-
-                </div>
-
-                <div>
-
-                    <span>Puntos</span>
-
-                    <strong class="puntos">
-
-                        ${item.puntos}
-
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    `;
-
-    card
-    .querySelector(".card-header")
-    .addEventListener("click",()=>{
-
-        card.classList.toggle("open");
-
-    });
-
-    return card;
-
-}
-
-
-/*==========================================================
-    PWA
-==========================================================*/
-
-if("serviceWorker" in navigator){
-
-    window.addEventListener("load",()=>{
-
-        navigator.serviceWorker.register("sw.js");
-
-    });
-
-}
