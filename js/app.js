@@ -484,17 +484,16 @@ class TrafficApp {
 
     updateStats() {
         const total = this.filtered.length;
-        const avgPrice = total > 0
-            ? Math.round(this.filtered.reduce((sum, item) => sum + item.importe, 0) / total)
-            : 0;
-        const maxPoints = total > 0
-            ? Math.max(...this.filtered.map(item => item.puntos))
-            : 0;
+        const statTotal = document.getElementById("statTotal");
+        const statFavorites = document.getElementById("statFavorites");
 
-        document.getElementById("statTotal").textContent = total;
-        document.getElementById("statAvgPrice").textContent = `${avgPrice}€`;
-        document.getElementById("statMaxPoints").textContent = maxPoints;
-        document.getElementById("statFavorites").textContent = this.favorites.length;
+        if (statTotal) {
+            statTotal.textContent = total;
+        }
+
+        if (statFavorites) {
+            statFavorites.textContent = this.favorites.length;
+        }
     }
 
     toggleEmptyState() {
