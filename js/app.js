@@ -735,13 +735,18 @@ class TrafficApp {
     }
 
     setTheme(theme) {
-        this.currentTheme = theme;
+        const normalizedTheme = theme === "light" ? "light" : "dark";
+        this.currentTheme = normalizedTheme;
+
         document.body.classList.remove("light", "dark");
-        document.body.classList.add(theme);
-        localStorage.setItem(CONFIG.storageTheme, theme);
-        this.updateThemeIcon(theme);
+        document.body.classList.add(normalizedTheme);
+        document.documentElement.setAttribute("data-theme", normalizedTheme);
+        localStorage.setItem(CONFIG.storageTheme, normalizedTheme);
+
+        this.updateThemeButton(normalizedTheme);
+
         // Actualizar gráficos si están visibles
-        if (!this.chartsSection.classList.contains("hidden")) {
+        if (this.chartsSection && !this.chartsSection.classList.contains("hidden")) {
             setTimeout(() => this.updateCharts(), 100);
         }
     }
@@ -756,12 +761,19 @@ class TrafficApp {
         );
     }
 
-    updateThemeIcon(theme) {
+    updateThemeButton(theme) {
         if (!this.themeButton) return;
+
         const icon = this.themeButton.querySelector("span");
         if (icon) {
-            icon.textContent = theme === "dark" ? "☀️" : "🌙";
+            icon.textContent = theme === "dark" ? "light_mode" : "dark_mode";
+            icon.classList.toggle("material-symbols-rounded", true);
         }
+
+        this.themeButton.classList.toggle("active", theme === "light");
+        this.themeButton.setAttribute("aria-pressed", String(theme === "light"));
+        this.themeButton.setAttribute("aria-label", theme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
+        this.themeButton.setAttribute("title", theme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
     }
 
     /*==============================================
