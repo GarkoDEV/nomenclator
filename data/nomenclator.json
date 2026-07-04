@@ -2518,5 +2518,765 @@
         "importe": 200,
         "importe_reducido": 100,
         "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "87",
+        "apartado": "1.b)",
+        "opcion": "A",
+        "texto": "Avanzar en un paso de peatones señalizado.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "87",
+        "apartado": "1.b)",
+        "opcion": "B",
+        "texto": "Avanzar en una intersección con vía para ciclistas.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "87",
+        "apartado": "1.b)",
+        "opcion": "C",
+        "texto": "Avanzar en un paso a nivel o en sus proximidades.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "87",
+        "apartado": "1.c)",
+        "opcion": "A",
+        "texto": "Avanzar en una intersección o en sus proximidades.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "87",
+        "apartado": "1.d)",
+        "opcion": "A",
+        "texto": "Avanzar en un túnel, en un paso inferior o en un tramo de vía afectado por la señal de túnel en la que únicamente se dispone de un carril por el sentido de circulación del vehículo que se pretende avanzar.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "88",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Superar un vehículo inmovilizado por causas ajenas al tráfico por lo que se ocupa el carril izquierdo de la calzada en un tramo donde está prohibido avanzar y se ocasiona peligro.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "88",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Superar un vehículo inmovilizado por necesidades del tráfico de forma que se ocupa el carril izquierdo de la calzada en un tramo donde está prohibido avanzar.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "88",
+        "apartado": "1",
+        "opcion": "C",
+        "texto": "Avanzar a una bicicleta, ciclo, ciclomotor, peatón, animal o vehículo de tracción animal de forma que se ocupa el carril izquierdo de la calzada en un tramo donde está prohibido avanzar poniéndolo en peligro.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "89",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Superar un obstáculo de forma que se ocupa el carril de sentido contrario de la marcha y se causa peligro.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "90",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Parar o estacionar el vehículo dentro de la calzada en una vía interurbana.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "90",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Parar o estacionar el vehículo dentro de la parte transitable del arcén en una vía interurbana.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "90",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Parar o estacionar el vehículo en el lado izquierdo de la calzada en relación con el sentido de su marcha en vía urbana de doble sentido.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "91",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Parar o estacionar el vehículo obstaculizando la circulación o constituyendo un riesgo a los demás usuarios.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "92",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Parar o estacionar el vehículo sin situarlo paralelamente al borde de la calzada.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "92",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Parar o estacionar el vehículo de forma que no permite la mejor utilización del espacio disponible.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "92",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Abandonar su sitio, el conductor de un vehículo, sin adoptar las medidas reglamentarias para evitar que el vehículo se ponga en movimiento.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "94",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Parar el vehículo en lugares prohibidos, como curvas o cambios de rasante de visibilidad reducida, túneles o pasos inferiores, pasos a nivel, pasos para ciclistas o peatones, intersecciones o sus proximidades, sobre raíles de tranvía, lugares donde se impida ver la señalización, autopistas o autovías fuera de los lugares habilitados, carriles reservados o zonas exclusivas señalizadas.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "94",
+        "apartado": "1.c)",
+        "opcion": "A",
+        "texto": "Parar el vehículo en el carril o en la parte de la vía reservados para la circulación de determinados usuarios.",
+        "importe": 100,
+        "importe_reducido": 50,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "94",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Estacionar el vehículo en lugares prohibidos, como curvas o cambios de rasante de visibilidad reducida, túneles o pasos inferiores, pasos a nivel, pasos para ciclistas o peatones, intersecciones o sus proximidades, sobre raíles de tranvía, lugares donde se impida ver la señalización, autopistas o autovías fuera de los lugares habilitados, carriles reservados, aceras, vados, doble fila o zonas exclusivas señalizadas.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "94",
+        "apartado": "2.a)",
+        "opcion": "A",
+        "texto": "Estacionar el vehículo en el carril o en la parte de la vía reservados para la circulación de determinados usuarios.",
+        "importe": 100,
+        "importe_reducido": 50,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "94",
+        "apartado": "2.b)",
+        "opcion": "A",
+        "texto": "Estacionar el vehículo en un lugar habilitado por la autoridad municipal como de estacionamiento con limitación horaria, sin colocar el distintivo que lo autoriza.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "94",
+        "apartado": "2.b)",
+        "opcion": "B",
+        "texto": "Mantener estacionado el vehículo en un lugar habilitado por la autoridad municipal como de estacionamiento con limitación horaria excediendo el tiempo máximo permitido por la ordenanza municipal.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "94",
+        "apartado": "2.c)",
+        "opcion": "A",
+        "texto": "Estacionar el vehículo en una zona señalizada por carga y descarga.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "95",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Atravesar un paso a nivel cerrado o un puente móvil, o con la barrera o semibarrera en movimiento.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "95",
+        "apartado": "2",
+        "opcion": "B",
+        "texto": "No detenerse detrás del vehículo que le precede en el carril correspondiente hasta tener el paso libre al llegar a un paso a nivel o a un puente móvil que se encuentre cerrado o con la barrera o semibarrera en movimiento.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "95",
+        "apartado": "6",
+        "opcion": "A",
+        "texto": "Circular dentro de un túnel o de un paso inferior sin mantener la distancia de seguridad reglamentaria con el vehículo que le precede.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "96",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Entrar en un paso a nivel cuando las barreras o semibarreras cierran la vía o ya están en movimiento, o cuando los semáforos impiden el paso.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "96",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Entrar en un paso a nivel cuando se avecina un vehículo que circula por los raíles.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "96",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Entrar en un túnel o en un paso inferior cuando los semáforos impiden el paso.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "97",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No adoptar, el conductor de un vehículo detenido en un paso a nivel por razones de fuerza mayor, las medidas adecuadas para desalojar rápidamente los ocupantes o para advertir al resto de usuarios que se aproximen de la existencia del vehículo detenido.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "97",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "No adoptar, el conductor de un vehículo, cuando se produce la caída de carga dentro de un paso a nivel, las medidas adecuadas para dejar el paso libre en el mínimo tiempo posible o para advertir al resto de usuarios que se aproximan de la existencia de caída de carga.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "97",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "No adoptar, el conductor de un vehículo detenido en un puente móvil por razones de fuerza mayor, las medidas adecuadas para desalojar rápidamente los ocupantes o para advertir al resto de usuarios que se aproximen de la existencia del vehículo detenido.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "97",
+        "apartado": "2",
+        "opcion": "B",
+        "texto": "No adoptar, el conductor de un vehículo, cuando se produce la caída de carga dentro de un puente móvil, las medidas adecuadas para dejar el paso libre en el mínimo tiempo posible o para advertir al resto de usuarios que se aproximan de la existencia de caída de carga.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "97",
+        "apartado": "3.a)",
+        "opcion": "A",
+        "texto": "No apagar el motor o no conectar la señal de emergencia o no mantener encendidas las luces de posición, el conductor de un vehículo inmovilizado dentro de un túnel o un paso inferior por motivos de emergencia.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "97",
+        "apartado": "3.b)",
+        "opcion": "A",
+        "texto": "No situar el vehículo, el conductor de un vehículo inmovilizado en un túnel o un paso inferior por motivos de emergencia, hacia la zona reservada para emergencia cuando es posible o lo más cerca posible del lado derecho de la calzada.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "97",
+        "apartado": "3.c)",
+        "opcion": "A",
+        "texto": "No colocar los dispositivos de preseñalización de peligro, el conductor de un vehículo inmovilizado en un túnel o un paso inferior por motivos de emergencia.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "97",
+        "apartado": "3.f)",
+        "opcion": "A",
+        "texto": "No salir de un túnel o de un paso inferior o no inmovilizar el vehículo en la zona reservada para emergencia, el conductor de un vehículo averiado, cuando la avería permite continuar la marcha del vehículo.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "97",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "No situar el vehículo lo más a la derecha posible obstruyendo el paso a los vehículos de emergencia o no apagar el motor o no dejar las llaves del vehículo puestas y las puertas abiertas, el conductor de un vehículo inmovilizado en un túnel o un paso inferior donde se produce un incendio.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "97",
+        "apartado": "3",
+        "opcion": "B",
+        "texto": "No conectar la señal de emergencia o no mantener encendidas las luces de posición o no apagar el motor, el conductor de un vehículo inmovilizado dentro de un túnel o un paso inferior por necesidades de la circulación.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "98",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "No utilizar, el conductor de una bicicleta que circula por una vía interurbana, una pieza reflectante estando obligado a ello.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "99",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular con las luces de posición apagadas estando obligado a ello.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "99",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Circular con las luces de gálibo apagadas, un vehículo de ancho superior a 2,10 metros cuando está obligado.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "100",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular con las luces de largo alcance o de carretera apagadas, un vehículo que circula a más de 40 km/h cuando está obligado.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "100",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Utilizar las luces de carretera cuando el vehículo está parado o estacionado.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "100",
+        "apartado": "2",
+        "opcion": "B",
+        "texto": "Utilizar alternativamente las luces de carretera y las de cruce (destellos) con finalidades diferentes a las previstas reglamentariamente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "101",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular con las luces de corto alcance o cruce apagadas cuando se está obligado.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "101",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular con las luces de corto alcance o cruce apagadas cuando se está obligado al no disponer de las luces reglamentarias o por las condiciones de circulación.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "102",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No sustituir las luces de carretera por las de cruce y deslumbrar a los usuarios que circulan en sentido contrario.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "102",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "No sustituir las luces de carretera por las de cruce cuando se circula detrás de otro vehículo y deslumbrar a su conductor por el espejo retrovisor.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "103",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "No llevar iluminada la placa posterior de matrícula cuando esté obligado.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "104",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "Circular con una motocicleta con las luces de cruce apagadas.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "104",
+        "apartado": "",
+        "opcion": "B",
+        "texto": "Circular por un carril reversible, adicional circunstancial o carril habilitado para circular en sentido contrario al habitual con las luces de cruce apagadas.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "105",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Tener las luces de posición apagadas, un vehículo inmovilizado en la calzada o en el arcén de una vía interurbana entre el anochecer y el amanecer o cuando hay condiciones meteorológicas o ambientales que hacen disminuir sensiblemente la visibilidad.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "105",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Tener las luces de gálibo apagadas, un vehículo de ancho superior a 2,10 metros inmovilizado en la calzada o en el arcén de una vía interurbana entre el anochecer y el amanecer o cuando hay condiciones meteorológicas o ambientales que hacen disminuir sensiblemente la visibilidad.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "105",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Tener las luces de posición apagadas, un vehículo parado o estacionado entre el anochecer y el amanecer en la calzada o en el arcén de una travesía insuficientemente iluminada.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "105",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Tener las luces de posición apagadas, un vehículo estacionado entre el anochecer y el amanecer en la calzada o en el arcén de una vía urbana insuficientemente iluminada.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "106",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "No utilizar las luces de niebla delanteras o las luces de corto o largo alcance cuando existen condiciones meteorológicas o ambientales que disminuyen sensiblemente la visibilidad.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "106",
+        "apartado": "2",
+        "opcion": "B",
+        "texto": "Utilizar las luces de niebla delanteras sin causa que lo justifique.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "106",
+        "apartado": "2",
+        "opcion": "C",
+        "texto": "Utilizar las luces de niebla posteriores sin que existan condiciones meteorológicas o ambientales especialmente desfavorables.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "106",
+        "apartado": "2",
+        "opcion": "D",
+        "texto": "Utilizar las luces de niebla posteriores sin que existan condiciones meteorológicas o ambientales especialmente desfavorables, por lo que se deslumbra al resto de usuarios.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "108",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No avisar, el conductor de un vehículo, utilizando la señalización luminosa, o en su defecto, con el brazo, al resto de usuarios de la vía, de la maniobra que está a punto de efectuar.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "109",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No señalizar con antelación suficiente la realización de una maniobra.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "109",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Mantener la advertencia luminosa después de finalizar la maniobra.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "109",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "No señalizar con el alumbrado de emergencia la presencia de un vehículo inmovilizado en una autopista o autovía o cuando existen condiciones que disminuyan sensiblemente la visibilidad.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "109",
+        "apartado": "2",
+        "opcion": "B",
+        "texto": "Inmovilizar o frenar considerablemente el vehículo de forma injustificada sin señalizar la maniobra al resto de los usuarios.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "110",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Utilizar las señales acústicas sin motivo.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "113",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "No avisar de su presencia con la señal luminosa especial ni con las luces específicamente determinadas para este vehículo, el conductor de un vehículo de obras o servicios, de un tractor o maquinaria agrícola o de un vehículo o transporte especial.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "114",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular con las puertas del vehículo abiertas.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "114",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Abrir las puertas del vehículo antes de su completa inmovilización o con peligro para otros usuarios.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "114",
+        "apartado": "1",
+        "opcion": "C",
+        "texto": "Bajar del vehículo con peligro para otros usuarios.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "114",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Entrar o salir del vehículo sin que éste se encuentre parado.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "115",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Quedarse detenido en un túnel o en un lugar cerrado durante más de dos minutos y no detener el motor.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "115",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "No detener el motor del vehículo durante la carga de combustible.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "115",
+        "apartado": "3",
+        "opcion": "B",
+        "texto": "Facilitar combustible para cargar el depósito de un vehículo que no tiene el motor parado o que tiene las luces encendidas.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "115",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "No apagar la radio del vehículo o el teléfono móvil durante la carga de combustible del vehículo.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "117",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No utilizar, o utilizar inadecuadamente, la persona denunciada, el cinturón de seguridad.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
     }
 ]
