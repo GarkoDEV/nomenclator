@@ -58,5 +58,2465 @@
         "importe": 80,
         "importe_reducido": 40,
         "puntos": 0
+    },
+    {
+        "norma": "LSV",
+        "articulo": "10",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Comportarse de forma que se origina peligro, perjuicios o molestias innecesarias al medio ambiente.",
+        "importe": 100,
+        "importe_reducido": 50,
+        "puntos": 0
+    },
+    {
+        "norma": "LSV",
+        "articulo": "13",
+        "apartado": "6",
+        "opcion": "A",
+        "texto": "Conducir un vehículo que lleva mecanismos de detección de radar o cinemómetros.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 3
+    },
+    {
+        "norma": "LSV",
+        "articulo": "14",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Conducir un vehículo con presencia de drogas en el organismo.",
+        "importe": 1000,
+        "importe_reducido": 500,
+        "puntos": 6
+    },
+    {
+        "norma": "LSV",
+        "articulo": "14",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Conducir una bicicleta/vehículo de movilidad personal con presencia de drogas en el organismo.",
+        "importe": 1000,
+        "importe_reducido": 500,
+        "puntos": 0
+    },
+    {
+        "norma": "LSV",
+        "articulo": "14",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Incumplir la obligación de todo conductor de someterse a las pruebas para la detección de la presencia de drogas en el organismo.",
+        "importe": 1000,
+        "importe_reducido": 500,
+        "puntos": 6
+    },
+    {
+        "norma": "LSV",
+        "articulo": "14",
+        "apartado": "2",
+        "opcion": "B",
+        "texto": "Incumplir la obligación de todo conductor de bicicletas/vehículo de movilidad personal de someterse a las pruebas para la detección de la presencia de drogas en el organismo.",
+        "importe": 1000,
+        "importe_reducido": 500,
+        "puntos": 0
+    },
+    {
+        "norma": "LSV",
+        "articulo": "14",
+        "apartado": "2",
+        "opcion": "C",
+        "texto": "No someterse el usuario de la vía que ha cometido una infracción a la normativa vial o que está implicado en un accidente de tráfico a las pruebas para la detección de la presencia de drogas en el organismo.",
+        "importe": 1000,
+        "importe_reducido": 500,
+        "puntos": 0
+    },
+    {
+        "norma": "LSV",
+        "articulo": "14",
+        "apartado": "2",
+        "opcion": "D",
+        "texto": "Incumplir la obligación de someterse a las pruebas para la detección de la presencia de drogas en el organismo, el conductor de un vehículo implicado en un accidente de tráfico.",
+        "importe": 1000,
+        "importe_reducido": 500,
+        "puntos": 6
+    },
+    {
+        "norma": "LSV",
+        "articulo": "14",
+        "apartado": "2",
+        "opcion": "E",
+        "texto": "Incumplir la obligación de someterse a las pruebas para la detección de la presencia de drogas en el organismo, el conductor de un vehículo denunciado por cometer alguna infracción a la normativa vial.",
+        "importe": 1000,
+        "importe_reducido": 500,
+        "puntos": 6
+    },
+    {
+        "norma": "LSV",
+        "articulo": "14",
+        "apartado": "2",
+        "opcion": "F",
+        "texto": "Incumplir la obligación de someterse a las pruebas para la detección de la presencia de drogas en el organismo, el conductor de un vehículo requerido en un control preventivo.",
+        "importe": 1000,
+        "importe_reducido": 500,
+        "puntos": 6
+    },
+    {
+        "norma": "LSV",
+        "articulo": "14",
+        "apartado": "2",
+        "opcion": "G",
+        "texto": "No someterse el usuario de la vía que ha cometido una infracción a la normativa vial a las pruebas de detección alcohólica.",
+        "importe": 1000,
+        "importe_reducido": 500,
+        "puntos": 0
+    },
+    {
+        "norma": "LSV",
+        "articulo": "75",
+        "apartado": "B",
+        "opcion": "A",
+        "texto": "Incumplir la obligación de pagar el peaje, tasa o precio público exigible.",
+        "importe": 100,
+        "importe_reducido": 50,
+        "puntos": 0
+    },
+    {
+        "norma": "LSV",
+        "articulo": "76",
+        "apartado": "G",
+        "opcion": "A",
+        "texto": "Utilizar, manteniéndolo con la mano, dispositivos de telefonía móvil mientras se conduce.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 6
+    },
+    {
+        "norma": "LSV",
+        "articulo": "76",
+        "apartado": "G",
+        "opcion": "B",
+        "texto": "Utilizar, manteniéndolo ajustado entre el casco y la cabeza, un dispositivo de telefonía móvil mientras se conduce.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 3
+    },
+    {
+        "norma": "LSV",
+        "articulo": "76",
+        "apartado": "J",
+        "opcion": "A",
+        "texto": "No respetar las señales u órdenes de la autoridad encargada de la regulación, ordenación, gestión, vigilancia y disciplina del tráfico.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "LSV",
+        "articulo": "76",
+        "apartado": "P",
+        "opcion": "A",
+        "texto": "Incumplir la obligación de todo conductor de verificar que las placas matrículas del vehículo no presentan obstáculos que impiden o dificulten su lectura e identificación.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "LSV",
+        "articulo": "76",
+        "apartado": "Z3",
+        "opcion": "A",
+        "texto": "Circular por una vía sujeta a restricciones de circulación derivadas de la aplicación de protocolos de episodios de contaminación o por razones de zonas de bajas emisiones.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "LSV",
+        "articulo": "77",
+        "apartado": "B",
+        "opcion": "A",
+        "texto": "Circular con un vehículo cuya carga ha caído a la vía, por su mal acondicionamiento, creando un grave peligro para el resto de los usuarios.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "LSV",
+        "articulo": "77",
+        "apartado": "H",
+        "opcion": "A",
+        "texto": "Conducir un vehículo que tenga instalado inhibidores de radares o cinemómetros o cualquier otro mecanismo encaminado a interferir en el correcto funcionamiento de los sistemas de vigilancia del tráfico. No constituyen infracción los sistemas de aviso que informan de la posición de los sistemas de vigilancia.",
+        "importe": 6000,
+        "importe_reducido": 0,
+        "puntos": 6
+    },
+    {
+        "norma": "LSV",
+        "articulo": "77",
+        "apartado": "L",
+        "opcion": "A",
+        "texto": "Circular con un vehículo incumpliendo las condiciones de la autorización administrativa que habilita su circulación.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "LSV",
+        "articulo": "77",
+        "apartado": "LL",
+        "opcion": "A",
+        "texto": "Circular con un vehículo que incumple las condiciones técnicas que afectan gravemente a la seguridad vial.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "LSV",
+        "articulo": "77",
+        "apartado": "M",
+        "opcion": "A",
+        "texto": "La participación o colaboración necesaria de los conductores en la colocación o puesta en funcionamiento de elementos que alteran lo normal uso del tacógrafo o del limitador de velocidad.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "LSV",
+        "articulo": "77",
+        "apartado": "N",
+        "opcion": "A",
+        "texto": "Realizar en la vía obras sin la autorización correspondiente.",
+        "importe": 12000,
+        "importe_reducido": 0,
+        "puntos": 0
+    },
+    {
+        "norma": "LSV",
+        "articulo": "77",
+        "apartado": "P",
+        "opcion": "A",
+        "texto": "Instalar un inhibidor de radar o cinemómetro, en el vehículo reseñado, encaminado a eludir el correcto funcionamiento de los sistemas de vigilancia del tráfico.",
+        "importe": 12000,
+        "importe_reducido": 0,
+        "puntos": 0
+    },
+    {
+        "norma": "LSV",
+        "articulo": "77",
+        "apartado": "V",
+        "opcion": "A",
+        "texto": "Incumplir las normas en materia de auxilio en las vías públicas.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "LSV",
+        "articulo": "77",
+        "apartado": "W",
+        "opcion": "A",
+        "texto": "Incumplir las normas de uso de los alcoholímetros antiarranque.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "2",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "Comportarse de forma que se entorpece indebidamente la circulación, se origina peligro, perjuicios o molestias innecesarias a las personas o se causan daños a los bienes.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "3",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Conducir de forma negligente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "3",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Conducir una bicicleta/vehículo de movilidad personal de forma negligente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "3",
+        "apartado": "1",
+        "opcion": "C",
+        "texto": "Conducir de forma temeraria.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "3",
+        "apartado": "1",
+        "opcion": "D",
+        "texto": "Conducir una bicicleta/vehículo de movilidad personal de forma temeraria.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "4",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Lanzar a la vía o en sus proximidades objetos o materias que entorpecen o hacen peligrosa la circulación, la parada o el estacionamiento.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "4",
+        "apartado": "2",
+        "opcion": "B",
+        "texto": "Depositar o abandonar en la vía objetos o materias que pueden deteriorar la vía o sus instalaciones o producir efectos que modifiquen las condiciones apropiadas para circular, parar o estacionar.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "4",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Instalar en la vía aparatos, instalaciones o construcciones que entorpecen la circulación.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "4",
+        "apartado": "3",
+        "opcion": "B",
+        "texto": "Realizar en la vía filmaciones, encuestas o ensayos que entorpecen la circulación.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "5",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Crear un obstáculo o peligro en la vía y no adoptar las medidas necesarias para hacerlo desaparecer lo antes posible.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "5",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Crear un obstáculo o peligro en la vía y no adoptar las medidas necesarias para que pueda ser advertido por el resto de usuarios o para que no dificulte la circulación.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "5",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "No señalizar de forma eficaz un obstáculo o peligro creado en la vía para avisar de que está ahí.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "5",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "Parar o estacionar un vehículo destinado a tareas de asistencia en un lugar distinto al fijado por el agente de la autoridad.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "6",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "Tirar en la vía o en sus proximidades cualquier objeto que puede poner en peligro la seguridad vial.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "6",
+        "apartado": "",
+        "opcion": "B",
+        "texto": "Tirar en la vía o en sus proximidades cualquier objeto que puede producir incendios o accidentes.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "7",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular con un vehículo con niveles de emisión de ruidos o de gases o humos por encima de los límites reglamentarios.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "7",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "No colaborar, el conductor del vehículo reseñado, en las pruebas de detección de posibles deficiencias en la emisión de perturbaciones electromagnéticas, ruidos, gases o humos.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "7",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular sin el dispositivo silenciador de explosiones o con el silenciador incompleto, inadecuado o deteriorado; o expulsando los gases del motor a través de un tubo resonador.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "7",
+        "apartado": "2",
+        "opcion": "B",
+        "texto": "Circular con el vehículo reseñado, de combustión interna, sin el dispositivo que evita la proyección descendente, en el exterior, del combustible no quemado; o lanzando humos que pueden dificultar la visibilidad a otros conductores o ser nocivos.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "9",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Transportar, en el vehículo reseñado, un número de personas superior al de plazas autorizadas.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "9",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Transportar, en el vehículo reseñado, un número de personas de forma que se aumenta en un 50% el número de plazas autorizadas, excluido el conductor.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "9",
+        "apartado": "1",
+        "opcion": "C",
+        "texto": "No tener, un vehículo de servicio público o autobús, la placa interior que señala el número de plazas.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "9",
+        "apartado": "1",
+        "opcion": "D",
+        "texto": "Transportar personas y/o equipajes de forma que se exceda la MMA del vehículo.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "10",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Transportar personas en un lugar distinto al que tienen destinado y acondicionado en los vehículos.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "10",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "No llevar instalada la protección de la carga que establece la legislación reguladora de los vehículos en un vehículo autorizado para transportar simultáneamente personas y carga.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "10",
+        "apartado": "3",
+        "opcion": "B",
+        "texto": "Llevar instalada una protección de la carga, en un vehículo autorizado para transportar simultáneamente personas y carga, por lo que la carga estorba o puede dañar a los ocupantes del vehículo.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "11",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Conducir, el conductor de un vehículo de transporte colectivo de personas, incumpliendo la normativa.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "12",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular, más de una persona, en un ciclo fabricado para una sola persona.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "12",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Conducir un ciclo transportando a un pasajero menor de 7 años sin tener la edad requerida para hacerlo o sin tener instalado un asiento adicional homologado.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "12",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Transportar en un ciclomotor o motocicleta un pasajero menor de 12 años.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "12",
+        "apartado": "2",
+        "opcion": "B",
+        "texto": "Circular, el pasajero de un ciclomotor o de una motocicleta, incumpliendo las condiciones establecidas reglamentariamente.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "12",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "Arrastrar, el vehículo reseñado, un remolque o un semirremolque incumpliendo las condiciones establecidas reglamentariamente.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "13",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular con el vehículo reseñado, cuyas dimensiones, incluida la carga, exceden de los límites reglamentarios.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "13",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular sin autorización especial, con el vehículo reseñado que transporta carga indivisible, cuyas dimensiones, incluida la carga, exceden de los límites reglamentarios.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "13",
+        "apartado": "2",
+        "opcion": "B",
+        "texto": "Circular con el vehículo reseñado incumpliendo las condiciones establecidas en la autorización especial.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "14",
+        "apartado": "1.a)",
+        "opcion": "A",
+        "texto": "Circular con un vehículo cuya carga puede arrastrarse, caer sobre la vía o desplazarse de manera peligrosa debido a su acondicionamiento.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "14",
+        "apartado": "1.b)",
+        "opcion": "A",
+        "texto": "Circular con un vehículo cuya carga puede comprometer la estabilidad del vehículo debido a su acondicionamiento.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "14",
+        "apartado": "1.c)",
+        "opcion": "A",
+        "texto": "Circular con un vehículo cuya carga produce ruido, polvo u otras molestias que se pueden evitar.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "14",
+        "apartado": "1.d)",
+        "opcion": "A",
+        "texto": "Circular con un vehículo cuya carga oculta los dispositivos de alumbrado o de señalización luminosa, las placas o los distintivos obligatorios o las advertencias manuales del conductor.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "14",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular con un vehículo sin llevar cubiertas, total y eficazmente, las materias que producen polvo o que pueden caer.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "15",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular con un vehículo destinado al transporte de mercancías, cuya carga indivisible sobresale de los límites reglamentarios.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "15",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Circular con un vehículo, no destinado al transporte de mercancías, cuya carga sobresale de los límites reglamentarios.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "15",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "Circular con un vehículo de ancho inferior a 1 metro cuya carga sobresale de los límites reglamentarios.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "15",
+        "apartado": "5",
+        "opcion": "A",
+        "texto": "No proteger la carga que sobresale para evitar daños o peligros a los demás usuarios.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "15",
+        "apartado": "6",
+        "opcion": "A",
+        "texto": "No señalizar reglamentariamente la carga que sobresale.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "15",
+        "apartado": "7",
+        "opcion": "A",
+        "texto": "No señalizar reglamentariamente, entre el anochecer y el amanecer, o con condiciones meteorológicas o ambientales que disminuyen sensiblemente la visibilidad, la carga que sobresale lateralmente del gálibo del vehículo.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "17",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Conducir sin la precaución necesaria ante la proximidad de otros usuarios de la vía.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "17",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Conducir sin especial precaución frente a la proximidad de niños, personas de la tercera edad, invidentes o con disminución.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "17",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Llevar caballería, rebaños y vehículos de tracción animal corriendo por la vía junto a otros de la misma especie o de personas que van a pie, así como abandonar su conducción, dejándoles marchar libremente, o detenerse en el camino.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "18",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Conducir un vehículo sin mantener la propia libertad de movimientos o el campo necesario de visión o atención permanente a la conducción.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "18",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Circular con un vehículo utilizando pantallas visuales incompatibles con la atención permanente a la conducción.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 3
+    },
+    {
+        "norma": "RGC",
+        "articulo": "18",
+        "apartado": "1",
+        "opcion": "C",
+        "texto": "Conducir un vehículo sin mantener la posición adecuada o sin hacerla mantener a los pasajeros, o colocando los objetos o animales transportados de modo que interfieren la conducción.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "18",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Conducir utilizando cascos o auriculares conectados a aparatos receptores o reproductores de sonido.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 3
+    },
+    {
+        "norma": "RGC",
+        "articulo": "18",
+        "apartado": "2",
+        "opcion": "B",
+        "texto": "Conducir una bicicleta/vehículo de movilidad personal utilizando cascos o auriculares conectados a aparatos receptores o reproductores de sonido.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "18",
+        "apartado": "2",
+        "opcion": "C",
+        "texto": "Conducir utilizando dispositivos de telefonía móvil, navegadores o cualquier otro sistema de comunicación que requiere intervención manual del conductor.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 3
+    },
+    {
+        "norma": "RGC",
+        "articulo": "18",
+        "apartado": "2",
+        "opcion": "D",
+        "texto": "Conducir una bicicleta/vehículo de movilidad personal utilizando dispositivos de telefonía móvil, navegadores o cualquier otro sistema de comunicación que requiere intervención manual del conductor.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "19",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular con un vehículo cuya superficie de cristal no permite a su conductor la visibilidad diáfana sobre toda la vía por la colocación de láminas o pegatinas.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "19",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Circular con un vehículo provisto de láminas adhesivas o cortinillas contra el sol en las ventanas traseras sin llevar los dos espejos retrovisores exteriores reglamentarios.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "19",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Colocar en un vehículo cristales tintados o coloreados no homologados.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "21",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "No someterse a las pruebas de detección alcohólica.",
+        "importe": 1000,
+        "importe_reducido": 500,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "26",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No proceder, el personal sanitario, a la obtención de muestras para la detección de alcohol.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "26",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "No remitir al laboratorio correspondiente, el personal sanitario, las muestras obtenidas para la detección de alcohol.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "26",
+        "apartado": "1",
+        "opcion": "C",
+        "texto": "No dar cuenta a la autoridad correspondiente, el personal sanitario, del resultado de las pruebas efectuadas.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "26",
+        "apartado": "1",
+        "opcion": "D",
+        "texto": "Comunicar, el personal sanitario, los datos relativos a la obtención de muestras de forma inadecuada o incompleta.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "29",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular por la izquierda, en sentido contrario a lo estipulado, en una vía de doble sentido de la circulación.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "29",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular por una vía de doble sentido de la circulación sin acercarse en lo posible al lado derecho de la calzada para mantener la separación lateral suficiente que permita cruzar con seguridad otro vehículo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "29",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Circular por una vía de doble sentido de la circulación, en una curva o un cambio de rasante de visibilidad reducida, sin dejar completamente libre la mitad de la calzada que corresponde al sentido contrario.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "30",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular por el arcén sin causa o razón de emergencia.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "30",
+        "apartado": "1.a)",
+        "opcion": "A",
+        "texto": "Circular por el carril de la izquierda, en sentido contrario al estipulado, en una calzada con doble sentido de circulación y dos carriles separados o no por marcas viarias.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "30",
+        "apartado": "1.b)",
+        "opcion": "A",
+        "texto": "Circular por el carril central, en una calzada con doble sentido de circulación y tres carriles separados por marcas longitudinales discontinuas, sin que ello se deba a un adelanto ni a un cambio de dirección hacia la izquierda.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "30",
+        "apartado": "1.b)",
+        "opcion": "B",
+        "texto": "Circular por el carril de la izquierda, en sentido contrario al estipulado, en una calzada con doble sentido de circulación y tres carriles separados por marcas longitudinales discontinuas.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "31",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "Circular fuera de poblado por el arcén sin causa o razón de emergencia.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "31",
+        "apartado": "",
+        "opcion": "B",
+        "texto": "Circular fora de poblat per un carril diferent del que hi ha més a la dreta entorpint la circulació d'altres vehicles que el segueixen, en una calçada amb més d'un carril per al mateix sentit de la marxa.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "32",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "Circular fora de poblat, amb un camió de MMA superior als 3.500 kg o amb un vehicle especial que no està obligat a circular pel voral o amb un conjunt de vehicles de més de 7 metres de longitud, en una calçada de tres o més carrils en el sentit de la marxa, per un carril diferent del situat més a la dreta, podent fer-ho per aquest carril o de manera que es dificulta la marxa d'un altre vehicle que el segueix.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "33",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "Circular amb un vehicle, en poblat, per una calçada amb almenys dos carrils per al mateix sentit, delimitats amb marques longitudinals, desplaçant-se de carril sense motiu justificat.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "35",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular amb el vehicle ressenyat per un carril habilitat per a VAO sense que el vehicle estigui ocupat pel nombre de persones fixat pel tram de la xarxa viària pel qual circula.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "35",
+        "apartado": "2.a)",
+        "opcion": "A",
+        "texto": "Circular per un carril habilitat per a VAO quan es té prohibit fer-ho.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "35",
+        "apartado": "2.d)",
+        "opcion": "A",
+        "texto": "Circular per un carril habilitat per a VAO en sentit contrari a l'establert.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "36",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No circular pel voral transitable de la seva dreta o circular ocupant més calçada de la que és imprescindible quan el voral és intransitable el conductor d'un vehicle de tracció animal, un vehicle especial amb MMA no superior a 3.500 kg, cicle, ciclomotor, vehicle per a persones de mobilitat reduïda o vehicle en seguiment de ciclistes.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "36",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "No circular pel voral transitable de la seva dreta o circular ocupant més calçada de la que és imprescindible quan el voral és intransitable el conductor d'un vehicle amb MMA no superior a 3.500 kg, que per raons d'emergència circula a una velocitat anormalment reduïda pertorbant greument la circulació.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "36",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular pel voral en posició paral·lela a un altre vehicle, tenint tots dos vehicles prohibida aquesta forma de circular.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "36",
+        "apartado": "2",
+        "opcion": "B",
+        "texto": "Circular pel voral, el conductor d'una bicicleta, en posició paral·lela a una altra bicicleta en un tram sense visibilitat o quan formen aglomeracions de trànsit.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "36",
+        "apartado": "2",
+        "opcion": "C",
+        "texto": "Circular, el conductor d'una bicicleta, envaint la calçada d'una autovia.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "36",
+        "apartado": "2",
+        "opcion": "D",
+        "texto": "Circular, el conductor d'un ciclomotor, en posició paral·lela a un altre ciclomotor, envaint la calçada de la via, quan el voral és transitable i suficient.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "36",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Efectuar un adelantamiento, con un vehículo que tiene prohibido circular en posición paralela, de duración superior a 15 segundos o de más de 200 metros de recorrido en circulación paralela.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "37",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular por una vía en sentido contrario al ordenado por la Autoridad competente por razones de fluidez o seguridad del tráfico.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "37",
+        "apartado": "5",
+        "opcion": "A",
+        "texto": "Circular por una vía sujeta a restricciones de circulación por razones de seguridad o fluidez del tráfico sin la correspondiente autorización.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "38",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular por una autopista o autovía con un vehículo de tracción animal, bicicleta, ciclomotor o un vehículo para personas de movilidad reducida.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "38",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Circular, el conductor de una bicicleta menor de 14 años, por una autovía.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "38",
+        "apartado": "1",
+        "opcion": "C",
+        "texto": "Circular, el conductor de una bicicleta, por una autovía cuando está prohibida su circulación mediante la correspondiente señalización.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "38",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "No abandonar la autopista o autovía cuando por razones de emergencia se circula a una velocidad anormalmente reducida.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "38",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Circular por autopista o por autovía, un vehículo especial o un vehículo en régimen de transporte especial que excede las masas o dimensiones reglamentariamente establecidas, sin autorización.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "38",
+        "apartado": "3",
+        "opcion": "B",
+        "texto": "Circular por autopista o por autovía, un vehículo especial o un vehículo en régimen de transporte especial que no excede de las masas o dimensiones establecidas y que no puede alcanzar terreno plano a una velocidad superior a los 60 km/h.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "38",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "Circular por una autopista con un vehículo de movilidad personal.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "38",
+        "apartado": "4",
+        "opcion": "B",
+        "texto": "Circular por una autovía con un vehículo de movilidad personal.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "38",
+        "apartado": "4",
+        "opcion": "C",
+        "texto": "Circular por una vía interurbana o travesía con un vehículo de movilidad personal.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "39",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "Incumplir las restricciones temporales a la circulación impuestas por los Agentes encargados de la vigilancia del tráfico.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "39",
+        "apartado": "5",
+        "opcion": "A",
+        "texto": "Circular sin haber obtenido la correspondiente autorización especial que le ampara para poder circular dentro de itinerarios y plazos sujetos a restricción establecidos por resolución de la autoridad competente.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "39",
+        "apartado": "5",
+        "opcion": "B",
+        "texto": "Incumplir las condiciones de la autorización especial que le ampara para poder circular dentro de itinerarios y plazos sujetos a restricción.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "40",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular por un carril reversible en sentido contrario al estipulado.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "41",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular por un carril habilitado en sentido contrario a lo habitual cuando se tiene prohibido hacerlo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "41",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Circular por un carril habilitado en sentido contrario al habitual a una velocidad inferior a la velocidad mínima establecida.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "41",
+        "apartado": "1",
+        "opcion": "C",
+        "texto": "Desplazarse lateralmente desde un carril habilitado para la circulación en sentido contrario al habitual, invadiendo el carril contiguo destinado al sentido normal de la circulación.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "41",
+        "apartado": "1",
+        "opcion": "D",
+        "texto": "Desplazarse lateralmente desde un carril destinado al sentido normal de la circulación, invadiendo el carril contiguo habilitado para la circulación en sentido contrario a lo habitual.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "41",
+        "apartado": "1",
+        "opcion": "E",
+        "texto": "Circular por un carril destinado al sentido normal de la circulación contiguo a un carril habilitado para la circulación en sentido contrario al habitual con las luces de corto alcance o de cruce apagados.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "41",
+        "apartado": "1",
+        "opcion": "F",
+        "texto": "Circular por un carril destinado al sentido normal de la circulación contiguo a un carril habilitado para la circulación en sentido contrario al habitual a una velocidad inferior a la velocidad mínima establecida.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "42",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular por un carril adicional a una velocidad inferior a la velocidad mínima establecida.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "42",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Desplazarse lateralmente desde un carril adicional, invadiendo el carril contiguo destinado a la circulación en sentido contrario.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "42",
+        "apartado": "1",
+        "opcion": "C",
+        "texto": "Desplazarse lateralmente desde un carril destinado al sentido normal de circulación, invadiendo el carril adicional destinado a la circulación en sentido contrario.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "43",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular en sentido contrario a lo estipulado en una vía de doble sentido de circulación, donde hay un refugio, una isla o un dispositivo de guía.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "43",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular en sentido contrario a lo estipulado por una plaza, una glorieta o en una confluencia de vías.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "44",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular por la calzada en sentido contrario a lo estipulado en una vía dividida en dos calzadas.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "44",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular por la calzada central o lateral en sentido contrario al que está estipulado en una vía dividida en tres calzadas.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "46",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular con un vehículo sin moderar la velocidad y, en su caso, detenerse, cuando las circunstancias lo exigen.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "49",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular a una velocidad anormalmente reducida, sin causa justificada, entorpeciendo la marcha de otro vehículo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "49",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Circular por una autopista o autovía a velocidad inferior a 60 km/h.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "49",
+        "apartado": "1",
+        "opcion": "C",
+        "texto": "Circular a una velocidad inferior a la mitad genérica de la vía.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "52",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular sin llevar visible en la parte trasera del vehículo, la señal reglamentaria de limitación de velocidad fijada al conductor o, en su caso, al vehículo reseñado.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "53",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Reducir considerablemente la velocidad sin que exista peligro y sin avisar previamente a los vehículos que le siguen.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "53",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Reducir bruscamente la velocidad con riesgo de colisión para los vehículos que le siguen.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "54",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular detrás de otro vehículo sin dejar un espacio libre que permita pararse sin colisionar en caso de frenada brusca del vehículo que le precede.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "54",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular detrás de otro vehículo, sin indicar la intención de adelantarlo, cuya separación no permite, a su vez, ser avanzado con seguridad.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "54",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "Circular con un vehículo de MMA superior a 3.500 kg o con un vehículo o con un conjunto de vehículos de más de 10 m de longitud total, detrás de otro vehículo, sin indicar la intención de adelantarlo, a una distancia de éste inferior a 50 m.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "55",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Celebrar una prueba deportiva, marcha ciclista u otro evento sin haber obtenido la autorización administrativa previa.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "55",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Celebrar una prueba deportiva, marcha ciclista u otro evento incumpliendo las condiciones fijadas en la autorización administrativa.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "55",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Participar en competiciones y carreras de vehículos no autorizadas.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "56",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No ceder el paso en una intersección señalizada de forma que se obliga a otro vehículo a maniobrar bruscamente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "57",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No ceder el paso a un vehículo que se acerca por la derecha en una intersección sin señalizar, por lo que se le fuerza a maniobrar bruscamente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "57",
+        "apartado": "1.a)",
+        "opcion": "A",
+        "texto": "Acceder a una vía pavimentada proveniente de una vía sin pavimentar sin ceder el paso a un vehículo que circula por ella, de forma que se le fuerza a maniobrar bruscamente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "57",
+        "apartado": "1.b)",
+        "opcion": "A",
+        "texto": "No ceder el paso a un vehículo que circula por raíles, por lo que se le fuerza a maniobrar bruscamente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "57",
+        "apartado": "1.c)",
+        "opcion": "A",
+        "texto": "Acceder a una glorieta sin ceder el paso a un vehículo que circula por la vía circular, de forma que se le fuerza a maniobrar bruscamente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "57",
+        "apartado": "1.d)",
+        "opcion": "A",
+        "texto": "Acceder a una autopista o a una autovía sin ceder el paso a un vehículo que circula por ella, de forma que se le fuerza a maniobrar bruscamente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "58",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No mostrar con antelación suficiente, por la forma de circular y, especialmente, con la reducción progresiva de la velocidad, que se cederá el paso en una intersección.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "59",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Entrar en una intersección, en un paso de peatones o en un paso para ciclistas cuando en atención a la circulación el vehículo queda detenido de forma que impide u obstruye la circulación transversal.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "59",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Estar detenido en una intersección regulada por semáforo, obstaculizando la circulación y no salir de ella lo antes posible, siempre que pueda hacerlo sin dificultar la marcha de los demás usuarios que avanzan en el sentido permitido.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "60",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No respetar la prioridad del vehículo que ha entrado primero en un estrecho no señalizado haciendo imposible o muy difícil el paso simultáneo de dos vehículos que circulan en sentido contrario.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "60",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "No circular por el sitio indicado para hacerlo en una vía con obras de reparación.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "60",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "Superar a un vehículo que se encuentra detenido esperando para pasar delante de una obra de reparación de la vía.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "60",
+        "apartado": "5",
+        "opcion": "A",
+        "texto": "No obedecer las indicaciones del personal destinado a la regulación del paso de vehículos en tramos en obras.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "61",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No respetar la señal de prioridad de paso en un puente o una obra de paso cuya anchura no permite el cruce de vehículos.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "61",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "No retroceder en un puente o en una obra de paso para dejar pasar a otro vehículo que circula en sentido contrario y que goza de prioridad de paso señalizada, cuando el cruce es imposible.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "61",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "No respetar la prioridad de paso, el conductor de un vehículo que necesita autorización especial para circular, a otro de idénticas características, en un puente con el ancho de la calzada inferior a 6 metros.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "63",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No respetar la preferencia de paso del vehículo que circula en sentido ascendente en un tramo estrecho de gran pendiente que hace imposible o muy difícil el paso simultáneo de dos vehículos que circulan en sentido contrario.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "64",
+        "apartado": "a)",
+        "opcion": "A",
+        "texto": "No respetar la prioridad de paso de los ciclistas que circulan por un carril bici, paso para ciclistas o arcén debidamente señalizados.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "64",
+        "apartado": "b)",
+        "opcion": "A",
+        "texto": "Girar con el vehículo para entrar en otra vía sin dar la prioridad de paso a los ciclistas que circulan.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "64",
+        "apartado": "c)",
+        "opcion": "A",
+        "texto": "No respetar la prioridad de paso de los ciclistas que circulan en grupo y que el primero de ellos ha iniciado el cruce o ha entrado en una glorieta.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "65",
+        "apartado": "1.a)",
+        "opcion": "A",
+        "texto": "No respetar la prioridad de paso de los peatones en un paso debidamente señalizado.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "65",
+        "apartado": "1.b)",
+        "opcion": "A",
+        "texto": "Girar con el vehículo para entrar en otra vía sin dar la prioridad de paso a los peatones que la atraviesan.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "65",
+        "apartado": "1.c)",
+        "opcion": "A",
+        "texto": "Atravesar con un vehículo el arcén sin dar la prioridad de paso a los peatones que circulan por ellos porque no disponen de zona peatonal.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "65",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Atravesar con un vehículo una zona peatonal por el paso habilitado al efecto sin dejar pasar a los peatones que circulan por ella.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "65",
+        "apartado": "3.a)",
+        "opcion": "A",
+        "texto": "Circular con un vehículo sin ceder el paso a los peatones que utilizan un transporte colectivo de viajeros, en una parada señalizada, y se encuentran entre este vehículo y la zona peatonal o refugio más cercano.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "65",
+        "apartado": "3.b)",
+        "opcion": "A",
+        "texto": "Circular con un vehículo sin ceder el paso a una tropa en formación, fila escolar o comitiva organizada.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "66",
+        "apartado": "1.a)",
+        "opcion": "A",
+        "texto": "No respetar la prioridad de paso de los animales que circulan por una cañada debidamente señalizada.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "66",
+        "apartado": "1.b)",
+        "opcion": "A",
+        "texto": "Girar con el vehículo para entrar en otra vía sin dar la prioridad de paso a los animales que la atraviesan.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "66",
+        "apartado": "1.c)",
+        "opcion": "A",
+        "texto": "Atravesar con un vehículo el arcén sin dar la prioridad de paso a los animales que circulan por no disponer de cañada.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "67",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Hacer uso de la prioridad de paso, el conductor de un vehículo de servicio de urgencia, sin encontrarse en servicio urgente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "68",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Conducir un vehículo prioritario, en servicio urgente, sin adoptar las precauciones necesarias para no poner en peligro al resto de usuarios.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "68",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "No obedecer, el conductor de un vehículo prioritario, las órdenes y señales de los agentes de circulación.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "69",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "No facilitar el paso a un vehículo prioritario que circula en servicio de urgencia, después de percibir las señales que anuncian su proximidad.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "69",
+        "apartado": "",
+        "opcion": "B",
+        "texto": "No detener el vehículo ante las indicaciones luminosas emitidas por un vehículo policial en servicio de urgencia.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "70",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular en servicio de urgencia, el conductor de un vehículo no prioritario, sin motivo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "70",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "No señalizar de forma reglamentaria la circulación de un vehículo no prioritario en servicio de urgencia.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "70",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "No facilitar el paso a un vehículo no prioritario en servicio de urgencia.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "71",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No tener instalada, un vehículo especial o un transporte especial, la señalización luminosa correspondiente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "71",
+        "apartado": "2.a)",
+        "opcion": "A",
+        "texto": "No utilizar la señal luminosa especial, el conductor de un vehículo destinado específicamente a remolcar otro accidentado, averiado o mal estacionado, cuando obstaculiza la circulación.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "71",
+        "apartado": "2.b)",
+        "opcion": "A",
+        "texto": "No utilizar la señal luminosa especial, el conductor de un vehículo destinado a obras o servicios cuando trabaja en operaciones de limpieza, conservación, señalización o reparación de las vías, para indicar su situación al resto de usuarios de la vía ya que puede suponer un peligro para éstos.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "71",
+        "apartado": "2.b)",
+        "opcion": "B",
+        "texto": "No utilizar la señal luminosa especial, el conductor de un vehículo destinado a obras o servicios, desde el momento de entrar en una autopista o autovía por realizar operaciones de limpieza, conservación, señalización o reparación de las vías y hasta llegar al lugar de los trabajos.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "71",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "No utilizar la señal luminosa especial o, en caso de avería de esta señal, el alumbrado correspondiente, el conductor de un vehículo especial o de un vehículo en régimen de transporte especial cuando circula por vías de uso público a una velocidad que no supera los 40 km/h.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "72",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Incorporarse a la circulación, cuando se está parado o estacionado, cuando procede de vías de acceso o zonas de servicio, o de una propiedad colindante, sin ceder el paso a otros vehículos obligando a sus conductores a maniobrar bruscamente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "72",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Incorporarse a una vía de uso público, desde un camino exclusivamente privado, sin ceder el paso a otros vehículos que circulan obligando a sus conductores a maniobrar bruscamente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "72",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Incorporarse a la circulación sin señalizar ópticamente la maniobra.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "72",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "Incorporarse a la calzada, desde un carril de aceleración, sin ceder el paso a otros vehículos obligando a sus conductores a maniobrar bruscamente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "73",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No facilitar la incorporación a la circulación de otros vehículos, especialmente a los vehículos de transporte colectivo de viajeros desde una parada señalizada.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "73",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "En poblado, no facilitar la incorporación a la circulación en un vehículo de transporte colectivo de viajeros desde una parada señalizada.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "74",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Realizar un cambio de dirección con peligro para el resto de usuarios.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "74",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Desplazarse lateralmente para cambiar de carril sin respetar la prioridad del vehículo que circula por el carril que se pretende ocupar.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "75",
+        "apartado": "1.a)",
+        "opcion": "A",
+        "texto": "No advertir la maniobra de cambio de dirección con suficiente antelación.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "75",
+        "apartado": "1.b)",
+        "opcion": "A",
+        "texto": "Realizar un cambio de dirección sin colocar el vehículo en el lugar adecuado con la necesaria antelación.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "75",
+        "apartado": "1.b)",
+        "opcion": "B",
+        "texto": "No realizar la maniobra de cambio de dirección en el menor espacio y tiempo posibles.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "75",
+        "apartado": "1.c)",
+        "opcion": "A",
+        "texto": "Hacer un cambio dirección hacia la izquierda sin dejar a la izquierda el centro de la intersección.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "76",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No adoptar las precauciones necesarias para evitar cualquier peligro al realizar un cambio de dirección, si por las dimensiones del vehículo u otras circunstancias no es posible hacerlo reglamentariamente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "76",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Hacer un cambio de dirección hacia la izquierda con un ciclo o ciclomotor sin situarse a la derecha, fuera de la calzada, cuando no hay un carril especialmente acondicionado para efectuar el giro a la izquierda.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "77",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "No entrar lo antes posible en el carril de deceleración al abandonar una vía.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "78",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Realizar un cambio de sentido de la marcha antirreglamentario.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "78",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Efectuar el cambio de sentido de la marcha con peligro para los demás usuarios de la vía.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 3
+    },
+    {
+        "norma": "RGC",
+        "articulo": "79",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Efectuar un cambio de sentido de la marcha en un paso a nivel o en un tramo de vía afectado por la señal de túnel.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 3
+    },
+    {
+        "norma": "RGC",
+        "articulo": "79",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Efectuar un cambio de sentido de la marcha en una autopista o autovía en un lugar no habilitado para hacerlo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 3
+    },
+    {
+        "norma": "RGC",
+        "articulo": "79",
+        "apartado": "1",
+        "opcion": "C",
+        "texto": "Efectuar un cambio de sentido de la marcha en un tramo de vía donde se prohíbe el adelanto.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 3
+    },
+    {
+        "norma": "RGC",
+        "articulo": "80",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular hacia atrás sin causa justificada.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "80",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular hacia atrás durante un recorrido superior a 15 metros para efectuar la maniobra de la que es complementaria.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "80",
+        "apartado": "2",
+        "opcion": "B",
+        "texto": "Circular hacia atrás de forma que se invade un cruce de vías para efectuar la maniobra de la que es complementaria.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "80",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Circular marcha atrás en una autopista o una autovía.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "80",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "Circular hacia atrás en un tramo largo de vía de forma que constituya una circulación en sentido contrario a lo estipulado.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "81",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Efectuar la maniobra de marcha atrás no reglamentariamente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "81",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "No desistir de la maniobra de marcha atrás o no efectuarla con la máxima precaución tan pronto como siente el aviso o se da cuenta de la proximidad de otro vehículo, persona, animal o exigencia por seguridad.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "82",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Avanzar a un vehículo por la derecha.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "82",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Avanzar un vehículo por la derecha sin que haya espacio suficiente para hacerlo o sin adoptar las máximas precauciones.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "82",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "En poblado, avanzar por la derecha en una calzada de al menos dos carriles de circulación en el mismo sentido de la marcha, con peligro para el resto de usuarios.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "83",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Avanzar en una calzada de varios carriles en el mismo sentido de la marcha y quedarse en el carril utilizado, entorpeciendo a otros vehículos que circulan detrás a más velocidad.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "83",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Avanzar cambiando de carril cuando existe tanta densidad de circulación que los vehículos ocupan todo el ancho de la calzada.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "84",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Efectuar un adelanto no reglamentario.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "84",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Efectuar un adelanto sin que en el carril que pretende utilizar para la maniobra haya suficiente espacio libre, con peligro de colisión para quienes circulan en sentido contrario.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "84",
+        "apartado": "1",
+        "opcion": "C",
+        "texto": "Avanzar sin tener espacio libre en el carril que pretende utilizar y estorba a los que circulan en sentido contrario.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "84",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Avanzar cuando el vehículo de enfrente ya ha indicado que quiere avanzar o cuando el vehículo de enfrente está avanzando de forma que se invade el sentido contrario.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "84",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Avanzar cuando el conductor que le sigue está avanzando en su vehículo o cuando no se dispone de espacio suficiente para volver al mismo carril al terminar el adelanto.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "85",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Avanzar con una velocidad que no es notoriamente superior a la del vehículo avanzado o sin dejar suficiente separación lateral.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "85",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "No volver al mismo carril si una vez iniciado el adelantamiento se da cuenta de que no puede hacerlo con seguridad.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "85",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Avanzar sin ocupar de nuevo lo antes posible y de forma gradual su carril, por lo que se obliga a los demás usuarios a modificar su trayectoria o velocidad.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "85",
+        "apartado": "3",
+        "opcion": "B",
+        "texto": "Avanzar y ocupar de nuevo el mismo carril sin advertirlo mediante las señales preceptivas.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "85",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "Avanzar, fuera de poblado, a peatones, animales o vehículos de dos ruedas o de tracción animal sin dejar una separación lateral de 1,50 metros como mínimo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "85",
+        "apartado": "4",
+        "opcion": "B",
+        "texto": "Efectuar un adelanto de forma que se pone en peligro o se entorpece a ciclistas.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "85",
+        "apartado": "4",
+        "opcion": "C",
+        "texto": "Efectuar un adelanto a ciclistas sin mantener la distancia de seguridad lateral de 1,5 metros.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "85",
+        "apartado": "5",
+        "opcion": "A",
+        "texto": "Avanzar, fuera de poblado, el conductor de un vehículo de dos ruedas a otro vehículo y dejar entre ambos una separación inferior a 1,50 metros.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "86",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No situarse lo más cerca posible del borde derecho de la calzada, el conductor de un vehículo, al darse cuenta de que el vehículo que le sigue tiene el propósito de avanzar.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "86",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Aumentar la velocidad o efectuar maniobras que impiden o dificultan el adelantamiento, el vehículo que será adelantado.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "86",
+        "apartado": "2",
+        "opcion": "B",
+        "texto": "No disminuir la velocidad, el conductor del vehículo que está a punto de ser adelantado, una vez iniciada la maniobra de adelantamiento, al producirse una situación de peligro.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "86",
+        "apartado": "2",
+        "opcion": "C",
+        "texto": "No facilitar al vehículo que avanza la vuelta a su carril cuando da muestras inequívocas de desistir de la maniobra.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "86",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "No disminuir la velocidad ni apartarse hacia el arcén, si es practicable, el conductor de un vehículo reglamentariamente obligado a hacerlo, para facilitar el adelantamiento sin peligro a los demás vehículos que le siguen.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "87",
+        "apartado": "1.a)",
+        "opcion": "A",
+        "texto": "Avanzar invadiendo el sentido contrario en curvas o cambios de rasante de visibilidad reducida o en lugares o circunstancias con insuficiente visibilidad para realizar el adelantamiento o desistir una vez iniciada.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "87",
+        "apartado": "1.a)",
+        "opcion": "B",
+        "texto": "Avanzar detrás de un vehículo que realiza la misma maniobra cuando las dimensiones del vehículo que lo efectúa en primer lugar impiden la visibilidad de la parte delantera de la vía al conductor que le sigue.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
     }
 ]
