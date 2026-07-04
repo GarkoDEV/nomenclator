@@ -9,7 +9,6 @@
 
 const CONFIG = {
     json: "data/nomenclator.json",
-    previewLength: 110,
     storageTheme: "theme",
     storageFavorites: "favorites",
     storageSearchHistory: "searchHistory",
@@ -476,7 +475,6 @@ class TrafficApp {
         const detailArticulo = card.querySelector(".detailArticulo");
         const detailApartado = card.querySelector(".detailApartado");
         const detailOpcion = card.querySelector(".detailOpcion");
-        const description = card.querySelector(".description");
         const importe = card.querySelector(".importe");
         const reducido = card.querySelector(".reducido");
         const puntos = card.querySelector(".puntos");
@@ -489,16 +487,13 @@ class TrafficApp {
         severity.classList.add(severityLevel);
 
         article.textContent = `Artículo ${item.articulo}${item.apartado ? `.${item.apartado}` : ""}`;
-        preview.textContent = item.texto.length > CONFIG.previewLength
-            ? `${item.texto.slice(0, CONFIG.previewLength).trim()}…`
-            : item.texto;
+        preview.textContent = item.texto || "Sin descripción";
         price.textContent = formatCurrency(item.importe);
 
         detailNorma.textContent = item.norma;
         detailArticulo.textContent = item.articulo || "—";
         detailApartado.textContent = item.apartado || "—";
         detailOpcion.textContent = item.opcion || "—";
-        description.textContent = item.texto || "Sin descripción";
         importe.textContent = formatCurrency(item.importe);
         reducido.textContent = formatCurrency(item.importe_reducido);
         puntos.textContent = item.puntos > 0 ? String(item.puntos) : "—";
