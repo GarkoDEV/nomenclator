@@ -41,6 +41,9 @@
     <link rel="stylesheet"
           href="css/styles.css">
 
+    <link rel="stylesheet"
+          href="css/charts.css">
+
 </head>
 
 <body>
@@ -199,17 +202,14 @@
     <section id="filters" class="filters"></section>
 
     <!-- ========================================= -->
-    <!-- BUSCADOR AVANZADO (COLLAPSIBLE) -->
+    <!-- BUSCADOR AVANZADO -->
     <!-- ========================================= -->
 
     <div class="advanced-search-toggle">
-
-        <button id="advancedToggle" class="toggle-btn">
-            <span class="material-symbols-rounded">tune</span>
-            Búsqueda avanzada
-            <span class="material-symbols-rounded toggle-icon">expand_more</span>
+        <button class="toggle-btn" id="advancedToggle" aria-label="Alternar búsqueda avanzada">
+            <span>Búsqueda avanzada</span>
+            <span class="toggle-icon material-symbols-rounded">expand_more</span>
         </button>
-
     </div>
 
     <section id="advancedSearch" class="advanced-search hidden">
@@ -217,37 +217,14 @@
         <div class="advanced-filters">
 
             <div class="filter-group">
-                <label for="priceRange">Rango de importe: <span id="priceValue">0€ - 1000€</span></label>
-                <input
-                    type="range"
-                    id="priceRange"
-                    class="slider"
-                    min="0"
-                    max="1000"
-                    value="1000"
-                    step="50">
+                <label>Importe: <span id="priceLabel">0€ - 1000€</span></label>
+                <input type="range" id="priceSlider" class="slider" min="0" max="1000" value="1000">
             </div>
 
             <div class="filter-group">
-                <label for="pointsRange">Rango de puntos: <span id="pointsValue">0 - 6</span></label>
-                <input
-                    type="range"
-                    id="pointsRange"
-                    class="slider"
-                    min="0"
-                    max="6"
-                    value="6"
-                    step="1">
+                <label>Puntos: <span id="pointsLabel">0 - 15</span></label>
+                <input type="range" id="pointsSlider" class="slider" min="0" max="15" value="15">
             </div>
-
-            <div class="filter-group checkbox">
-                <label for="severeOnly">
-                    <input type="checkbox" id="severeOnly">
-                    <span>Solo infracciones graves (>4 puntos)</span>
-                </label>
-            </div>
-
-            <button id="resetAdvanced" class="btn-reset">Limpiar filtros</button>
 
         </div>
 
@@ -257,10 +234,10 @@
     <!-- HISTORIAL DE BÚSQUEDAS -->
     <!-- ========================================= -->
 
-    <div id="searchHistory" class="search-history hidden">
-        <span class="history-label">Búsquedas recientes:</span>
-        <div id="historyChips" class="history-chips"></div>
-    </div>
+    <section id="historySection" class="hidden">
+        <h2 style="margin-bottom: 12px; font-size: 0.875rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Búsquedas recientes</h2>
+        <div id="historyList" class="history-list"></div>
+    </section>
 
     <!-- ========================================= -->
     <!-- RESULTADOS -->
@@ -278,149 +255,40 @@
 
         <h2>Sin resultados</h2>
 
-        <p>Prueba otra búsqueda o ajusta los filtros</p>
+        <p>Prueba otra búsqueda.</p>
 
     </section>
 
 </div>
 
 <!-- ========================================= -->
-<!-- BOTÓN FLOTANTE -->
+<!-- BOTÓN FLOTANTE (SCROLL TOP) -->
 <!-- ========================================= -->
 
 <button
     id="scrollTop"
     class="fab hidden"
-    aria-label="Subir al inicio"
-    title="Subir">
+    aria-label="Subir">
 
     <span class="material-symbols-rounded">keyboard_arrow_up</span>
 
 </button>
 
 <!-- ========================================= -->
-<!-- TEMPLATE CARD -->
+<!-- TOAST NOTIFICATIONS -->
 <!-- ========================================= -->
 
-<template id="cardTemplate">
-
-    <article class="card">
-
-        <button class="card-header">
-
-            <div class="card-main">
-
-                <div class="card-top">
-
-                    <span class="badge"></span>
-
-                    <span class="severity-indicator"></span>
-
-                </div>
-
-                <h2 class="article"></h2>
-
-                <p class="preview"></p>
-
-            </div>
-
-            <div class="price-box">
-
-                <div class="price"></div>
-
-                <span class="expand-icon material-symbols-rounded">expand_more</span>
-
-            </div>
-
-        </button>
-
-        <button class="favorite-btn" aria-label="Añadir a favoritos" title="Favorito">
-            <span class="material-symbols-rounded">favorite</span>
-        </button>
-
-        <div class="card-body">
-
-            <div class="detail-grid">
-
-                <div class="detail-item">
-                    <span class="detail-label">Norma</span>
-                    <strong class="detailNorma"></strong>
-                </div>
-
-                <div class="detail-item">
-                    <span class="detail-label">Artículo</span>
-                    <strong class="detailArticulo"></strong>
-                </div>
-
-                <div class="detail-item">
-                    <span class="detail-label">Apartado</span>
-                    <strong class="detailApartado"></strong>
-                </div>
-
-                <div class="detail-item">
-                    <span class="detail-label">Opción</span>
-                    <strong class="detailOpcion"></strong>
-                </div>
-
-            </div>
-
-            <div class="description-section">
-                <p class="description"></p>
-            </div>
-
-            <div class="price-grid">
-
-                <div class="price-item">
-                    <span class="price-label">Importe</span>
-                    <strong class="importe"></strong>
-                </div>
-
-                <div class="price-item">
-                    <span class="price-label">Reducido</span>
-                    <strong class="reducido"></strong>
-                </div>
-
-                <div class="price-item points-item">
-                    <span class="price-label">Puntos</span>
-                    <strong class="puntos"></strong>
-                </div>
-
-            </div>
-
-            <div class="card-actions">
-                <button class="action-btn copy-btn" title="Copiar">
-                    <span class="material-symbols-rounded">content_copy</span>
-                    Copiar
-                </button>
-                <button class="action-btn share-btn" title="Compartir">
-                    <span class="material-symbols-rounded">share</span>
-                    Compartir
-                </button>
-            </div>
-
-        </div>
-
-    </article>
-
-</template>
+<div id="toastContainer"></div>
 
 <!-- ========================================= -->
-<!-- TOAST -->
+<!-- SCRIPTS -->
 <!-- ========================================= -->
 
-<div id="toast" class="toast"></div>
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 
-<!-- ========================================= -->
-<!-- CHART.JS -->
-<!-- ========================================= -->
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-
-<!-- ========================================= -->
-<!-- JAVASCRIPT -->
-<!-- ========================================= -->
-
-<script defer src="js/app.js"></script>
+<!-- App Principal -->
+<script src="js/app.js"></script>
 
 </body>
 
