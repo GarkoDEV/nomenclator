@@ -3278,5 +3278,945 @@
         "importe": 200,
         "importe_reducido": 100,
         "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "117",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Incumplir la obligación de informar a los pasajeros sobre el uso del cinturón de seguridad o sistema de retención homologado en los vehículos destinados al transporte de pasajeros de más de nueve plazas.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "117",
+        "apartado": "2",
+        "opcion": "B",
+        "texto": "Circular un pasajero de 3 o más años sin utilizar un sistema de sujeción homologado o, en su defecto, sin utilizar los cinturones de seguridad del vehículo en vehículos de transporte de pasajeros de más de nueve plazas.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "117",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Circular con un menor de edad de altura igual o inferior a 135 cm en el asiento trasero sin utilizar, o utilizando inadecuadamente, un sistema de sujeción homologado.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "117",
+        "apartado": "3",
+        "opcion": "B",
+        "texto": "Circular con un menor de edad de altura igual o inferior a 135 cm en el asiento delantero del vehículo cuando está prohibido hacerlo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "117",
+        "apartado": "3",
+        "opcion": "C",
+        "texto": "Circular con un menor de edad de altura igual o inferior a 135 cm en el asiento delantero sin utilizar, o utilizando inadecuadamente, un sistema de sujeción homologado.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "117",
+        "apartado": "5",
+        "opcion": "A",
+        "texto": "No tener instalados en el vehículo los cinturones de seguridad.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "118",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No utilizar, o utilizar inadecuadamente, el casco de protección homologado.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "118",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "No utilizar, el conductor o pasajero de una bicicleta, un casco de protección homologado.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "118",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "No utilizar, o utilizar inadecuadamente, el conductor del vehículo reseñado, que está fuera del vehículo y ocupa la calzada o el arcén de la vía, un chaleco reflectante de alta visibilidad.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "120",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Exceder en más de un 50% de los tiempos de conducción establecidos en la legislación sobre transportes terrestres.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "120",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Minorar en más de un 50% los períodos de descanso establecidos en la legislación sobre transportes terrestres.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 6
+    },
+    {
+        "norma": "RGC",
+        "articulo": "121",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Transitar por el arcén o por la calzada cuando hay una zona peatonal por la que se puede pasar.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "121",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Transitar por la calzada cuando hay un arcén practicable.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "121",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "Circular con monopatín, patines o aparatos similares por lugares o en condiciones prohibidas reglamentariamente.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "121",
+        "apartado": "5",
+        "opcion": "A",
+        "texto": "Circular con cualquier clase de vehículo por una acera o zona peatonal.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "122",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No circular, un peatón, por el izquierdo en una carretera o una travesía.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "122",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "No circular por la derecha de la carretera un peatón, grupo o persona obligados a hacerlo.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "122",
+        "apartado": "5",
+        "opcion": "A",
+        "texto": "Transitar por la calzada o por el arcén sin acercarse lo más posible al borde exterior, de modo que se entorpece la circulación.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "122",
+        "apartado": "5",
+        "opcion": "B",
+        "texto": "No circular, los peatones que forman un grupo, uno detrás del otro cuando la seguridad de la circulación lo requiere.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "122",
+        "apartado": "6",
+        "opcion": "A",
+        "texto": "Quedarse detenido, un peatón, en la calzada o en el arcén cuando hay un refugio, una zona peatonal u otro espacio adecuado.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "122",
+        "apartado": "7",
+        "opcion": "A",
+        "texto": "No dejar libre la calzada, un peatón, al advertir las señales ópticas y acústicas de vehículos prioritarios.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "122",
+        "apartado": "8",
+        "opcion": "A",
+        "texto": "Estorbar, un peatón, inútilmente a los conductores de los vehículos en una calle residencial.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "123",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "No llevar, un peatón que transita por el arcén o por la calzada, fuera de poblado, entre el anochecer y el amanecer o en condiciones meteorológicas o ambientales que disminuyen sensiblemente la visibilidad, un elemento luminoso o reflectante.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "123",
+        "apartado": "",
+        "opcion": "B",
+        "texto": "No llevar en el lado más cercano al centro de la calzada, un grupo de personas o una comitiva que transita por el arcén o por la calzada, fuera de poblado, entre el anochecer y el amanecer o en condiciones de visibilidad insuficiente, las luces necesarias para precisar su situación y dimensiones.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "124",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Atravesar la calzada, un peatón, fuera del paso de peatones con esta finalidad o cuando las luces del semáforo permiten la circulación de vehículos.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "124",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Atravesar la calzada, un peatón, sin caminar perpendicularmente al eje de la calzada o entreteniéndose o deteniéndose sin necesidad o estorbar el paso de los demás.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "124",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "Atravesar una plaza o una glorieta, un peatón, por la calzada sin bordearla.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "125",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular, un peatón, por una autopista o una autovía.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "125",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Hacer caso, el conductor de un vehículo, en las peticiones de pasaje en las autopistas o autovías.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "126",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "Transitar por una vía con tráfico rodado con animales de tiro, carga o silla, o con reses, cuando existe itinerario transitable por vía pecuaria o vía alternativa con menor intensidad de circulación de vehículos.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "127",
+        "apartado": "1.a)",
+        "opcion": "A",
+        "texto": "Llevar a un animal o reses de forma que se invade la zona peatonal.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "127",
+        "apartado": "1.b)",
+        "opcion": "A",
+        "texto": "Circular con animales o reses por el arcén izquierdo o por la calzada sin acercarse tanto como sea posible al lado derecho de la misma.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "127",
+        "apartado": "1.c)",
+        "opcion": "A",
+        "texto": "Llevar un rebaño de ganado sin llevarlos al paso o de forma que ocupen más de la mitad derecha de la calzada.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "127",
+        "apartado": "1.c)",
+        "opcion": "B",
+        "texto": "No adoptar las precauciones necesarias para cruzarse con otro rebaño de ganado lo antes posible, sin dificultar la circulación.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "127",
+        "apartado": "1.d)",
+        "opcion": "A",
+        "texto": "Atravesar la vía con animales o reses por un lugar no autorizado al efecto o por un lugar que no cumple las condiciones necesarias de seguridad.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "127",
+        "apartado": "1.e)",
+        "opcion": "A",
+        "texto": "Circular de noche con animales o reses, por una vía insuficientemente iluminada o en condiciones que hacen disminuir la visibilidad, sin llevar al lado más cercano al centro de la calzada las luces necesarias para precisar su situación y dimensiones.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "127",
+        "apartado": "1.f)",
+        "opcion": "A",
+        "texto": "No ceder el paso, el conductor de animales o reses, a los vehículos que tienen preferencia en estrechos de la vía, intersecciones y en casos en que las trayectorias respectivas se crucen.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "127",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Dejar animales sin custodia en cualquier clase de vía cuando existe la posibilidad de que lo invadan.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "128",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "Circular con animales o con reses por una autopista o una autovía.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "128",
+        "apartado": "",
+        "opcion": "B",
+        "texto": "Circular, un vehículo de tracción animal, por una autopista o una autovía.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "129",
+        "apartado": "2.a)",
+        "opcion": "A",
+        "texto": "Detener el vehículo de forma que crea un nuevo peligro para la circulación, al encontrarse implicado en un accidente de circulación.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "129",
+        "apartado": "2.b)",
+        "opcion": "A",
+        "texto": "No facilitar la identidad a los agentes de la autoridad o no colaborar con los agentes de la autoridad, al estar implicado en un accidente de circulación.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "129",
+        "apartado": "2.b)",
+        "opcion": "B",
+        "texto": "Huir del lugar del accidente, estando implicado, sin facilitar los datos al resto de personas implicadas o a los agentes de la autoridad.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "129",
+        "apartado": "2.c)",
+        "opcion": "A",
+        "texto": "No esforzarse en restablecer o mantener la seguridad de la circulación, al encontrarse implicado en un accidente de circulación.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "129",
+        "apartado": "2.c)",
+        "opcion": "B",
+        "texto": "Modificar el estado de las cosas y de las huellas u otras pruebas que pueden resultar útiles para determinar responsabilidades, al encontrarse implicado en un accidente de circulación.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "129",
+        "apartado": "2.d)",
+        "opcion": "A",
+        "texto": "No prestar a las víctimas el auxilio que resulte más adecuado o no pedir auxilio sanitario para las víctimas, al encontrarse implicado en un accidente de circulación.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "129",
+        "apartado": "2.e)",
+        "opcion": "A",
+        "texto": "No avisar a los agentes de la autoridad o no quedarse o no volver al lugar del accidente hasta que lleguen los agentes, al encontrarse implicado en un accidente de circulación con víctimas o heridos.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "129",
+        "apartado": "2.f)",
+        "opcion": "A",
+        "texto": "No facilitar la identidad a otras personas implicadas en un accidente de circulación.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "129",
+        "apartado": "2.g)",
+        "opcion": "A",
+        "texto": "No facilitar los datos del vehículo a otras personas implicadas en un accidente de circulación.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "129",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "No auxiliar o no solicitar el auxilio necesario para las víctimas, crear un nuevo peligro, no colaborar o no avisar a la autoridad cuando un usuario de la vía no implicado presencia un accidente con víctimas.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "130",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No señalizar eficazmente un vehículo inmovilizado en la calzada o la caída de carga en la calzada.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "130",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "No adoptar, el conductor de un vehículo inmovilizado en la calzada o que le ha caído la carga, las medidas necesarias para que el vehículo o la carga sean retirados lo antes posible.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "130",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "No utilizar los dispositivos de preseñalización de peligro para avisar de la presencia de un vehículo inmovilizado en la calzada o de carga en la calzada.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "130",
+        "apartado": "5",
+        "opcion": "A",
+        "texto": "Remolcar un vehículo averiado o accidentado por otro vehículo no destinado a tal fin.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "139",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "No comunicar al órgano responsable de la gestión del tráfico la realización de obras en vías públicas antes de su inicio.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "139",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "Incumplir las instrucciones dictadas por el órgano responsable de la gestión del tráfico.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "140",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "No instalar las señales de obras, poniendo en grave riesgo la seguridad vial.",
+        "importe": 6000,
+        "importe_reducido": 0,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "140",
+        "apartado": "",
+        "opcion": "B",
+        "texto": "Instalar las señales de obras incumpliendo la normativa vigente, poniendo en grave riesgo la seguridad vial.",
+        "importe": 3000,
+        "importe_reducido": 0,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "140",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Retirar la señalización de una vía sin autorización.",
+        "importe": 3000,
+        "importe_reducido": 0,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "140",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Modificar el contenido de las señales de forma que puede inducir a confusión a los usuarios de la vía.",
+        "importe": 3000,
+        "importe_reducido": 0,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "140",
+        "apartado": "3",
+        "opcion": "B",
+        "texto": "Modificar el contenido de la señal de tal forma que se puede reducir su visibilidad o su eficacia.",
+        "importe": 3000,
+        "importe_reducido": 0,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "140",
+        "apartado": "3",
+        "opcion": "C",
+        "texto": "Modificar el contenido de la señal de tal forma que se puede deslumbrar a los usuarios de la vía.",
+        "importe": 3000,
+        "importe_reducido": 0,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "140",
+        "apartado": "3",
+        "opcion": "D",
+        "texto": "Modificar el contenido de la señal de tal forma que puede distraer la atención a los usuarios de la vía.",
+        "importe": 3000,
+        "importe_reducido": 0,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "140",
+        "apartado": "3",
+        "opcion": "E",
+        "texto": "Colocar en las señales o en las proximidades, placas, carteles, marcas u otros objetos que pueden inducir a confusión, reducir su visibilidad o deslumbrar o distraer a los usuarios de la vía.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "140",
+        "apartado": "3",
+        "opcion": "F",
+        "texto": "Retirar la señalización de una vía sin autorización.",
+        "importe": 3000,
+        "importe_reducido": 0,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "141",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No obedecer las órdenes de los agentes de la autoridad en servicio de regulación del tráfico.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "141",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "No obedecer, por parte de los conductores de bicicletas y de vehículos de movilidad personal, las órdenes de los agentes de la autoridad en servicio de regulación del tráfico.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "141",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "No obedecer las órdenes de los agentes de la autoridad en servicio de urgencia.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "142",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No obedecer las indicaciones de un panel de mensajería variable.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "142",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "No respetar la prohibición de paso establecida mediante señal de balizamiento.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-A",
+        "opcion": "A",
+        "texto": "No respetar, un peatón, la luz roja de un semáforo reservado para peatones.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-B",
+        "opcion": "A",
+        "texto": "No respetar, el conductor de un vehículo, la luz roja de un semáforo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-B",
+        "opcion": "B",
+        "texto": "Superar, un vehículo, la línea de detención anterior más próxima a un semáforo cuando emite luz roja no intermitente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-B",
+        "opcion": "C",
+        "texto": "Entrar en una intersección regulada por semáforo situado dentro de la misma o en el lado opuesto, cuando emite luz roja no intermitente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-B",
+        "opcion": "D",
+        "texto": "No respetar, el conductor de un vehículo, la luz roja intermitente de un semáforo o dos luces rojas alternativamente intermitentes de un semáforo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-B",
+        "opcion": "E",
+        "texto": "No detenerse, el conductor de un vehículo, pudiendo hacerlo sin peligro, ante la luz amarilla no intermitente de un semáforo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-B",
+        "opcion": "F",
+        "texto": "No extremar las precauciones, el conductor de un vehículo, frente a una luz amarilla intermitente o dos luces amarillas alternativamente intermitentes.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-B",
+        "opcion": "G",
+        "texto": "No respetar, el conductor de un vehículo, la prohibición establecida por una flecha negra sobre la luz roja de un semáforo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-B",
+        "opcion": "H",
+        "texto": "No respetar, el conductor de un vehículo, la prohibición establecida por una flecha negra sobre la luz amarilla de un semáforo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-B",
+        "opcion": "I",
+        "texto": "No obedecer, el conductor de un vehículo, la dirección y el sentido de circulación indicados por una flecha verde iluminada sobre un fondo circular negro de un semáforo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-C",
+        "opcion": "A",
+        "texto": "Ocupar un carril cuando lo prohíbe la luz roja en forma de aspa de un semáforo cuadrado.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-D",
+        "opcion": "A",
+        "texto": "No respetar, el conductor de una bicicleta o vehículo de movilidad personal, la luz roja de un semáforo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-D",
+        "opcion": "B",
+        "texto": "No respetar, el conductor de una bicicleta, la luz roja intermitente de un semáforo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-D",
+        "opcion": "C",
+        "texto": "No detenerse, el conductor de una bicicleta, frente a la luz roja de un semáforo reservado para ciclos y ciclomotores.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-D",
+        "opcion": "D",
+        "texto": "No detenerse, el conductor de un ciclomotor, frente a la luz roja de un semáforo reservado para ciclos y ciclomotores.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-D",
+        "opcion": "E",
+        "texto": "No detenerse, el conductor de una bicicleta o de un ciclomotor, pudiéndolo hacer sin peligro, ante la luz amarilla de un semáforo reservado para ciclos y ciclomotores.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-D",
+        "opcion": "F",
+        "texto": "No respetar, el conductor de un tranvía, las indicaciones de su semáforo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "143",
+        "apartado": "1-D",
+        "opcion": "G",
+        "texto": "No respetar, el conductor de un autobús de líneas regulares, las indicaciones de su semáforo.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-A",
+        "opcion": "A",
+        "texto": "No obedecer una señal de ceda el paso.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-A",
+        "opcion": "B",
+        "texto": "No detenerse ante una señal de detención obligatoria (STOP).",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-A",
+        "opcion": "C",
+        "texto": "No detenerse una bicicleta o vehículo de movilidad personal en una señal de detención obligatoria (STOP).",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-A",
+        "opcion": "D",
+        "texto": "No obedecer una bicicleta o vehículo de movilidad personal una señal de ceda el paso.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-B",
+        "opcion": "A",
+        "texto": "No obedecer una señal de circulación prohibida para toda clase de vehículos.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-B",
+        "opcion": "B",
+        "texto": "No obedecer una señal de entrada prohibida para todo tipo de vehículos.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
     }
 ]
