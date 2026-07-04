@@ -1,7 +1,7 @@
 /*==================================================
     NOMENCLÁTOR DE TRÁFICO
     GarkoDEV
-    APP.JS v4.0 - FAVORITOS, ESTADÍSTICAS, BUSCADOR AVANZADO
+    APP.JS v5.0 - GRÁFICOS CON CHART.JS
 ==================================================*/
 
 /*==================================================
@@ -62,6 +62,7 @@ class TrafficApp {
             maxPoints: 6,
             severeOnly: false
         };
+        this.charts = {};
 
         // Elementos del DOM
         this.results = document.getElementById("results");
@@ -72,9 +73,11 @@ class TrafficApp {
         this.empty = document.getElementById("emptyState");
         this.toast = document.getElementById("toast");
         this.themeButton = document.getElementById("themeButton");
+        this.chartsBtn = document.getElementById("chartsBtn");
         this.clearButton = document.getElementById("clearSearch");
         this.fab = document.getElementById("scrollTop");
         this.favoritesBtn = document.getElementById("favoritesBtn");
+        this.chartsSection = document.getElementById("chartsSection");
         this.advancedToggle = document.getElementById("advancedToggle");
         this.advancedSearch = document.getElementById("advancedSearch");
         this.priceRange = document.getElementById("priceRange");
@@ -96,6 +99,7 @@ class TrafficApp {
         this.createFilters();
         this.filterData();
         this.updateStats();
+        this.initCharts();
         this.attachEvents();
     }
 
@@ -172,19 +176,10 @@ class TrafficApp {
         const search = normalize(this.search);
 
         this.filtered = this.database.filter(item => {
-            // Filtro de norma
             const matchFilter = this.filter === "TODOS" || item.norma === this.filter;
-
-            // Filtro de búsqueda
             const matchSearch = search === "" || item.searchIndex.includes(search);
-
-            // Filtro de precio
             const matchPrice = item.importe <= this.advancedFilters.maxPrice;
-
-            // Filtro de puntos
             const matchPoints = item.puntos <= this.advancedFilters.maxPoints;
-
-            // Filtro de severidad
             const matchSevere = !this.advancedFilters.severeOnly || item.puntos > 4;
 
             return matchFilter && matchSearch && matchPrice && matchPoints && matchSevere;
@@ -194,6 +189,7 @@ class TrafficApp {
         this.updateCounter();
         this.toggleEmptyState();
         this.updateStats();
+        this.updateCharts();
     }
 
     /*==============================================
@@ -206,7 +202,6 @@ class TrafficApp {
 
         this.filtered.forEach((item, index) => {
             const card = this.renderCard(item);
-            // Animación escalonada
             card.style.animationDelay = `${index * 50}ms`;
             fragment.appendChild(card);
         });
@@ -224,7 +219,6 @@ class TrafficApp {
         const itemId = getItemId(item);
         const isFavorite = this.favorites.includes(itemId);
 
-        // Elementos
         const badge = card.querySelector(".badge");
         const severity = card.querySelector(".severity-indicator");
         const article = card.querySelector(".article");
@@ -242,40 +236,31 @@ class TrafficApp {
         const copyBtn = card.querySelector(".copy-btn");
         const shareBtn = card.querySelector(".share-btn");
 
-        // CABECERA
         badge.textContent = item.norma;
         badge.classList.add(item.norma.toLowerCase());
 
-        // Indicador de severidad
         const severidad = this.getSeverity(item);
         severity.classList.add(severidad);
 
         article.textContent = `Artículo ${item.articulo}`;
-
         preview.textContent = item.texto.length > CONFIG.previewLength
             ? item.texto.substring(0, CONFIG.previewLength) + "…"
             : item.texto;
-
         price.textContent = `${item.importe} €`;
 
-        // DETALLES
         detailNorma.textContent = item.norma;
         detailArticulo.textContent = item.articulo;
         detailApartado.textContent = item.apartado || "—";
         detailOpcion.textContent = item.opcion || "—";
-
         description.textContent = item.texto;
-
         importe.textContent = `${item.importe} €`;
         reducido.textContent = `${item.importe_reducido} €`;
         puntos.textContent = item.puntos === 0 ? "—" : item.puntos;
 
-        // Color de puntos
         if (item.puntos > 0) {
             puntos.classList.add("danger");
         }
 
-        // FAVORITO
         if (isFavorite) {
             favoriteBtn.classList.add("active");
         }
@@ -285,19 +270,16 @@ class TrafficApp {
             this.toggleFavorite(itemId, favoriteBtn);
         });
 
-        // COPIAR
         copyBtn.addEventListener("click", (e) => {
             e.stopPropagation();
             this.copyInfraction(item);
         });
 
-        // COMPARTIR
         shareBtn.addEventListener("click", (e) => {
             e.stopPropagation();
             this.shareInfraction(item);
         });
 
-        // Evento para desplegar
         card.querySelector(".card-header").addEventListener("click", () => {
             card.classList.toggle("open");
         });
@@ -309,6 +291,151 @@ class TrafficApp {
         if (item.puntos >= 4) return "high";
         if (item.puntos >= 2) return "medium";
         return "low";
+    }
+
+    /*==============================================
+        GRÁFICOS
+    ==============================================*/
+
+    initCharts() {
+        // Configurar opciones globales de Chart.js
+        Chart.defaults.font.family = '"Inter", sans-serif';
+        this.updateCharts();
+    }
+
+    updateCharts() {
+        // Destruir gráficos previos
+        Object.values(this.charts).forEach(chart => {
+            if (chart) chart.destroy();
+        });
+        this.charts = {};
+
+        if (this.chartsSection.classList.contains("hidden")) return;
+
+        this.createNormaChart();
+        this.createPriceChart();
+    }
+
+    createNormaChart() {
+        const ctx = document.getElementById("normaChart");
+        if (!ctx) return;
+
+        // Datos por norma
+        const normaData = {};
+        this.filtered.forEach(item => {
+            if (!normaData[item.norma]) {
+                normaData[item.norma] = 0;
+            }
+            normaData[item.norma]++;
+        });
+
+        const labels = Object.keys(normaData);
+        const data = Object.values(normaData);
+        const colors = this.getNormaColors(labels);
+
+        this.charts.norma = new Chart(ctx, {
+            type: "doughnut",
+            data: {
+                labels,
+                datasets: [{
+                    data,
+                    backgroundColor: colors,
+                    borderColor: this.currentTheme === "dark" ? "#162033" : "#FFFFFF",
+                    borderWidth: 2,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: "bottom",
+                        labels: {
+                            color: this.currentTheme === "dark" ? "#F8FAFC" : "#111827",
+                            padding: 15,
+                            font: { weight: "600", size: 13 }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    createPriceChart() {
+        const ctx = document.getElementById("priceChart");
+        if (!ctx) return;
+
+        // Importe promedio por norma
+        const normaData = {};
+        this.filtered.forEach(item => {
+            if (!normaData[item.norma]) {
+                normaData[item.norma] = { sum: 0, count: 0 };
+            }
+            normaData[item.norma].sum += item.importe;
+            normaData[item.norma].count++;
+        });
+
+        const labels = Object.keys(normaData);
+        const data = labels.map(label => Math.round(normaData[label].sum / normaData[label].count));
+        const colors = this.getNormaColors(labels);
+
+        this.charts.price = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels,
+                datasets: [{
+                    label: "Importe Promedio (€)",
+                    data,
+                    backgroundColor: colors,
+                    borderRadius: 8,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                indexAxis: "y",
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: this.currentTheme === "dark" ? "#F8FAFC" : "#111827",
+                            font: { weight: "600", size: 13 }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: this.currentTheme === "dark" ? "#CBD5E1" : "#6B7280",
+                            callback: (v) => `${v}€`
+                        },
+                        grid: {
+                            color: this.currentTheme === "dark" ? "#2D3B52" : "#E5E7EB"
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: this.currentTheme === "dark" ? "#CBD5E1" : "#6B7280"
+                        },
+                        grid: {
+                            drawBorder: false,
+                            color: this.currentTheme === "dark" ? "#2D3B52" : "#E5E7EB"
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    getNormaColors(normas) {
+        const colorMap = {
+            "RGC": "rgba(59, 130, 246, 0.8)",
+            "RGV": "rgba(139, 92, 246, 0.8)",
+            "RGCOND": "rgba(236, 72, 153, 0.8)",
+            "LSV": "rgba(249, 115, 22, 0.8)"
+        };
+        return normas.map(n => colorMap[n] || "rgba(100, 116, 139, 0.8)");
     }
 
     /*==============================================
@@ -467,7 +594,7 @@ class TrafficApp {
     ==============================================*/
 
     attachEvents() {
-        // Buscador con debounce
+        // Buscador
         let debounceTimer;
         this.searchInput.addEventListener("input", (e) => {
             clearTimeout(debounceTimer);
@@ -480,13 +607,23 @@ class TrafficApp {
             }, 200);
         });
 
-        // Limpiar búsqueda
         if (this.clearButton) {
             this.clearButton.addEventListener("click", () => {
                 this.searchInput.value = "";
                 this.search = "";
                 this.filterData();
                 this.searchInput.focus();
+            });
+        }
+
+        // Gráficos
+        if (this.chartsBtn) {
+            this.chartsBtn.addEventListener("click", () => {
+                this.chartsSection.classList.toggle("hidden");
+                this.chartsBtn.classList.toggle("active");
+                if (!this.chartsSection.classList.contains("hidden")) {
+                    setTimeout(() => this.updateCharts(), 100);
+                }
             });
         }
 
@@ -497,7 +634,6 @@ class TrafficApp {
                     this.showToast("📌 No tienes favoritos aún");
                     return;
                 }
-                // Filtrar solo favoritos
                 this.filtered = this.database.filter(item => {
                     return this.favorites.includes(getItemId(item));
                 });
@@ -516,7 +652,6 @@ class TrafficApp {
             });
         }
 
-        // Rango de precio
         if (this.priceRange) {
             this.priceRange.addEventListener("input", (e) => {
                 this.advancedFilters.maxPrice = parseInt(e.target.value);
@@ -525,7 +660,6 @@ class TrafficApp {
             });
         }
 
-        // Rango de puntos
         if (this.pointsRange) {
             this.pointsRange.addEventListener("input", (e) => {
                 this.advancedFilters.maxPoints = parseInt(e.target.value);
@@ -534,7 +668,6 @@ class TrafficApp {
             });
         }
 
-        // Solo graves
         if (this.severeOnly) {
             this.severeOnly.addEventListener("change", (e) => {
                 this.advancedFilters.severeOnly = e.target.checked;
@@ -542,7 +675,6 @@ class TrafficApp {
             });
         }
 
-        // Reset avanzado
         if (this.resetAdvanced) {
             this.resetAdvanced.addEventListener("click", () => {
                 this.advancedFilters = { maxPrice: 1000, maxPoints: 6, severeOnly: false };
@@ -555,20 +687,17 @@ class TrafficApp {
             });
         }
 
-        // Botón flotante
         if (this.fab) {
             this.fab.addEventListener("click", () => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
             });
         }
 
-        // Mostrar/ocultar botón flotante
         window.addEventListener("scroll", () => {
             if (!this.fab) return;
             this.fab.classList.toggle("hidden", window.scrollY < 300);
         });
 
-        // Atajos de teclado
         document.addEventListener("keydown", (e) => {
             if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "f") {
                 e.preventDefault();
@@ -581,12 +710,10 @@ class TrafficApp {
             }
         });
 
-        // Tema
         if (this.themeButton) {
             this.themeButton.addEventListener("click", () => this.toggleTheme());
         }
 
-        // Mostrar historial
         this.renderSearchHistory();
         this.updateFavoritesButton();
     }
@@ -613,6 +740,10 @@ class TrafficApp {
         document.body.classList.add(theme);
         localStorage.setItem(CONFIG.storageTheme, theme);
         this.updateThemeIcon(theme);
+        // Actualizar gráficos si están visibles
+        if (!this.chartsSection.classList.contains("hidden")) {
+            setTimeout(() => this.updateCharts(), 100);
+        }
     }
 
     toggleTheme() {

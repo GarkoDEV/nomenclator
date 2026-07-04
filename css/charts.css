@@ -1,0 +1,96 @@
+/*==================================================
+    NOMENCLÁTOR DE TRÁFICO - GRÁFICOS
+    Estilos para Chart.js - AÑADI al final del archivo styles.css
+==================================================*/
+
+/*==================================================
+    SECCIÓN GRÁFICOS
+==================================================*/
+
+.charts-section {
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--surface), var(--surface-light));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    animation: fadeIn var(--duration-base) var(--easing);
+}
+
+.charts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-2xl);
+}
+
+.chart-wrapper {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    transition: transform var(--duration-base) var(--easing), box-shadow var(--duration-base) var(--easing);
+}
+
+.chart-wrapper:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.chart-wrapper h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.chart-canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 300px;
+}
+
+.charts-button {
+    position: relative;
+}
+
+.charts-button.active {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(37, 99, 235, 0.1));
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .charts-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .charts-section {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .chart-wrapper {
+        padding: var(--spacing-md);
+    }
+
+    .chart-wrapper h3 {
+        font-size: 0.9375rem;
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+/*==================================================
+    ESTILOS CHART.JS
+==================================================*/
+
+/* Personalizar temas de Chart.js */
+body.dark .chart-canvas {
+    filter: brightness(0.95);
+}
+
+body.light .chart-canvas {
+    filter: brightness(1.05);
+}

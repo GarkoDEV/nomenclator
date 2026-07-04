@@ -70,6 +70,16 @@
         <div class="header-actions">
 
             <button
+                id="chartsBtn"
+                class="icon-button charts-button"
+                aria-label="Ver gráficos"
+                title="Gráficos">
+
+                <span class="material-symbols-rounded">bar_chart</span>
+
+            </button>
+
+            <button
                 id="favoritesBtn"
                 class="icon-button favorites-button"
                 aria-label="Ver favoritos"
@@ -130,6 +140,28 @@
                 <span class="stat-label">Favoritos</span>
                 <strong id="statFavorites" class="stat-value">0</strong>
             </div>
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- GRÁFICOS (COLLAPSIBLE) -->
+    <!-- ========================================= -->
+
+    <section id="chartsSection" class="charts-section hidden">
+
+        <div class="charts-container">
+
+            <div class="chart-wrapper">
+                <h3>Infracciones por Norma</h3>
+                <canvas id="normaChart" class="chart-canvas"></canvas>
+            </div>
+
+            <div class="chart-wrapper">
+                <h3>Importe Promedio por Norma</h3>
+                <canvas id="priceChart" class="chart-canvas"></canvas>
+            </div>
+
         </div>
 
     </section>
@@ -377,6 +409,12 @@
 <!-- ========================================= -->
 
 <div id="toast" class="toast"></div>
+
+<!-- ========================================= -->
+<!-- CHART.JS -->
+<!-- ========================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
 <!-- ========================================= -->
 <!-- JAVASCRIPT -->
