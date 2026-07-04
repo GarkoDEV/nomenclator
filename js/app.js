@@ -13,7 +13,8 @@ const CONFIG = {
     storageTheme: "theme",
     storageFavorites: "favorites",
     storageSearchHistory: "searchHistory",
-    maxSearchHistory: 5
+    maxSearchHistory: 5,
+    maxDataIssuesPreview: 3
 };
 
 const EURO_FORMATTER = new Intl.NumberFormat("es-ES", {
@@ -45,11 +46,121 @@ function createSearchIndex(item) {
 }
 
 function getItemId(item) {
-    return `${item.norma}-${item.articulo}-${item.apartado || ""}-${item.opcion || ""}`;
+    return item.id || `${item.norma}-${item.articulo}-${item.apartado || ""}-${item.opcion || ""}`;
 }
 
 function formatCurrency(value) {
     return EURO_FORMATTER.format(Number(value) || 0);
+}
+
+function cleanText(value) {
+    return String(value ?? "")
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+function sanitizeId(value) {
+    return cleanText(value)
+        .toLowerCase()
+        .replace(/[^a-z0-9._-]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+}
+
+function parseNumericValue(value) {
+    if (typeof value === "number") {
+        return Number.isFinite(value) ? value : NaN;
+    }
+
+    const normalized = cleanText(value).replace(",", ".");
+    if (normalized === "") {
+        return NaN;
+    }
+
+    return Number(normalized);
+}
+
+function createIssue(severity, index, message) {
+    return {
+        severity,
+        index,
+        message
+    };
+}
+
+function validateRecord(rawItem, index) {
+    const position = index + 1;
+    const issues = [];
+
+    if (!rawItem || typeof rawItem !== "object" || Array.isArray(rawItem)) {
+        return {
+            item: null,
+            issues: [createIssue("error", position, "Registro inválido: no es un objeto.")]
+        };
+    }
+
+    const norma = cleanText(rawItem.norma).toUpperCase();
+    const articulo = cleanText(rawItem.articulo);
+    const apartado = cleanText(rawItem.apartado);
+    const opcion = cleanText(rawItem.opcion);
+    const texto = cleanText(rawItem.texto);
+    const importe = parseNumericValue(rawItem.importe);
+    const importeReducidoRaw = parseNumericValue(rawItem.importe_reducido);
+    const puntosRaw = parseNumericValue(rawItem.puntos);
+    const providedId = sanitizeId(rawItem.id);
+
+    if (!norma) {
+        issues.push(createIssue("error", position, "Falta la norma."));
+    }
+
+    if (!articulo) {
+        issues.push(createIssue("error", position, "Falta el artículo."));
+    }
+
+    if (!texto) {
+        issues.push(createIssue("error", position, "Falta el texto descriptivo."));
+    }
+
+    if (!Number.isFinite(importe) || importe < 0) {
+        issues.push(createIssue("error", position, "El importe no es válido."));
+    }
+
+    const hasFatalIssue = issues.some(issue => issue.severity === "error");
+    if (hasFatalIssue) {
+        return { item: null, issues };
+    }
+
+    let importeReducido = importeReducidoRaw;
+    if (!Number.isFinite(importeReducido) || importeReducido < 0) {
+        importeReducido = 0;
+        issues.push(createIssue("warning", position, "Importe reducido inválido; se ha ajustado a 0."));
+    }
+
+    let puntos = puntosRaw;
+    if (!Number.isFinite(puntos) || puntos < 0) {
+        puntos = 0;
+        issues.push(createIssue("warning", position, "Puntos inválidos; se han ajustado a 0."));
+    }
+
+    if (importeReducido > importe) {
+        issues.push(createIssue("warning", position, "El importe reducido es mayor que el importe principal."));
+    }
+
+    const item = {
+        id: providedId || sanitizeId(`${norma}-${articulo}-${apartado}-${opcion}`),
+        norma,
+        articulo,
+        apartado,
+        opcion,
+        texto,
+        importe,
+        importe_reducido: importeReducido,
+        puntos,
+        searchIndex: ""
+    };
+
+    item.searchIndex = createSearchIndex(item);
+
+    return { item, issues };
 }
 
 /*==================================================
@@ -61,6 +172,11 @@ class TrafficApp {
     constructor() {
         this.database = [];
         this.databaseIndex = new Map();
+        this.dataIssues = [];
+        this.dataIssueSummary = {
+            discarded: 0,
+            warnings: 0
+        };
         this.filtered = [];
         this.filter = "TODOS";
         this.search = "";
@@ -89,7 +205,6 @@ class TrafficApp {
         this.toast = document.getElementById("toast");
         this.themeButton = document.getElementById("themeButton");
         this.chartsBtn = document.getElementById("chartsBtn");
-        this.clearButton = document.getElementById("clearSearch");
         this.fab = document.getElementById("scrollTop");
         this.favoritesBtn = document.getElementById("favoritesBtn");
         this.chartsSection = document.getElementById("chartsSection");
@@ -105,6 +220,9 @@ class TrafficApp {
         this.historyChips = document.getElementById("historyChips");
         this.statTotal = document.getElementById("statTotal");
         this.statFavorites = document.getElementById("statFavorites");
+        this.dataStatus = document.getElementById("dataStatus");
+        this.dataStatusTitle = document.getElementById("dataStatusTitle");
+        this.dataStatusText = document.getElementById("dataStatusText");
 
         this.init();
     }
@@ -141,23 +259,54 @@ class TrafficApp {
                 throw new Error("Formato de datos no válido.");
             }
 
-            this.database = data.map(item => ({
-                ...item,
-                articulo: String(item.articulo ?? ""),
-                apartado: String(item.apartado ?? ""),
-                opcion: String(item.opcion ?? ""),
-                texto: String(item.texto ?? ""),
-                importe: Number(item.importe ?? 0),
-                importe_reducido: Number(item.importe_reducido ?? 0),
-                puntos: Number(item.puntos ?? 0),
-                searchIndex: createSearchIndex(item)
-            }));
+            this.dataIssues = [];
+            this.dataIssueSummary = {
+                discarded: 0,
+                warnings: 0
+            };
+
+            const validItems = [];
+            const duplicateIds = new Set();
+
+            data.forEach((rawItem, index) => {
+                const { item, issues } = validateRecord(rawItem, index);
+
+                issues.forEach(issue => {
+                    this.dataIssues.push(issue);
+                    if (issue.severity === "warning") {
+                        this.dataIssueSummary.warnings += 1;
+                    }
+                });
+
+                if (!item) {
+                    this.dataIssueSummary.discarded += 1;
+                    return;
+                }
+
+                if (duplicateIds.has(item.id)) {
+                    this.dataIssues.push(createIssue("error", index + 1, `ID duplicado detectado (${item.id}).`));
+                    this.dataIssueSummary.discarded += 1;
+                    return;
+                }
+
+                duplicateIds.add(item.id);
+                validItems.push(item);
+            });
+
+            this.database = validItems;
             this.databaseIndex = new Map(this.database.map(item => [getItemId(item), item]));
 
             this.maxPriceAvailable = Math.max(0, ...this.database.map(item => item.importe));
             this.maxPointsAvailable = Math.max(0, ...this.database.map(item => item.puntos));
             this.advancedFilters.maxPrice = this.maxPriceAvailable;
             this.advancedFilters.maxPoints = this.maxPointsAvailable;
+
+            this.renderDataStatus();
+            this.reportDataIssuesInConsole();
+
+            if (this.dataIssues.length > 0) {
+                this.showToast(`⚠️ ${this.dataIssues.length} incidencia(s) detectada(s) en los datos.`, 3200);
+            }
 
             console.log(`✅ ${this.database.length} infracciones cargadas.`);
         } catch (error) {
@@ -168,6 +317,36 @@ class TrafficApp {
             this.showToast("❌ No se pudo cargar el nomenclátor.");
             this.toggleEmptyState();
         }
+    }
+
+    renderDataStatus() {
+        if (!this.dataStatus || !this.dataStatusTitle || !this.dataStatusText) return;
+
+        const totalIssues = this.dataIssues.length;
+        if (totalIssues === 0) {
+            this.dataStatus.classList.add("hidden");
+            return;
+        }
+
+        const preview = this.dataIssues
+            .slice(0, CONFIG.maxDataIssuesPreview)
+            .map(issue => `Registro ${issue.index}: ${issue.message}`)
+            .join(" ");
+
+        this.dataStatusTitle.textContent = `Datos con incidencias (${totalIssues})`;
+        this.dataStatusText.textContent = `${this.dataIssueSummary.discarded} descartados y ${this.dataIssueSummary.warnings} ajustes automáticos. ${preview}`;
+        this.dataStatus.classList.remove("hidden");
+    }
+
+    reportDataIssuesInConsole() {
+        if (this.dataIssues.length === 0) return;
+
+        console.groupCollapsed(`⚠️ Calidad de datos: ${this.dataIssues.length} incidencia(s) detectada(s)`);
+        this.dataIssues.forEach(issue => {
+            const level = issue.severity === "error" ? "error" : "warn";
+            console[level](`Registro ${issue.index}: ${issue.message}`);
+        });
+        console.groupEnd();
     }
 
     configureAdvancedControls() {
@@ -458,9 +637,6 @@ class TrafficApp {
                     this.searchInput.value = term;
                     this.searchInput.focus();
                 }
-                if (this.clearButton) {
-                    this.clearButton.classList.toggle("hidden", !term);
-                }
                 this.filterData();
             });
             this.historyChips.appendChild(chip);
@@ -697,11 +873,6 @@ class TrafficApp {
         if (this.searchInput) {
             this.searchInput.addEventListener("input", event => {
                 const value = event.target.value;
-                
-                // Controlar visibilidad del botón de borrar
-                if (this.clearButton) {
-                    this.clearButton.classList.toggle("hidden", !value);
-                }
 
                 clearTimeout(debounceTimer);
                 debounceTimer = setTimeout(() => {
@@ -712,10 +883,6 @@ class TrafficApp {
                     this.filterData();
                 }, 180);
             });
-        }
-
-        if (this.clearButton) {
-            this.clearButton.addEventListener("click", () => this.clearSearchState({ focusInput: true }));
         }
 
         if (this.chartsBtn && this.chartsSection) {
@@ -868,18 +1035,11 @@ class TrafficApp {
         });
     }
 
-    clearSearchState({ focusInput = false } = {}) {
+    clearSearchState() {
         this.search = "";
 
         if (this.searchInput) {
             this.searchInput.value = "";
-            if (focusInput) {
-                this.searchInput.focus();
-            }
-        }
-
-        if (this.clearButton) {
-            this.clearButton.classList.add("hidden");
         }
 
         this.filterData();

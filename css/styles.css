@@ -307,6 +307,53 @@ button, input, .card, .badge, .icon-button {
     .stat-value { font-size: 1.25rem; }
 }
 
+.data-status {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(245, 158, 11, 0.06));
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    border-radius: var(--radius-lg);
+    color: var(--text);
+}
+
+.data-status-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: rgba(245, 158, 11, 0.15);
+    color: var(--warning);
+}
+
+.data-status-content {
+    min-width: 0;
+}
+
+.data-status-content strong {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-size: 0.95rem;
+}
+
+.data-status-content p {
+    margin: 0;
+    color: var(--text-soft);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+    .data-status {
+        margin-bottom: var(--spacing-lg);
+        padding: var(--spacing-md);
+    }
+}
+
 /*==================================================
     BUSCADOR
 ==================================================*/
@@ -340,23 +387,12 @@ button, input, .card, .badge, .icon-button {
 
 .search-box input::placeholder { color: var(--text-muted); }
 
-.clear-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    color: var(--text-muted);
-    flex-shrink: 0;
+.search-box input[type="search"]::-ms-clear,
+.search-box input[type="search"]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
 }
-
-.clear-button:hover {
-    background-color: var(--surface-light);
-    color: var(--text);
-}
-
-.clear-button .material-symbols-rounded { font-size: 20px; }
 
 @media (max-width: 480px) {
     .search-box { height: 48px; padding: 0 var(--spacing-md); gap: var(--spacing-sm); margin-bottom: var(--spacing-lg); }
