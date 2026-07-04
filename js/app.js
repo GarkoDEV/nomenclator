@@ -1,299 +1,191 @@
-/* ==========================================================
-   NOMENCLÁTOR DE TRÁFICO
-   GarkoDEV
-   app.js
-========================================================== */
-
 "use strict";
 
-/* ==========================================================
-   BASE DE DATOS (TEMPORAL)
-   Más adelante se cargará desde data/nomenclator.json
-========================================================== */
+/*==================================================
+    NOMENCLÁTOR DE TRÁFICO v3
+    GarkoDEV
+==================================================*/
 
-const DATABASE = [
+/*==================================================
+    ESTADO GLOBAL
+==================================================*/
 
-    {
-        norma:"RGC",
-        articulo:"48",
-        apartado:"1",
-        opcion:"5A",
-        texto:"Circular superando la velocidad máxima permitida en vía urbana.",
-        importe:200,
-        importe_reducido:100,
-        puntos:4
-    },
+const STATE = {
 
-    {
-        norma:"RGC",
-        articulo:"18",
-        apartado:"2",
-        opcion:"3B",
-        texto:"Conducir utilizando manualmente un teléfono móvil.",
-        importe:200,
-        importe_reducido:100,
-        puntos:6
-    },
+    data: [],
 
-    {
-        norma:"RGV",
-        articulo:"15",
-        apartado:"1",
-        opcion:"1",
-        texto:"Circular con neumáticos en mal estado.",
-        importe:200,
-        importe_reducido:100,
-        puntos:0
-    }
+    results: [],
 
-];
+    search: "",
 
-/* ==========================================================
-   APLICACIÓN
-========================================================== */
+    filter: "TODOS",
 
-const App = {
+    favorites: [],
 
-    /* ---------------------------- */
+    history: [],
 
-    data:[],
+    settings: {
 
-    filtered:[],
-
-    currentFilter:"TODOS",
-
-    query:"",
-
-    favorites:[],
-
-    history:[],
-
-    settings:{
-
-        theme:"dark"
-
-    },
-
-    /* ---------------------------- */
-
-    elements:{},
-
-    /* ======================================================
-       INICIO
-    ====================================================== */
-
-    init(){
-
-        console.log("🚔 Nomenclátor iniciado");
-
-        this.cacheDOM();
-
-        this.loadSettings();
-
-        this.loadData();
-
-        this.bindEvents();
-
-        this.updateStats();
-
-    },
-
-    /* ======================================================
-       CACHE DOM
-    ====================================================== */
-
-    cacheDOM(){
-
-        this.elements.results=
-            document.getElementById("results");
-
-        this.elements.search=
-            document.getElementById("searchInput");
-
-        this.elements.filters=
-            document.getElementById("filters");
-
-        this.elements.empty=
-            document.getElementById("empty");
-
-        this.elements.stats=
-            document.getElementById("statsText");
-
-        this.elements.theme=
-            document.getElementById("themeButton");
-
-        this.elements.toast=
-            document.getElementById("toast");
-
-    },
-
-    /* ======================================================
-       CARGAR DATOS
-    ====================================================== */
-
-    loadData(){
-
-        this.data=[...DATABASE];
-
-        this.filtered=[...DATABASE];
-
-    },
-
-    /* ======================================================
-       AJUSTES
-    ====================================================== */
-
-    loadSettings(){
-
-        const settings=
-
-            localStorage.getItem("nomenclator-settings");
-
-        if(settings){
-
-            this.settings=JSON.parse(settings);
-
-        }
-
-        this.applyTheme();
-
-    },
-
-    saveSettings(){
-
-        localStorage.setItem(
-
-            "nomenclator-settings",
-
-            JSON.stringify(this.settings)
-
-        );
-
-    },
-
-    /* ======================================================
-       TEMA
-    ====================================================== */
-
-    applyTheme(){
-
-        if(this.settings.theme==="light"){
-
-            document.body.classList.add("light");
-
-        }else{
-
-            document.body.classList.remove("light");
-
-        }
-
-        this.updateThemeIcon();
-
-    },
-
-    toggleTheme(){
-
-        this.settings.theme=
-
-            this.settings.theme==="dark"
-
-            ? "light"
-
-            : "dark";
-
-        this.applyTheme();
-
-        this.saveSettings();
-
-        this.toast(
-
-            this.settings.theme==="dark"
-
-            ? "🌙 Tema oscuro"
-
-            : "☀️ Tema claro"
-
-        );
-
-    },
-
-    updateThemeIcon(){
-
-        const icon=
-
-            this.elements.theme.querySelector("span");
-
-        icon.textContent=
-
-            this.settings.theme==="dark"
-
-            ? "light_mode"
-
-            : "dark_mode";
-
-    },
-
-    /* ======================================================
-       ESTADÍSTICAS
-    ====================================================== */
-
-    updateStats(){
-
-        this.elements.stats.textContent=
-
-            `${this.filtered.length} infracciones`;
-
-    },
-
-    /* ======================================================
-       EVENTOS
-    ====================================================== */
-
-    bindEvents(){
-
-        this.elements.theme.addEventListener(
-
-            "click",
-
-            ()=>this.toggleTheme()
-
-        );
-
-    },
-
-    /* ======================================================
-       TOAST
-    ====================================================== */
-
-    toast(message){
-
-        const toast=this.elements.toast;
-
-        toast.textContent=message;
-
-        toast.classList.add("show");
-
-        clearTimeout(this.toastTimer);
-
-        this.toastTimer=setTimeout(()=>{
-
-            toast.classList.remove("show");
-
-        },2000);
+        theme: "dark"
 
     }
 
 };
 
-/* ==========================================================
-   START
-========================================================== */
+/*==================================================
+    DOM
+==================================================*/
+
+const DOM = {
+
+    search: document.querySelector("#searchInput"),
+
+    results: document.querySelector("#results"),
+
+    filters: document.querySelector("#filters"),
+
+    stats: document.querySelector("#statsText"),
+
+    empty: document.querySelector("#empty"),
+
+    toast: document.querySelector("#toast"),
+
+    theme: document.querySelector("#themeButton")
+
+};
+
+/*==================================================
+    BASE DE DATOS (Temporal)
+==================================================*/
+
+const DATABASE = [
+
+    {
+
+        norma:"RGC",
+
+        articulo:"48",
+
+        apartado:"1",
+
+        opcion:"5A",
+
+        texto:"Circular superando la velocidad máxima permitida.",
+
+        importe:200,
+
+        importe_reducido:100,
+
+        puntos:4
+
+    },
+
+    {
+
+        norma:"RGC",
+
+        articulo:"18",
+
+        apartado:"2",
+
+        opcion:"3B",
+
+        texto:"Conducir utilizando manualmente un teléfono móvil.",
+
+        importe:200,
+
+        importe_reducido:100,
+
+        puntos:6
+
+    },
+
+    {
+
+        norma:"LSV",
+
+        articulo:"76",
+
+        apartado:"Z3",
+
+        opcion:"1",
+
+        texto:"No utilizar el cinturón de seguridad.",
+
+        importe:200,
+
+        importe_reducido:100,
+
+        puntos:4
+
+    }
+
+];
+
+/*==================================================
+    NORMALIZAR TEXTO
+==================================================*/
+
+function normalize(text){
+
+    return String(text)
+
+        .normalize("NFD")
+
+        .replace(/[\u0300-\u036f]/g,"")
+
+        .toLowerCase()
+
+        .trim();
+
+}
+
+/*==================================================
+    INDEXAR DATOS
+==================================================*/
+
+function buildIndex(){
+
+    STATE.data = DATABASE.map(item=>{
+
+        return{
+
+            ...item,
+
+            searchIndex:normalize(
+
+                [
+
+                    item.norma,
+
+                    item.articulo,
+
+                    item.apartado,
+
+                    item.opcion,
+
+                    item.texto,
+
+                    item.importe,
+
+                    item.puntos
+
+                ].join(" ")
+
+            )
+
+        };
+
+    });
+
+    STATE.results=[...STATE.data];
+
+}
 
 document.addEventListener(
 
     "DOMContentLoaded",
 
-    ()=>App.init()
+    init
 
 );
 
