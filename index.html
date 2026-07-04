@@ -28,7 +28,7 @@
           href="https://fonts.gstatic.com"
           crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet">
 
     <!-- Material Symbols -->
@@ -61,19 +61,11 @@
 
             </div>
 
-            <div>
+            <div class="header-text">
 
-                <h1>
+                <h1>Nomenclátor</h1>
 
-                    Nomenclátor
-
-                </h1>
-
-                <p id="resultsCounter">
-
-                    Cargando...
-
-                </p>
+                <p id="resultsCounter">Cargando...</p>
 
             </div>
 
@@ -81,14 +73,11 @@
 
         <button
             id="themeButton"
-            class="icon-button"
-            aria-label="Cambiar tema">
+            class="icon-button theme-button"
+            aria-label="Cambiar tema"
+            title="Cambiar tema">
 
-            <span class="material-symbols-rounded">
-
-                dark_mode
-
-            </span>
+            <span class="material-symbols-rounded">dark_mode</span>
 
         </button>
 
@@ -100,26 +89,21 @@
 
     <section class="search-box">
 
-        <span class="material-symbols-rounded">
-
-            search
-
-        </span>
+        <span class="material-symbols-rounded">search</span>
 
         <input
             id="searchInput"
             type="search"
-            placeholder="Buscar artículo o palabra...">
+            placeholder="Buscar artículo o palabra..."
+            autocomplete="off">
 
         <button
             id="clearSearch"
-            aria-label="Limpiar búsqueda">
+            class="clear-button"
+            aria-label="Limpiar búsqueda"
+            title="Limpiar">
 
-            <span class="material-symbols-rounded">
-
-                close
-
-            </span>
+            <span class="material-symbols-rounded">close</span>
 
         </button>
 
@@ -133,7 +117,7 @@
         id="filters"
         class="filters">
 
-        <!-- JavaScript -->
+        <!-- Generado por JavaScript -->
 
     </section>
 
@@ -155,23 +139,11 @@
         id="emptyState"
         class="empty hidden">
 
-        <span class="material-symbols-rounded empty-icon">
+        <span class="material-symbols-rounded empty-icon">search_off</span>
 
-            search_off
+        <h2>Sin resultados</h2>
 
-        </span>
-
-        <h2>
-
-            Sin resultados
-
-        </h2>
-
-        <p>
-
-            Prueba otra búsqueda.
-
-        </p>
+        <p>Prueba otra búsqueda o selecciona otro filtro</p>
 
     </section>
 
@@ -184,13 +156,10 @@
 <button
     id="scrollTop"
     class="fab hidden"
-    aria-label="Subir">
+    aria-label="Subir al inicio"
+    title="Subir">
 
-    <span class="material-symbols-rounded">
-
-        keyboard_arrow_up
-
-    </span>
+    <span class="material-symbols-rounded">keyboard_arrow_up</span>
 
 </button>
 
@@ -206,7 +175,13 @@
 
             <div class="card-main">
 
-                <span class="badge"></span>
+                <div class="card-top">
+
+                    <span class="badge"></span>
+
+                    <span class="severity-indicator"></span>
+
+                </div>
 
                 <h2 class="article"></h2>
 
@@ -214,7 +189,11 @@
 
             </div>
 
-            <div class="price">
+            <div class="price-box">
+
+                <div class="price"></div>
+
+                <span class="expand-icon material-symbols-rounded">expand_more</span>
 
             </div>
 
@@ -224,33 +203,33 @@
 
             <div class="detail-grid">
 
-                <div>
+                <div class="detail-item">
 
-                    <span>Norma</span>
+                    <span class="detail-label">Norma</span>
 
                     <strong class="detailNorma"></strong>
 
                 </div>
 
-                <div>
+                <div class="detail-item">
 
-                    <span>Artículo</span>
+                    <span class="detail-label">Artículo</span>
 
                     <strong class="detailArticulo"></strong>
 
                 </div>
 
-                <div>
+                <div class="detail-item">
 
-                    <span>Apartado</span>
+                    <span class="detail-label">Apartado</span>
 
                     <strong class="detailApartado"></strong>
 
                 </div>
 
-                <div>
+                <div class="detail-item">
 
-                    <span>Opción</span>
+                    <span class="detail-label">Opción</span>
 
                     <strong class="detailOpcion"></strong>
 
@@ -258,31 +237,33 @@
 
             </div>
 
-            <div class="description">
+            <div class="description-section">
+
+                <p class="description"></p>
 
             </div>
 
             <div class="price-grid">
 
-                <div>
+                <div class="price-item">
 
-                    <span>Importe</span>
+                    <span class="price-label">Importe</span>
 
                     <strong class="importe"></strong>
 
                 </div>
 
-                <div>
+                <div class="price-item">
 
-                    <span>Reducido</span>
+                    <span class="price-label">Reducido</span>
 
                     <strong class="reducido"></strong>
 
                 </div>
 
-                <div class="points">
+                <div class="price-item points-item">
 
-                    <span>Puntos</span>
+                    <span class="price-label">Puntos</span>
 
                     <strong class="puntos"></strong>
 
@@ -300,11 +281,7 @@
 <!-- TOAST -->
 <!-- ========================================= -->
 
-<div
-    id="toast"
-    class="toast">
-
-</div>
+<div id="toast" class="toast"></div>
 
 <!-- ========================================= -->
 <!-- JAVASCRIPT -->
