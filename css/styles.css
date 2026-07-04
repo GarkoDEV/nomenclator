@@ -230,6 +230,12 @@ button, input, .card, .badge, .icon-button {
     font-weight: 700;
 }
 
+.favorites-button.active {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.18), rgba(239, 68, 68, 0.08));
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
 @media (max-width: 480px) {
     .header { gap: var(--spacing-md); margin-bottom: var(--spacing-xl); }
     .logo { width: 48px; height: 48px; font-size: 24px; }
@@ -441,6 +447,8 @@ button, input, .card, .badge, .icon-button {
     color: var(--primary);
 }
 
+.toggle-btn.active .toggle-icon { transform: rotate(180deg); }
+
 .toggle-icon {
     transition: transform var(--duration-base) var(--easing);
     font-size: 20px;
@@ -552,6 +560,11 @@ button, input, .card, .badge, .icon-button {
     background-color: var(--danger);
     border-color: var(--danger);
     color: white;
+}
+
+.advanced-search-actions {
+    display: flex;
+    justify-content: flex-end;
 }
 
 @media (max-width: 480px) {

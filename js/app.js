@@ -1,7 +1,6 @@
 /*==================================================
     NOMENCLÁTOR DE TRÁFICO
-    GarkoDEV
-    APP.JS v5.0 - GRÁFICOS CON CHART.JS
+    APP.JS v6.0 - UI SINCRONIZADA
 ==================================================*/
 
 /*==================================================
@@ -10,7 +9,7 @@
 
 const CONFIG = {
     json: "data/nomenclator.json",
-    previewLength: 100,
+    previewLength: 110,
     storageTheme: "theme",
     storageFavorites: "favorites",
     storageSearchHistory: "searchHistory",
@@ -22,7 +21,7 @@ const CONFIG = {
 ==================================================*/
 
 function normalize(text) {
-    return String(text)
+    return String(text ?? "")
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
         .toLowerCase()
@@ -40,7 +39,7 @@ function createSearchIndex(item) {
 }
 
 function getItemId(item) {
-    return `${item.norma}-${item.articulo}-${item.apartado}-${item.opcion}`;
+    return `${item.norma}-${item.articulo}-${item.apartado || ""}-${item.opcion || ""}`;
 }
 
 /*==================================================
@@ -57,12 +56,16 @@ class TrafficApp {
         this.currentTheme = "dark";
         this.favorites = [];
         this.searchHistory = [];
+        this.showFavoritesOnly = false;
+        this.maxPriceAvailable = 1000;
+        this.maxPointsAvailable = 6;
         this.advancedFilters = {
             maxPrice: 1000,
             maxPoints: 6,
             severeOnly: false
         };
         this.charts = {};
+        this.toastTimer = null;
 
         // Elementos del DOM
         this.results = document.getElementById("results");
@@ -82,25 +85,28 @@ class TrafficApp {
         this.advancedSearch = document.getElementById("advancedSearch");
         this.priceRange = document.getElementById("priceRange");
         this.pointsRange = document.getElementById("pointsRange");
+        this.priceValue = document.getElementById("priceValue");
+        this.pointsValue = document.getElementById("pointsValue");
         this.severeOnly = document.getElementById("severeOnly");
         this.resetAdvanced = document.getElementById("resetAdvanced");
-        this.searchHistory = document.getElementById("searchHistory");
+        this.searchHistorySection = document.getElementById("searchHistory");
         this.historyChips = document.getElementById("historyChips");
-        this.statsSection = document.getElementById("statsSection");
 
         this.init();
     }
 
     async init() {
-        await this.loadDatabase();
+        this.restoreTheme();
         this.loadFavoritesFromStorage();
         this.loadSearchHistory();
-        this.restoreTheme();
-        this.createFilters();
-        this.filterData();
-        this.updateStats();
-        this.initCharts();
         this.attachEvents();
+        await this.loadDatabase();
+        this.configureAdvancedControls();
+        this.createFilters();
+        this.renderSearchHistory();
+        this.updateFavoritesButton();
+        this.initCharts();
+        this.filterData();
     }
 
     /*==============================================
@@ -112,23 +118,66 @@ class TrafficApp {
             this.counter.textContent = "Cargando nomenclátor...";
 
             const response = await fetch(CONFIG.json);
-            if (!response.ok) throw new Error("No se pudo cargar el JSON.");
+            if (!response.ok) {
+                throw new Error("No se pudo cargar el nomenclátor.");
+            }
 
             const data = await response.json();
-            if (!Array.isArray(data)) throw new Error("Formato JSON no válido.");
+            if (!Array.isArray(data)) {
+                throw new Error("Formato de datos no válido.");
+            }
 
             this.database = data.map(item => ({
                 ...item,
+                articulo: String(item.articulo ?? ""),
+                apartado: String(item.apartado ?? ""),
+                opcion: String(item.opcion ?? ""),
+                texto: String(item.texto ?? ""),
+                importe: Number(item.importe ?? 0),
+                importe_reducido: Number(item.importe_reducido ?? 0),
+                puntos: Number(item.puntos ?? 0),
                 searchIndex: createSearchIndex(item)
             }));
 
-            this.filtered = [...this.database];
-            this.updateCounter();
+            this.maxPriceAvailable = Math.max(0, ...this.database.map(item => item.importe));
+            this.maxPointsAvailable = Math.max(0, ...this.database.map(item => item.puntos));
+            this.advancedFilters.maxPrice = this.maxPriceAvailable;
+            this.advancedFilters.maxPoints = this.maxPointsAvailable;
+
             console.log(`✅ ${this.database.length} infracciones cargadas.`);
         } catch (error) {
             console.error(error);
-            this.counter.textContent = "Error al cargar datos";
+            this.database = [];
+            this.filtered = [];
+            this.counter.textContent = "Error al cargar los datos";
             this.showToast("❌ No se pudo cargar el nomenclátor.");
+            this.toggleEmptyState();
+        }
+    }
+
+    configureAdvancedControls() {
+        if (this.priceRange) {
+            this.priceRange.min = "0";
+            this.priceRange.max = String(this.maxPriceAvailable);
+            this.priceRange.value = String(this.advancedFilters.maxPrice);
+        }
+
+        if (this.pointsRange) {
+            this.pointsRange.min = "0";
+            this.pointsRange.max = String(this.maxPointsAvailable);
+            this.pointsRange.value = String(this.advancedFilters.maxPoints);
+        }
+
+        this.updateAdvancedLabels();
+    }
+
+    updateAdvancedLabels() {
+        if (this.priceValue) {
+            this.priceValue.textContent = `0€ - ${this.advancedFilters.maxPrice}€`;
+        }
+
+        if (this.pointsValue) {
+            this.pointsValue.textContent = `0 - ${this.advancedFilters.maxPoints}`;
         }
     }
 
@@ -137,6 +186,8 @@ class TrafficApp {
     ==============================================*/
 
     createFilters() {
+        if (!this.filters) return;
+
         const normas = [
             "TODOS",
             ...new Set(this.database.map(item => item.norma))
@@ -146,45 +197,49 @@ class TrafficApp {
 
         normas.forEach(norma => {
             const button = document.createElement("button");
+            button.type = "button";
             button.textContent = norma;
             button.dataset.filter = norma;
-            button.type = "button";
-
-            if (norma === this.filter) {
-                button.classList.add("active");
-            }
-
-            button.addEventListener("click", () => this.setFilter(norma, button));
+            button.classList.toggle("active", norma === this.filter);
+            button.addEventListener("click", () => this.setFilter(norma));
             this.filters.appendChild(button);
         });
     }
 
-    setFilter(norma, button) {
+    setFilter(norma) {
         this.filter = norma;
-        this.filters.querySelectorAll("button").forEach(btn => {
-            btn.classList.remove("active");
-        });
-        button.classList.add("active");
+
+        if (this.filters) {
+            this.filters.querySelectorAll("button").forEach(button => {
+                button.classList.toggle("active", button.dataset.filter === norma);
+            });
+        }
+
         this.filterData();
     }
 
     /*==============================================
-        FILTRAR DATOS
+        FILTRADO
     ==============================================*/
 
     filterData() {
         const search = normalize(this.search);
 
-        this.filtered = this.database.filter(item => {
+        let data = this.database.filter(item => {
             const matchFilter = this.filter === "TODOS" || item.norma === this.filter;
             const matchSearch = search === "" || item.searchIndex.includes(search);
             const matchPrice = item.importe <= this.advancedFilters.maxPrice;
             const matchPoints = item.puntos <= this.advancedFilters.maxPoints;
-            const matchSevere = !this.advancedFilters.severeOnly || item.puntos > 4;
+            const matchSevere = !this.advancedFilters.severeOnly || item.puntos >= 4;
 
             return matchFilter && matchSearch && matchPrice && matchPoints && matchSevere;
         });
 
+        if (this.showFavoritesOnly) {
+            data = data.filter(item => this.favorites.includes(getItemId(item)));
+        }
+
+        this.filtered = data;
         this.renderCards();
         this.updateCounter();
         this.toggleEmptyState();
@@ -193,31 +248,32 @@ class TrafficApp {
     }
 
     /*==============================================
-        RENDERIZAR TARJETAS
+        RENDERIZADO
     ==============================================*/
 
     renderCards() {
+        if (!this.results) return;
+
         this.results.replaceChildren();
+
+        if (!this.template) return;
+
         const fragment = document.createDocumentFragment();
 
         this.filtered.forEach((item, index) => {
             const card = this.renderCard(item);
-            card.style.animationDelay = `${index * 50}ms`;
+            card.style.animationDelay = `${index * 40}ms`;
             fragment.appendChild(card);
         });
 
         this.results.appendChild(fragment);
     }
 
-    /*==============================================
-        CREAR TARJETA
-    ==============================================*/
-
     renderCard(item) {
-        const node = this.template.content.firstElementChild.cloneNode(true);
-        const card = node;
+        const card = this.template.content.firstElementChild.cloneNode(true);
         const itemId = getItemId(item);
         const isFavorite = this.favorites.includes(itemId);
+        const severityLevel = this.getSeverity(item);
 
         const badge = card.querySelector(".badge");
         const severity = card.querySelector(".severity-indicator");
@@ -235,53 +291,51 @@ class TrafficApp {
         const favoriteBtn = card.querySelector(".favorite-btn");
         const copyBtn = card.querySelector(".copy-btn");
         const shareBtn = card.querySelector(".share-btn");
+        const headerBtn = card.querySelector(".card-header");
 
         badge.textContent = item.norma;
-        badge.classList.add(item.norma.toLowerCase());
+        badge.classList.add(normalize(item.norma));
+        severity.classList.add(severityLevel);
 
-        const severidad = this.getSeverity(item);
-        severity.classList.add(severidad);
-
-        article.textContent = `Artículo ${item.articulo}`;
+        article.textContent = `Artículo ${item.articulo}${item.apartado ? `.${item.apartado}` : ""}`;
         preview.textContent = item.texto.length > CONFIG.previewLength
-            ? item.texto.substring(0, CONFIG.previewLength) + "…"
+            ? `${item.texto.slice(0, CONFIG.previewLength).trim()}…`
             : item.texto;
         price.textContent = `${item.importe} €`;
 
         detailNorma.textContent = item.norma;
-        detailArticulo.textContent = item.articulo;
+        detailArticulo.textContent = item.articulo || "—";
         detailApartado.textContent = item.apartado || "—";
         detailOpcion.textContent = item.opcion || "—";
-        description.textContent = item.texto;
+        description.textContent = item.texto || "Sin descripción";
         importe.textContent = `${item.importe} €`;
         reducido.textContent = `${item.importe_reducido} €`;
-        puntos.textContent = item.puntos === 0 ? "—" : item.puntos;
+        puntos.textContent = item.puntos > 0 ? String(item.puntos) : "—";
+        puntos.classList.toggle("danger", item.puntos > 0);
 
-        if (item.puntos > 0) {
-            puntos.classList.add("danger");
-        }
+        favoriteBtn.classList.toggle("active", isFavorite);
+        favoriteBtn.setAttribute("aria-pressed", String(isFavorite));
+        favoriteBtn.setAttribute("aria-label", isFavorite ? "Quitar de favoritos" : "Añadir a favoritos");
+        favoriteBtn.setAttribute("title", isFavorite ? "Quitar de favoritos" : "Añadir a favoritos");
 
-        if (isFavorite) {
-            favoriteBtn.classList.add("active");
-        }
-
-        favoriteBtn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            this.toggleFavorite(itemId, favoriteBtn);
+        favoriteBtn.addEventListener("click", (event) => {
+            event.stopPropagation();
+            this.toggleFavorite(itemId);
         });
 
-        copyBtn.addEventListener("click", (e) => {
-            e.stopPropagation();
+        copyBtn.addEventListener("click", (event) => {
+            event.stopPropagation();
             this.copyInfraction(item);
         });
 
-        shareBtn.addEventListener("click", (e) => {
-            e.stopPropagation();
+        shareBtn.addEventListener("click", (event) => {
+            event.stopPropagation();
             this.shareInfraction(item);
         });
 
-        card.querySelector(".card-header").addEventListener("click", () => {
-            card.classList.toggle("open");
+        headerBtn.addEventListener("click", () => {
+            const isOpen = card.classList.toggle("open");
+            headerBtn.setAttribute("aria-expanded", String(isOpen));
         });
 
         return card;
@@ -294,23 +348,226 @@ class TrafficApp {
     }
 
     /*==============================================
+        FAVORITOS
+    ==============================================*/
+
+    loadFavoritesFromStorage() {
+        try {
+            const stored = localStorage.getItem(CONFIG.storageFavorites);
+            this.favorites = stored ? JSON.parse(stored) : [];
+        } catch {
+            this.favorites = [];
+        }
+    }
+
+    saveFavoritesToStorage() {
+        localStorage.setItem(CONFIG.storageFavorites, JSON.stringify(this.favorites));
+    }
+
+    toggleFavorite(itemId) {
+        const isFavorite = this.favorites.includes(itemId);
+
+        if (isFavorite) {
+            this.favorites = this.favorites.filter(id => id !== itemId);
+            this.showToast("💔 Eliminado de favoritos");
+        } else {
+            this.favorites.push(itemId);
+            this.showToast("❤️ Añadido a favoritos");
+        }
+
+        if (this.showFavoritesOnly && this.favorites.length === 0) {
+            this.showFavoritesOnly = false;
+        }
+
+        this.saveFavoritesToStorage();
+        this.updateFavoritesButton();
+        this.filterData();
+    }
+
+    toggleFavoritesView() {
+        if (this.favorites.length === 0) {
+            this.showToast("📌 No tienes favoritos todavía");
+            return;
+        }
+
+        this.showFavoritesOnly = !this.showFavoritesOnly;
+        this.updateFavoritesButton();
+        this.filterData();
+        this.showToast(this.showFavoritesOnly ? "⭐ Mostrando favoritos" : "📚 Mostrando todas las infracciones");
+    }
+
+    updateFavoritesButton() {
+        if (!this.favoritesBtn) return;
+
+        const count = this.favorites.length;
+        const badge = this.favoritesBtn.querySelector(".badge-count");
+
+        if (badge) {
+            badge.textContent = count;
+        }
+
+        this.favoritesBtn.classList.toggle("active", this.showFavoritesOnly);
+        this.favoritesBtn.setAttribute("aria-pressed", String(this.showFavoritesOnly));
+        this.favoritesBtn.setAttribute("title", this.showFavoritesOnly ? `Ver todas (${count} favoritos guardados)` : `Mis favoritos (${count})`);
+    }
+
+    /*==============================================
+        HISTORIAL DE BÚSQUEDAS
+    ==============================================*/
+
+    loadSearchHistory() {
+        try {
+            const stored = localStorage.getItem(CONFIG.storageSearchHistory);
+            this.searchHistory = stored ? JSON.parse(stored) : [];
+        } catch {
+            this.searchHistory = [];
+        }
+    }
+
+    saveSearchHistory() {
+        localStorage.setItem(CONFIG.storageSearchHistory, JSON.stringify(this.searchHistory));
+    }
+
+    addToSearchHistory(term) {
+        const cleanTerm = String(term ?? "").trim();
+        if (!cleanTerm) return;
+
+        this.searchHistory = this.searchHistory.filter(item => normalize(item) !== normalize(cleanTerm));
+        this.searchHistory.unshift(cleanTerm);
+        this.searchHistory = this.searchHistory.slice(0, CONFIG.maxSearchHistory);
+        this.saveSearchHistory();
+        this.renderSearchHistory();
+    }
+
+    renderSearchHistory() {
+        if (!this.searchHistorySection || !this.historyChips) return;
+
+        this.historyChips.innerHTML = "";
+
+        if (this.searchHistory.length === 0) {
+            this.searchHistorySection.classList.add("hidden");
+            return;
+        }
+
+        this.searchHistorySection.classList.remove("hidden");
+
+        this.searchHistory.forEach(term => {
+            const chip = document.createElement("button");
+            chip.type = "button";
+            chip.className = "history-chip";
+            chip.textContent = term;
+            chip.addEventListener("click", () => {
+                this.search = term;
+                if (this.searchInput) {
+                    this.searchInput.value = term;
+                    this.searchInput.focus();
+                }
+                this.filterData();
+            });
+            this.historyChips.appendChild(chip);
+        });
+    }
+
+    /*==============================================
+        ESTADÍSTICAS Y CONTADOR
+    ==============================================*/
+
+    updateCounter() {
+        if (!this.counter) return;
+
+        const count = this.filtered.length;
+        const total = this.database.length;
+        const suffix = this.showFavoritesOnly ? " en favoritos" : "";
+
+        this.counter.textContent = `${count}/${total} resultado${count !== 1 ? "s" : ""}${suffix}`;
+    }
+
+    updateStats() {
+        const total = this.filtered.length;
+        const avgPrice = total > 0
+            ? Math.round(this.filtered.reduce((sum, item) => sum + item.importe, 0) / total)
+            : 0;
+        const maxPoints = total > 0
+            ? Math.max(...this.filtered.map(item => item.puntos))
+            : 0;
+
+        document.getElementById("statTotal").textContent = total;
+        document.getElementById("statAvgPrice").textContent = `${avgPrice}€`;
+        document.getElementById("statMaxPoints").textContent = maxPoints;
+        document.getElementById("statFavorites").textContent = this.favorites.length;
+    }
+
+    toggleEmptyState() {
+        if (!this.empty) return;
+        this.empty.classList.toggle("hidden", this.filtered.length > 0);
+    }
+
+    /*==============================================
+        COPIAR Y COMPARTIR
+    ==============================================*/
+
+    async copyInfraction(item) {
+        const text = [
+            `${item.norma} · Artículo ${item.articulo}${item.apartado ? `.${item.apartado}` : ""}${item.opcion ? ` · Opción ${item.opcion}` : ""}`,
+            item.texto,
+            `Importe: ${item.importe}€`,
+            `Importe reducido: ${item.importe_reducido}€`,
+            `Puntos: ${item.puntos}`
+        ].join("\n");
+
+        try {
+            await navigator.clipboard.writeText(text);
+            this.showToast("📋 Infracción copiada");
+        } catch {
+            this.showToast("❌ No se pudo copiar");
+        }
+    }
+
+    async shareInfraction(item) {
+        const text = `${item.norma} · Artículo ${item.articulo}\n${item.texto}\nImporte: ${item.importe}€ · Puntos: ${item.puntos}`;
+
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: "Nomenclátor de Tráfico",
+                    text
+                });
+                return;
+            } catch {
+                // Si el usuario cancela, no hacemos nada.
+            }
+        }
+
+        this.copyInfraction(item);
+    }
+
+    /*==============================================
         GRÁFICOS
     ==============================================*/
 
     initCharts() {
-        // Configurar opciones globales de Chart.js
+        if (!window.Chart) return;
         Chart.defaults.font.family = '"Inter", sans-serif';
         this.updateCharts();
     }
 
-    updateCharts() {
-        // Destruir gráficos previos
+    destroyCharts() {
         Object.values(this.charts).forEach(chart => {
-            if (chart) chart.destroy();
+            if (chart && typeof chart.destroy === "function") {
+                chart.destroy();
+            }
         });
         this.charts = {};
+    }
 
-        if (this.chartsSection.classList.contains("hidden")) return;
+    updateCharts() {
+        if (!window.Chart || !this.chartsSection) return;
+
+        this.destroyCharts();
+
+        if (this.chartsSection.classList.contains("hidden") || this.filtered.length === 0) {
+            return;
+        }
 
         this.createNormaChart();
         this.createPriceChart();
@@ -320,18 +577,13 @@ class TrafficApp {
         const ctx = document.getElementById("normaChart");
         if (!ctx) return;
 
-        // Datos por norma
         const normaData = {};
         this.filtered.forEach(item => {
-            if (!normaData[item.norma]) {
-                normaData[item.norma] = 0;
-            }
-            normaData[item.norma]++;
+            normaData[item.norma] = (normaData[item.norma] || 0) + 1;
         });
 
         const labels = Object.keys(normaData);
         const data = Object.values(normaData);
-        const colors = this.getNormaColors(labels);
 
         this.charts.norma = new Chart(ctx, {
             type: "doughnut",
@@ -339,7 +591,7 @@ class TrafficApp {
                 labels,
                 datasets: [{
                     data,
-                    backgroundColor: colors,
+                    backgroundColor: this.getNormaColors(labels),
                     borderColor: this.currentTheme === "dark" ? "#162033" : "#FFFFFF",
                     borderWidth: 2,
                     borderRadius: 8
@@ -366,28 +618,27 @@ class TrafficApp {
         const ctx = document.getElementById("priceChart");
         if (!ctx) return;
 
-        // Importe promedio por norma
-        const normaData = {};
+        const grouped = {};
+
         this.filtered.forEach(item => {
-            if (!normaData[item.norma]) {
-                normaData[item.norma] = { sum: 0, count: 0 };
+            if (!grouped[item.norma]) {
+                grouped[item.norma] = { sum: 0, count: 0 };
             }
-            normaData[item.norma].sum += item.importe;
-            normaData[item.norma].count++;
+            grouped[item.norma].sum += item.importe;
+            grouped[item.norma].count += 1;
         });
 
-        const labels = Object.keys(normaData);
-        const data = labels.map(label => Math.round(normaData[label].sum / normaData[label].count));
-        const colors = this.getNormaColors(labels);
+        const labels = Object.keys(grouped);
+        const data = labels.map(label => Math.round(grouped[label].sum / grouped[label].count));
 
         this.charts.price = new Chart(ctx, {
             type: "bar",
             data: {
                 labels,
                 datasets: [{
-                    label: "Importe Promedio (€)",
+                    label: "Importe promedio (€)",
                     data,
-                    backgroundColor: colors,
+                    backgroundColor: this.getNormaColors(labels),
                     borderRadius: 8,
                     borderSkipped: false
                 }]
@@ -408,7 +659,7 @@ class TrafficApp {
                     x: {
                         ticks: {
                             color: this.currentTheme === "dark" ? "#CBD5E1" : "#6B7280",
-                            callback: (v) => `${v}€`
+                            callback: value => `${value}€`
                         },
                         grid: {
                             color: this.currentTheme === "dark" ? "#2D3B52" : "#E5E7EB"
@@ -430,163 +681,13 @@ class TrafficApp {
 
     getNormaColors(normas) {
         const colorMap = {
-            "RGC": "rgba(59, 130, 246, 0.8)",
-            "RGV": "rgba(139, 92, 246, 0.8)",
-            "RGCOND": "rgba(236, 72, 153, 0.8)",
-            "LSV": "rgba(249, 115, 22, 0.8)"
+            RGC: "rgba(59, 130, 246, 0.8)",
+            RGV: "rgba(139, 92, 246, 0.8)",
+            RGCOND: "rgba(236, 72, 153, 0.8)",
+            LSV: "rgba(249, 115, 22, 0.8)"
         };
-        return normas.map(n => colorMap[n] || "rgba(100, 116, 139, 0.8)");
-    }
 
-    /*==============================================
-        FAVORITOS
-    ==============================================*/
-
-    loadFavoritesFromStorage() {
-        try {
-            const stored = localStorage.getItem(CONFIG.storageFavorites);
-            this.favorites = stored ? JSON.parse(stored) : [];
-        } catch {
-            this.favorites = [];
-        }
-    }
-
-    toggleFavorite(itemId, btn) {
-        const isFavorite = this.favorites.includes(itemId);
-
-        if (isFavorite) {
-            this.favorites = this.favorites.filter(id => id !== itemId);
-            btn.classList.remove("active");
-            this.showToast("💔 Eliminado de favoritos");
-        } else {
-            this.favorites.push(itemId);
-            btn.classList.add("active");
-            this.showToast("❤️ Añadido a favoritos");
-        }
-
-        localStorage.setItem(CONFIG.storageFavorites, JSON.stringify(this.favorites));
-        this.updateStats();
-        this.updateFavoritesButton();
-    }
-
-    updateFavoritesButton() {
-        const count = this.favorites.length;
-        this.favoritesBtn.querySelector(".badge-count").textContent = count;
-        this.favoritesBtn.title = `Mis favoritos (${count})`;
-    }
-
-    /*==============================================
-        COPIAR Y COMPARTIR
-    ==============================================*/
-
-    async copyInfraction(item) {
-        const text = `${item.norma} - Artículo ${item.articulo}\n${item.texto}\nImporte: ${item.importe}€ | Puntos: ${item.puntos}`;
-        try {
-            await navigator.clipboard.writeText(text);
-            this.showToast("📋 Copiado al portapapeles");
-        } catch {
-            this.showToast("❌ No se pudo copiar");
-        }
-    }
-
-    async shareInfraction(item) {
-        const text = `${item.norma} - Artículo ${item.articulo}\n${item.texto}\nImporte: ${item.importe}€ | Puntos: ${item.puntos}`;
-
-        if (navigator.share) {
-            try {
-                await navigator.share({
-                    title: "Nomenclátor",
-                    text
-                });
-            } catch {}
-        } else {
-            this.copyInfraction(item);
-        }
-    }
-
-    /*==============================================
-        ESTADÍSTICAS
-    ==============================================*/
-
-    updateStats() {
-        const total = this.filtered.length;
-        const avgPrice = total > 0
-            ? Math.round(this.filtered.reduce((sum, item) => sum + item.importe, 0) / total)
-            : 0;
-        const maxPoints = total > 0
-            ? Math.max(...this.filtered.map(item => item.puntos))
-            : 0;
-        const favCount = this.favorites.length;
-
-        document.getElementById("statTotal").textContent = total;
-        document.getElementById("statAvgPrice").textContent = `${avgPrice}€`;
-        document.getElementById("statMaxPoints").textContent = maxPoints;
-        document.getElementById("statFavorites").textContent = favCount;
-    }
-
-    /*==============================================
-        HISTORIAL DE BÚSQUEDAS
-    ==============================================*/
-
-    loadSearchHistory() {
-        try {
-            const stored = localStorage.getItem(CONFIG.storageSearchHistory);
-            this.searchHistory = stored ? JSON.parse(stored) : [];
-        } catch {
-            this.searchHistory = [];
-        }
-    }
-
-    addToSearchHistory(term) {
-        if (!term.trim() || this.searchHistory.includes(term)) return;
-
-        this.searchHistory.unshift(term);
-        if (this.searchHistory.length > CONFIG.maxSearchHistory) {
-            this.searchHistory.pop();
-        }
-        localStorage.setItem(CONFIG.storageSearchHistory, JSON.stringify(this.searchHistory));
-        this.renderSearchHistory();
-    }
-
-    renderSearchHistory() {
-        if (this.searchHistory.length === 0) {
-            this.searchHistory.classList.add("hidden");
-            return;
-        }
-
-        this.searchHistory.classList.remove("hidden");
-        this.historyChips.innerHTML = "";
-
-        this.searchHistory.forEach(term => {
-            const chip = document.createElement("button");
-            chip.className = "history-chip";
-            chip.textContent = term;
-            chip.addEventListener("click", () => {
-                this.searchInput.value = term;
-                this.search = term;
-                this.filterData();
-            });
-            this.historyChips.appendChild(chip);
-        });
-    }
-
-    /*==============================================
-        ACTUALIZAR CONTADOR
-    ==============================================*/
-
-    updateCounter() {
-        const count = this.filtered.length;
-        const total = this.database.length;
-        this.counter.textContent = `${count}/${total} resultado${count !== 1 ? "s" : ""}`;
-    }
-
-    /*==============================================
-        MOSTRAR/OCULTAR ESTADO VACÍO
-    ==============================================*/
-
-    toggleEmptyState() {
-        const isEmpty = this.filtered.length === 0;
-        this.empty.classList.toggle("hidden", !isEmpty);
+        return normas.map(norma => colorMap[norma] || "rgba(100, 116, 139, 0.8)");
     }
 
     /*==============================================
@@ -594,95 +695,101 @@ class TrafficApp {
     ==============================================*/
 
     attachEvents() {
-        // Buscador
-        let debounceTimer;
-        this.searchInput.addEventListener("input", (e) => {
-            clearTimeout(debounceTimer);
-            debounceTimer = setTimeout(() => {
-                this.search = e.target.value;
-                if (this.search.trim()) {
-                    this.addToSearchHistory(this.search);
-                }
-                this.filterData();
-            }, 200);
-        });
+        let debounceTimer = null;
+
+        if (this.searchInput) {
+            this.searchInput.addEventListener("input", event => {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(() => {
+                    this.search = event.target.value;
+                    if (this.search.trim().length >= 2) {
+                        this.addToSearchHistory(this.search);
+                    }
+                    this.filterData();
+                }, 180);
+            });
+        }
 
         if (this.clearButton) {
             this.clearButton.addEventListener("click", () => {
-                this.searchInput.value = "";
                 this.search = "";
+                if (this.searchInput) {
+                    this.searchInput.value = "";
+                    this.searchInput.focus();
+                }
                 this.filterData();
-                this.searchInput.focus();
             });
         }
 
-        // Gráficos
-        if (this.chartsBtn) {
+        if (this.chartsBtn && this.chartsSection) {
             this.chartsBtn.addEventListener("click", () => {
-                this.chartsSection.classList.toggle("hidden");
-                this.chartsBtn.classList.toggle("active");
-                if (!this.chartsSection.classList.contains("hidden")) {
+                const isHidden = this.chartsSection.classList.toggle("hidden");
+                this.chartsBtn.classList.toggle("active", !isHidden);
+
+                if (!isHidden) {
                     setTimeout(() => this.updateCharts(), 100);
+                } else {
+                    this.destroyCharts();
                 }
             });
         }
 
-        // Favoritos
         if (this.favoritesBtn) {
-            this.favoritesBtn.addEventListener("click", () => {
-                if (this.favorites.length === 0) {
-                    this.showToast("📌 No tienes favoritos aún");
-                    return;
-                }
-                this.filtered = this.database.filter(item => {
-                    return this.favorites.includes(getItemId(item));
-                });
-                this.renderCards();
-                this.updateCounter();
-                this.toggleEmptyState();
-                this.updateStats();
-            });
+            this.favoritesBtn.addEventListener("click", () => this.toggleFavoritesView());
         }
 
-        // Buscador avanzado
-        if (this.advancedToggle) {
+        if (this.advancedToggle && this.advancedSearch) {
             this.advancedToggle.addEventListener("click", () => {
-                this.advancedSearch.classList.toggle("hidden");
-                this.advancedToggle.classList.toggle("active");
+                const isHidden = this.advancedSearch.classList.toggle("hidden");
+                this.advancedToggle.classList.toggle("active", !isHidden);
+                this.advancedToggle.setAttribute("aria-expanded", String(!isHidden));
             });
         }
 
         if (this.priceRange) {
-            this.priceRange.addEventListener("input", (e) => {
-                this.advancedFilters.maxPrice = parseInt(e.target.value);
-                document.getElementById("priceValue").textContent = `0€ - ${e.target.value}€`;
+            this.priceRange.addEventListener("input", event => {
+                this.advancedFilters.maxPrice = Number(event.target.value);
+                this.updateAdvancedLabels();
                 this.filterData();
             });
         }
 
         if (this.pointsRange) {
-            this.pointsRange.addEventListener("input", (e) => {
-                this.advancedFilters.maxPoints = parseInt(e.target.value);
-                document.getElementById("pointsValue").textContent = `0 - ${e.target.value}`;
+            this.pointsRange.addEventListener("input", event => {
+                this.advancedFilters.maxPoints = Number(event.target.value);
+                this.updateAdvancedLabels();
                 this.filterData();
             });
         }
 
         if (this.severeOnly) {
-            this.severeOnly.addEventListener("change", (e) => {
-                this.advancedFilters.severeOnly = e.target.checked;
+            this.severeOnly.addEventListener("change", event => {
+                this.advancedFilters.severeOnly = event.target.checked;
                 this.filterData();
             });
         }
 
         if (this.resetAdvanced) {
             this.resetAdvanced.addEventListener("click", () => {
-                this.advancedFilters = { maxPrice: 1000, maxPoints: 6, severeOnly: false };
-                this.priceRange.value = 1000;
-                this.pointsRange.value = 6;
-                this.severeOnly.checked = false;
-                document.getElementById("priceValue").textContent = "0€ - 1000€";
-                document.getElementById("pointsValue").textContent = "0 - 6";
+                this.advancedFilters = {
+                    maxPrice: this.maxPriceAvailable,
+                    maxPoints: this.maxPointsAvailable,
+                    severeOnly: false
+                };
+
+                if (this.priceRange) {
+                    this.priceRange.value = String(this.maxPriceAvailable);
+                }
+
+                if (this.pointsRange) {
+                    this.pointsRange.value = String(this.maxPointsAvailable);
+                }
+
+                if (this.severeOnly) {
+                    this.severeOnly.checked = false;
+                }
+
+                this.updateAdvancedLabels();
                 this.filterData();
             });
         }
@@ -698,14 +805,15 @@ class TrafficApp {
             this.fab.classList.toggle("hidden", window.scrollY < 300);
         });
 
-        document.addEventListener("keydown", (e) => {
-            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "f") {
-                e.preventDefault();
+        document.addEventListener("keydown", event => {
+            if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "f" && this.searchInput) {
+                event.preventDefault();
                 this.searchInput.focus();
             }
-            if (e.key === "Escape" && this.searchInput.value) {
-                this.searchInput.value = "";
+
+            if (event.key === "Escape" && this.searchInput && this.searchInput.value) {
                 this.search = "";
+                this.searchInput.value = "";
                 this.filterData();
             }
         });
@@ -713,9 +821,6 @@ class TrafficApp {
         if (this.themeButton) {
             this.themeButton.addEventListener("click", () => this.toggleTheme());
         }
-
-        this.renderSearchHistory();
-        this.updateFavoritesButton();
     }
 
     /*==============================================
@@ -745,7 +850,6 @@ class TrafficApp {
 
         this.updateThemeButton(normalizedTheme);
 
-        // Actualizar gráficos si están visibles
         if (this.chartsSection && !this.chartsSection.classList.contains("hidden")) {
             setTimeout(() => this.updateCharts(), 100);
         }
@@ -754,20 +858,15 @@ class TrafficApp {
     toggleTheme() {
         const newTheme = this.currentTheme === "dark" ? "light" : "dark";
         this.setTheme(newTheme);
-        this.showToast(
-            newTheme === "dark"
-                ? "🌙 Modo oscuro activado"
-                : "☀️ Modo claro activado"
-        );
+        this.showToast(newTheme === "dark" ? "🌙 Modo oscuro activado" : "☀️ Modo claro activado");
     }
 
     updateThemeButton(theme) {
         if (!this.themeButton) return;
 
-        const icon = this.themeButton.querySelector("span");
+        const icon = this.themeButton.querySelector(".material-symbols-rounded");
         if (icon) {
             icon.textContent = theme === "dark" ? "light_mode" : "dark_mode";
-            icon.classList.toggle("material-symbols-rounded", true);
         }
 
         this.themeButton.classList.toggle("active", theme === "light");
@@ -797,7 +896,7 @@ class TrafficApp {
     INICIALIZACIÓN
 ==================================================*/
 
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", () => {
     window.app = new TrafficApp();
     console.log("🚔 Nomenclátor de Tráfico iniciado.");
 });

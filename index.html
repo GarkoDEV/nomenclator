@@ -206,7 +206,7 @@
     <!-- ========================================= -->
 
     <div class="advanced-search-toggle">
-        <button class="toggle-btn" id="advancedToggle" aria-label="Alternar búsqueda avanzada">
+        <button class="toggle-btn" id="advancedToggle" aria-label="Alternar búsqueda avanzada" aria-expanded="false">
             <span>Búsqueda avanzada</span>
             <span class="toggle-icon material-symbols-rounded">expand_more</span>
         </button>
@@ -217,13 +217,24 @@
         <div class="advanced-filters">
 
             <div class="filter-group">
-                <label>Importe: <span id="priceLabel">0€ - 1000€</span></label>
-                <input type="range" id="priceSlider" class="slider" min="0" max="1000" value="1000">
+                <label>Importe: <span id="priceValue">0€ - 1000€</span></label>
+                <input type="range" id="priceRange" class="slider" min="0" max="1000" value="1000">
             </div>
 
             <div class="filter-group">
-                <label>Puntos: <span id="pointsLabel">0 - 15</span></label>
-                <input type="range" id="pointsSlider" class="slider" min="0" max="15" value="15">
+                <label>Puntos: <span id="pointsValue">0 - 6</span></label>
+                <input type="range" id="pointsRange" class="slider" min="0" max="6" value="6">
+            </div>
+
+            <div class="filter-group checkbox">
+                <label for="severeOnly">
+                    <input type="checkbox" id="severeOnly">
+                    Solo infracciones graves o muy graves
+                </label>
+            </div>
+
+            <div class="advanced-search-actions">
+                <button type="button" id="resetAdvanced" class="btn-reset">Restablecer filtros</button>
             </div>
 
         </div>
@@ -234,9 +245,9 @@
     <!-- HISTORIAL DE BÚSQUEDAS -->
     <!-- ========================================= -->
 
-    <section id="historySection" class="hidden">
-        <h2 style="margin-bottom: 12px; font-size: 0.875rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Búsquedas recientes</h2>
-        <div id="historyList" class="history-list"></div>
+    <section id="searchHistory" class="search-history hidden">
+        <span class="history-label">Búsquedas recientes</span>
+        <div id="historyChips" class="history-chips"></div>
     </section>
 
     <!-- ========================================= -->
@@ -275,10 +286,90 @@
 </button>
 
 <!-- ========================================= -->
+<!-- TEMPLATE TARJETA -->
+<!-- ========================================= -->
+
+<template id="cardTemplate">
+    <article class="card">
+        <button type="button" class="favorite-btn" aria-label="Añadir a favoritos" title="Añadir a favoritos">
+            <span class="material-symbols-rounded">favorite</span>
+        </button>
+
+        <button type="button" class="card-header" aria-expanded="false">
+            <div class="card-main">
+                <div class="card-top">
+                    <span class="badge">RGC</span>
+                    <span class="severity-indicator"></span>
+                </div>
+
+                <h2 class="article">Artículo</h2>
+                <p class="preview"></p>
+            </div>
+
+            <div class="price-box">
+                <span class="expand-icon material-symbols-rounded">expand_more</span>
+                <span class="price">0 €</span>
+            </div>
+        </button>
+
+        <div class="card-body">
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <span class="detail-label">Norma</span>
+                    <strong class="detailNorma">—</strong>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Artículo</span>
+                    <strong class="detailArticulo">—</strong>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Apartado</span>
+                    <strong class="detailApartado">—</strong>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Opción</span>
+                    <strong class="detailOpcion">—</strong>
+                </div>
+            </div>
+
+            <div class="description-section">
+                <p class="description"></p>
+            </div>
+
+            <div class="price-grid">
+                <div class="price-item">
+                    <span class="price-label">Importe</span>
+                    <strong class="importe">0 €</strong>
+                </div>
+                <div class="price-item">
+                    <span class="price-label">Reducido</span>
+                    <strong class="reducido">0 €</strong>
+                </div>
+                <div class="price-item points-item">
+                    <span class="price-label">Puntos</span>
+                    <strong class="puntos">—</strong>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <button type="button" class="action-btn copy-btn">
+                    <span class="material-symbols-rounded">content_copy</span>
+                    <span>Copiar</span>
+                </button>
+                <button type="button" class="action-btn share-btn">
+                    <span class="material-symbols-rounded">share</span>
+                    <span>Compartir</span>
+                </button>
+            </div>
+        </div>
+    </article>
+</template>
+
+<!-- ========================================= -->
 <!-- TOAST NOTIFICATIONS -->
 <!-- ========================================= -->
 
-<div id="toastContainer"></div>
+<div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
 
 <!-- ========================================= -->
 <!-- SCRIPTS -->
