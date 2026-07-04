@@ -4218,5 +4218,1145 @@
         "importe": 80,
         "importe_reducido": 40,
         "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-B",
+        "opcion": "C",
+        "texto": "No obedecer una señal de entrada prohibida para determinados vehículos.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-C",
+        "opcion": "A",
+        "texto": "No obedecer una señal de limitación de masa.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-C",
+        "opcion": "B",
+        "texto": "No obedecer una señal de limitación de masa por eje.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-C",
+        "opcion": "C",
+        "texto": "No obedecer una señal de limitación de longitud.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-C",
+        "opcion": "D",
+        "texto": "No obedecer una señal de limitación de ancho.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-C",
+        "opcion": "E",
+        "texto": "No obedecer una señal de limitación de altura.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-C",
+        "opcion": "F",
+        "texto": "No obedecer una señal de prohibición de pasar sin detenerse.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-C",
+        "opcion": "G",
+        "texto": "Incumplir la prohibición establecida en la señal correspondiente (R-200) al reanudar la marcha sin haber cumplido la prescripción de peaje que la señal establece.",
+        "importe": 100,
+        "importe_reducido": 50,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-D",
+        "opcion": "A",
+        "texto": "No obedecer una señal de separación mínima.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-D",
+        "opcion": "B",
+        "texto": "No obedecer una señal de giro a la derecha prohibido.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-D",
+        "opcion": "C",
+        "texto": "No obedecer una señal de giro a la izquierda prohibida.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-D",
+        "opcion": "D",
+        "texto": "No obedecer una señal de media vuelta prohibida.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-D",
+        "opcion": "E",
+        "texto": "No obedecer una señal de adelanto prohibida.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-D",
+        "opcion": "F",
+        "texto": "No obedecer una señal de adelanto prohibida para camiones.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-D",
+        "opcion": "G",
+        "texto": "No obedecer una señal de parada y estacionamiento prohibido.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-D",
+        "opcion": "H",
+        "texto": "No obedecer una señal de estacionamiento prohibida.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-D",
+        "opcion": "I",
+        "texto": "No obedecer una señal de estacionamiento prohibida los días impares.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-D",
+        "opcion": "J",
+        "texto": "No obedecer una señal de estacionamiento prohibida los días pares.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-D",
+        "opcion": "K",
+        "texto": "No obedecer una señal de estacionamiento prohibida en la primera quincena.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-D",
+        "opcion": "L",
+        "texto": "No obedecer una señal de estacionamiento prohibida en la segunda quincena.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-D",
+        "opcion": "M",
+        "texto": "No obedecer una señal de estacionamiento prohibida en el vado.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-D",
+        "opcion": "N",
+        "texto": "No obedecer una señal de zona de estacionamiento limitado.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-D",
+        "opcion": "O",
+        "texto": "No obedecer una señal de advertencias acústicas prohibidas.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "A",
+        "texto": "No obedecer una señal de sentido obligatorio.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "B",
+        "texto": "No obedecer una señal de paso obligatorio.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "C",
+        "texto": "No obedecer una señal de intersección de sentido giratorio obligatorio.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "D",
+        "texto": "No obedecer una señal de única dirección y sentido permitido.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "E",
+        "texto": "No obedecer una señal de calzada para automóviles.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "F",
+        "texto": "No obedecer una señal de calzada para motocicletas.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "G",
+        "texto": "No obedecer una señal de calzada para camiones, tractocamiones y furgones o furgonetas.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "H",
+        "texto": "No obedecer una señal de vía reservada para ciclos o vía ciclista.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "I",
+        "texto": "No obedecer una señal de vía reservada para ciclomotores.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "J",
+        "texto": "No obedecer una señal de camino para vehículos de tracción animal.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "K",
+        "texto": "No obedecer una señal de camino reservado para animales de montura.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "L",
+        "texto": "No obedecer una señal de camino reservado para viandantes.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "M",
+        "texto": "No obedecer una señal de velocidad mínima.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "N",
+        "texto": "No obedecer una señal de cadenas por la nieve.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "O",
+        "texto": "No obedecer una señal de alumbrado de corto alcance.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "P",
+        "texto": "No obedecer una señal de calzada para vehículos que transportan mercancías peligrosas.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "Q",
+        "texto": "No obedecer una señal de calzada para vehículos que transportan productos contaminantes del agua.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "R",
+        "texto": "No obedecer una señal de calzada para vehículos que transportan mercancías explosivas e inflamables.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "145",
+        "apartado": "2-E",
+        "opcion": "S",
+        "texto": "Utilizar un peaje dinámico o telepeaje sin estar provisto, el vehículo, del medio técnico que posibilita su uso.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "146",
+        "apartado": "2-A",
+        "opcion": "A",
+        "texto": "No respetar una señal de limitación de tiempo de estacionamiento.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "146",
+        "apartado": "2-A",
+        "opcion": "B",
+        "texto": "No respetar una señal de estacionamiento reservado para determinada clase de vehículos.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "146",
+        "apartado": "2-A",
+        "opcion": "C",
+        "texto": "No respetar una señal de estacionamiento reservado para TAXI.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "146",
+        "apartado": "2-A",
+        "opcion": "D",
+        "texto": "No respetar una señal de parada de autobuses.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "146",
+        "apartado": "2-A",
+        "opcion": "E",
+        "texto": "No respetar una señal de parada de tranvías.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "146",
+        "apartado": "2-A",
+        "opcion": "F",
+        "texto": "No respetar una señal de transitabilidad en tramo o puerto de montaña.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "146",
+        "apartado": "2-A",
+        "opcion": "G",
+        "texto": "No respetar una señal de calle residencial.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "146",
+        "apartado": "2-A",
+        "opcion": "H",
+        "texto": "No obedecer una señal de zona 30.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "146",
+        "apartado": "2-B",
+        "opcion": "A",
+        "texto": "Circular por un carril reservado para autobuses.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "146",
+        "apartado": "2-B",
+        "opcion": "B",
+        "texto": "Circular por un carril reservado para bicicletas o vía ciclista.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-A",
+        "opcion": "A",
+        "texto": "No respetar una línea longitudinal continua.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-A",
+        "opcion": "B",
+        "texto": "Circular sobre una línea longitudinal discontinua.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-B",
+        "opcion": "A",
+        "texto": "No respetar una marca vial transversal continua.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-B",
+        "opcion": "B",
+        "texto": "No respetar una marca vial transversal discontinua.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-B",
+        "opcion": "C",
+        "texto": "No respetar la preferencia de paso de ciclistas en un tramo señalizado con marca vial de paso para ciclistas.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-C",
+        "opcion": "A",
+        "texto": "No obedecer la obligación impuesta por una flecha de selección de carriles.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-D",
+        "opcion": "A",
+        "texto": "Entrar en una zona excluida de circulación (cebreado) en una marca viaria única continua.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-E",
+        "opcion": "A",
+        "texto": "No respetar una señal horizontal de ceda el paso.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-E",
+        "opcion": "B",
+        "texto": "No detenerse delante de una señal horizontal de detención obligatoria (STOP).",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-E",
+        "opcion": "C",
+        "texto": "No respetar, una bicicleta o un vehículo de movilidad personal (VMP), una señal horizontal de ceda el paso.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-E",
+        "opcion": "D",
+        "texto": "No detener una bicicleta o un vehículo de movilidad personal (VMP) en la señal horizontal de detención obligatoria.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-F",
+        "opcion": "A",
+        "texto": "Estacionar en una zona señalizada con una marca amarilla en zigzag.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-F",
+        "opcion": "B",
+        "texto": "Estacionar en una zona señalizada con una marca amarilla longitudinal continua.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-F",
+        "opcion": "C",
+        "texto": "Estacionar en una zona señalizada con una marca amarilla longitudinal discontinua.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-F",
+        "opcion": "D",
+        "texto": "Circular por un carril o zona reservada para determinados vehículos señalizada al efecto.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-F",
+        "opcion": "E",
+        "texto": "Parar en una zona señalizada con una marca longitudinal continua.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGC",
+        "articulo": "147",
+        "apartado": "2-F",
+        "opcion": "F",
+        "texto": "Quedarse detenido en una cuadrícula de marcas amarillas.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "1",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Conducir un vehículo de motor o un ciclomotor sin haber obtenido la preceptiva autorización administrativa para conducir.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "1",
+        "apartado": "1",
+        "opcion": "B",
+        "texto": "Conducir un vehículo de motor o un ciclomotor con un permiso o licencia que no le habilita para ello.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 4
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "1",
+        "apartado": "1",
+        "opcion": "C",
+        "texto": "Conducir el vehículo reseñado con una autorización administrativa que carece de validez por no haber cumplido los requisitos administrativos exigidos reglamentariamente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "1",
+        "apartado": "1",
+        "opcion": "D",
+        "texto": "Conducir un vehículo a motor o ciclomotor sin haber obtenido nunca permiso o licencia.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "3",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Conducir el vehículo reseñado incumpliendo las condiciones restrictivas de la licencia de conducción o del permiso de conducir.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "3",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Conducir un vehículo de motor o ciclomotor sin llevar la correspondiente licencia de conducción o permiso de conducir.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "3",
+        "apartado": "2",
+        "opcion": "B",
+        "texto": "Conducir el vehículo reseñado con la licencia o el permiso no vigente por pérdida total de puntos.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "10",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "No comunicar, el titular del permiso de conducir o de una licencia de conducción, cualquier variación de los datos que figuran en la autoridad competente en el plazo establecido.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "11",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Tener el original de la autorización administrativa para conducir, sin haber devuelto la misma, cuando se le ha expedido un duplicado por sustracción o pérdida.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "12",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "Conducir un vehículo con la autorización administrativa caducada.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "12",
+        "apartado": "6",
+        "opcion": "A",
+        "texto": "Conducir el vehículo reseñado siendo titular de un permiso o licencia de conducción sin mantener los requisitos exigidos en su día para su otorgamiento.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "15",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "Conducir el vehículo reseñado con una autorización que no tiene validez en España por no haber solicitado su renovación en la jefatura provincial de tráfico.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "25",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Conducir un vehículo que realiza transporte de mercancías peligrosas sin la autorización especial, cuando sea necesario.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "25",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Conducir un vehículo que realiza transporte de mercancías peligrosas sin llevar la correspondiente autorización especial.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "28",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Conducir un vehículo que realiza transporte de mercancías peligrosas con la autorización especial que le habilita al efecto caducada.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "39",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Conducir el vehículo reseñado teniendo el permiso de conducir suspendido como medida cautelar.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGCOND",
+        "articulo": "39",
+        "apartado": "3",
+        "opcion": "B",
+        "texto": "Conducir el vehículo reseñado teniendo la licencia de conducir suspendida como medida cautelar.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 4
+    },
+    {
+        "norma": "RGV",
+        "articulo": "1",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular sin haber obtenido la correspondiente autorización administrativa del vehículo reseñado.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "1",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular con un vehículo con permiso de circulación suspendido.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "7",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Efectuar en el vehículo reseñado una reforma de importancia sin autorización o sin haber pasado la inspección técnica correspondiente.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "9",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular con un vehículo tractor que forma conjunto con un remolque o un semirremolque sin respetar la compatibilidad para formar conjunto.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "9",
+        "apartado": "3",
+        "opcion": "A",
+        "texto": "Circular con un vehículo a motor arrastrando una caravana o remolque ligero que no tiene tarjeta de inspección técnica.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "10",
+        "apartado": "1",
+        "opcion": "6A",
+        "texto": "Circular con el vehículo reseñado sin tener la autorización administrativa para circular a causa de una inspección técnica desfavorable.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "10",
+        "apartado": "1",
+        "opcion": "6B",
+        "texto": "Circular con el vehículo reseñado cuya inspección técnica ha resultado negativa, por incumplir este vehículo las condiciones técnicas que afectan gravemente a la seguridad vial.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "11",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular con un vehículo que no tiene el número reglamentario de espejos retrovisores eficaces.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "11",
+        "apartado": "12",
+        "opcion": "A",
+        "texto": "No llevar instalado, el vehículo reseñado, el aparato tacógrafo o el limitador de velocidad, estando obligado a ello.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "11",
+        "apartado": "12",
+        "opcion": "B",
+        "texto": "Participar o colaborar en la colocación o puesta en funcionamiento de elementos que alteran el tacógrafo o limitador de velocidad.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "11",
+        "apartado": "16",
+        "opcion": "A",
+        "texto": "No tener el dispositivo que evite el empotramiento en el caso de colisión posterior.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "12",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "Circular con el vehículo reseñado incumpliendo las condiciones reglamentarias.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "12",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Llevar los vehículos a motor, remolques, semirremolques y máquinas remolcadas aristas salientes, en el interior o exterior del vehículo, que constituyan un peligro para sus ocupantes o para los demás usuarios de la vía.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "12",
+        "apartado": "5.1",
+        "opcion": "A",
+        "texto": "Circular con un vehículo cuyos neumáticos no conservan el dibujo en la totalidad de la banda de rodadura o se aprecian deformaciones o cortes.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "12",
+        "apartado": "9",
+        "opcion": "A",
+        "texto": "Circular con el vehículo reseñado, sometido a normas especiales, incumpliendo las exigencias reglamentariamente establecidas referidas a sus condiciones técnicas.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "15",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "Circular con el vehículo reseñado sin ajustarse los dispositivos de alumbrado y señalización óptica a las prescripciones reglamentarias.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "16",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "Circular con el vehículo reseñado sin los dispositivos de alumbrado y señalización óptica reglamentarios.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "18",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "No llevar, el vehículo reseñado, la señal correspondiente.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "19",
+        "apartado": "",
+        "opcion": "A",
+        "texto": "No tener, el vehículo reseñado, los repuestos o accesorios reglamentarios.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "21",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "Circular con el ciclomotor reseñado sin los dispositivos de alumbrado y señalización óptica reglamentarios.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "22",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular con una bicicleta que no reúne las condiciones técnicas reglamentarias.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "22",
+        "apartado": "",
+        "opcion": "B",
+        "texto": "Circular con un vehículo de movilidad personal (VMP) que no dispone del certificado de circulación.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "22",
+        "apartado": "4",
+        "opcion": "A",
+        "texto": "Circular con una bicicleta, de noche, por tramos de vía con la señal de \"túnel\" o con condiciones meteorológicas que disminuyen la visibilidad, sin los dispositivos de alumbrado y señalización óptica reglamentarios.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "23",
+        "apartado": "5",
+        "opcion": "A",
+        "texto": "Circular con un vehículo de tracción animal, de noche, por tramos de vía con la señal de \"túnel\" o con condiciones meteorológicas que disminuyen sensiblemente la visibilidad, sin los dispositivos de alumbrado y señalización óptica reglamentarios.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "25",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular con el vehículo reseñado sin las placas de matrícula correspondientes.",
+        "importe": 200,
+        "importe_reducido": 100,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "26",
+        "apartado": "1",
+        "opcion": "A",
+        "texto": "Circular con el vehículo reseñado sin llevar la correspondiente autorización administrativa.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "28",
+        "apartado": "6",
+        "opcion": "A",
+        "texto": "Circular un tren turístico sin haber obtenido la correspondiente autorización especial.",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "30",
+        "apartado": "2",
+        "opcion": "A",
+        "texto": "No comunicar, el titular de una licencia o permiso, cualquier variación de los datos que figuran en la autoridad competente en el plazo establecido.",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
     }
 ]
