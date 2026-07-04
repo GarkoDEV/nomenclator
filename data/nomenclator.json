@@ -18,5 +18,45 @@
         "importe": 200,
         "importe_reducido": 100,
         "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "1",
+        "apartado": "1",
+        "opcion": "5A",
+        "texto": "Circular con el vehículo reseñado sin haber obtenido la correspondiente tarjeta de inspección técnica (ITV).",
+        "importe": 500,
+        "importe_reducido": 250,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "26",
+        "apartado": "1",
+        "opcion": "5A",
+        "texto": "Circular con el vehículo reseñado sin llevar la correspondiente tarjeta de inspección técnica (ITV).",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "26",
+        "apartado": "1",
+        "opcion": "5B",
+        "texto": "Circular el vehículo reseñado con la tarjeta de ITV deteriorada (ITV).",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
+    },
+    {
+        "norma": "RGV",
+        "articulo": "26",
+        "apartado": "1",
+        "opcion": "5C",
+        "texto": "Circular el ciclomotor reseñado con la tarjeta de ITV deteriorada (ITV).",
+        "importe": 80,
+        "importe_reducido": 40,
+        "puntos": 0
     }
 ]
