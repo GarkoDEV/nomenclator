@@ -16,6 +16,12 @@ const CONFIG = {
     maxSearchHistory: 5
 };
 
+const EURO_FORMATTER = new Intl.NumberFormat("es-ES", {
+    style: "currency",
+    currency: "EUR",
+    maximumFractionDigits: 0
+});
+
 /*==================================================
     UTILIDADES
 ==================================================*/
@@ -42,6 +48,10 @@ function getItemId(item) {
     return `${item.norma}-${item.articulo}-${item.apartado || ""}-${item.opcion || ""}`;
 }
 
+function formatCurrency(value) {
+    return EURO_FORMATTER.format(Number(value) || 0);
+}
+
 /*==================================================
     APLICACIÓN PRINCIPAL
 ==================================================*/
@@ -50,11 +60,13 @@ class TrafficApp {
 
     constructor() {
         this.database = [];
+        this.databaseIndex = new Map();
         this.filtered = [];
         this.filter = "TODOS";
         this.search = "";
         this.currentTheme = "dark";
         this.favorites = [];
+        this.favoriteIds = new Set();
         this.searchHistory = [];
         this.showFavoritesOnly = false;
         this.maxPriceAvailable = 1000;
@@ -91,6 +103,8 @@ class TrafficApp {
         this.resetAdvanced = document.getElementById("resetAdvanced");
         this.searchHistorySection = document.getElementById("searchHistory");
         this.historyChips = document.getElementById("historyChips");
+        this.statTotal = document.getElementById("statTotal");
+        this.statFavorites = document.getElementById("statFavorites");
 
         this.init();
     }
@@ -138,6 +152,7 @@ class TrafficApp {
                 puntos: Number(item.puntos ?? 0),
                 searchIndex: createSearchIndex(item)
             }));
+            this.databaseIndex = new Map(this.database.map(item => [getItemId(item), item]));
 
             this.maxPriceAvailable = Math.max(0, ...this.database.map(item => item.importe));
             this.maxPointsAvailable = Math.max(0, ...this.database.map(item => item.puntos));
@@ -236,7 +251,7 @@ class TrafficApp {
         });
 
         if (this.showFavoritesOnly) {
-            data = data.filter(item => this.favorites.includes(getItemId(item)));
+            data = data.filter(item => this.favoriteIds.has(getItemId(item)));
         }
 
         this.filtered = data;
@@ -254,8 +269,6 @@ class TrafficApp {
     renderCards() {
         if (!this.results) return;
 
-        this.results.replaceChildren();
-
         if (!this.template) return;
 
         const fragment = document.createDocumentFragment();
@@ -266,13 +279,13 @@ class TrafficApp {
             fragment.appendChild(card);
         });
 
-        this.results.appendChild(fragment);
+        this.results.replaceChildren(fragment);
     }
 
     renderCard(item) {
         const card = this.template.content.firstElementChild.cloneNode(true);
         const itemId = getItemId(item);
-        const isFavorite = this.favorites.includes(itemId);
+        const isFavorite = this.favoriteIds.has(itemId);
         const severityLevel = this.getSeverity(item);
 
         const badge = card.querySelector(".badge");
@@ -289,9 +302,8 @@ class TrafficApp {
         const reducido = card.querySelector(".reducido");
         const puntos = card.querySelector(".puntos");
         const favoriteBtn = card.querySelector(".favorite-btn");
-        const copyBtn = card.querySelector(".copy-btn");
-        const shareBtn = card.querySelector(".share-btn");
-        const headerBtn = card.querySelector(".card-header");
+
+        card.dataset.itemId = itemId;
 
         badge.textContent = item.norma;
         badge.classList.add(normalize(item.norma));
@@ -301,15 +313,15 @@ class TrafficApp {
         preview.textContent = item.texto.length > CONFIG.previewLength
             ? `${item.texto.slice(0, CONFIG.previewLength).trim()}…`
             : item.texto;
-        price.textContent = `${item.importe} €`;
+        price.textContent = formatCurrency(item.importe);
 
         detailNorma.textContent = item.norma;
         detailArticulo.textContent = item.articulo || "—";
         detailApartado.textContent = item.apartado || "—";
         detailOpcion.textContent = item.opcion || "—";
         description.textContent = item.texto || "Sin descripción";
-        importe.textContent = `${item.importe} €`;
-        reducido.textContent = `${item.importe_reducido} €`;
+        importe.textContent = formatCurrency(item.importe);
+        reducido.textContent = formatCurrency(item.importe_reducido);
         puntos.textContent = item.puntos > 0 ? String(item.puntos) : "—";
         puntos.classList.toggle("danger", item.puntos > 0);
 
@@ -317,26 +329,6 @@ class TrafficApp {
         favoriteBtn.setAttribute("aria-pressed", String(isFavorite));
         favoriteBtn.setAttribute("aria-label", isFavorite ? "Quitar de favoritos" : "Añadir a favoritos");
         favoriteBtn.setAttribute("title", isFavorite ? "Quitar de favoritos" : "Añadir a favoritos");
-
-        favoriteBtn.addEventListener("click", (event) => {
-            event.stopPropagation();
-            this.toggleFavorite(itemId);
-        });
-
-        copyBtn.addEventListener("click", (event) => {
-            event.stopPropagation();
-            this.copyInfraction(item);
-        });
-
-        shareBtn.addEventListener("click", (event) => {
-            event.stopPropagation();
-            this.shareInfraction(item);
-        });
-
-        headerBtn.addEventListener("click", () => {
-            const isOpen = card.classList.toggle("open");
-            headerBtn.setAttribute("aria-expanded", String(isOpen));
-        });
 
         return card;
     }
@@ -354,18 +346,22 @@ class TrafficApp {
     loadFavoritesFromStorage() {
         try {
             const stored = localStorage.getItem(CONFIG.storageFavorites);
-            this.favorites = stored ? JSON.parse(stored) : [];
+            const parsed = stored ? JSON.parse(stored) : [];
+            this.favorites = Array.isArray(parsed) ? parsed : [];
         } catch {
             this.favorites = [];
         }
+
+        this.favoriteIds = new Set(this.favorites);
     }
 
     saveFavoritesToStorage() {
+        this.favoriteIds = new Set(this.favorites);
         localStorage.setItem(CONFIG.storageFavorites, JSON.stringify(this.favorites));
     }
 
     toggleFavorite(itemId) {
-        const isFavorite = this.favorites.includes(itemId);
+        const isFavorite = this.favoriteIds.has(itemId);
 
         if (isFavorite) {
             this.favorites = this.favorites.filter(id => id !== itemId);
@@ -462,6 +458,9 @@ class TrafficApp {
                     this.searchInput.value = term;
                     this.searchInput.focus();
                 }
+                if (this.clearButton) {
+                    this.clearButton.classList.toggle("hidden", !term);
+                }
                 this.filterData();
             });
             this.historyChips.appendChild(chip);
@@ -484,15 +483,13 @@ class TrafficApp {
 
     updateStats() {
         const total = this.filtered.length;
-        const statTotal = document.getElementById("statTotal");
-        const statFavorites = document.getElementById("statFavorites");
 
-        if (statTotal) {
-            statTotal.textContent = total;
+        if (this.statTotal) {
+            this.statTotal.textContent = total;
         }
 
-        if (statFavorites) {
-            statFavorites.textContent = this.favorites.length;
+        if (this.statFavorites) {
+            this.statFavorites.textContent = this.favorites.length;
         }
     }
 
@@ -509,8 +506,8 @@ class TrafficApp {
         const text = [
             `${item.norma} · Artículo ${item.articulo}${item.apartado ? `.${item.apartado}` : ""}${item.opcion ? ` · Opción ${item.opcion}` : ""}`,
             item.texto,
-            `Importe: ${item.importe}€`,
-            `Importe reducido: ${item.importe_reducido}€`,
+            `Importe: ${formatCurrency(item.importe)}`,
+            `Importe reducido: ${formatCurrency(item.importe_reducido)}`,
             `Puntos: ${item.puntos}`
         ].join("\n");
 
@@ -523,7 +520,7 @@ class TrafficApp {
     }
 
     async shareInfraction(item) {
-        const text = `${item.norma} · Artículo ${item.articulo}\n${item.texto}\nImporte: ${item.importe}€ · Puntos: ${item.puntos}`;
+        const text = `${item.norma} · Artículo ${item.articulo}\n${item.texto}\nImporte: ${formatCurrency(item.importe)} · Puntos: ${item.puntos}`;
 
         if (navigator.share) {
             try {
@@ -695,12 +692,20 @@ class TrafficApp {
 
     attachEvents() {
         let debounceTimer = null;
+        let isScrollTicking = false;
 
         if (this.searchInput) {
             this.searchInput.addEventListener("input", event => {
+                const value = event.target.value;
+                
+                // Controlar visibilidad del botón de borrar
+                if (this.clearButton) {
+                    this.clearButton.classList.toggle("hidden", !value);
+                }
+
                 clearTimeout(debounceTimer);
                 debounceTimer = setTimeout(() => {
-                    this.search = event.target.value;
+                    this.search = value;
                     if (this.search.trim().length >= 2) {
                         this.addToSearchHistory(this.search);
                     }
@@ -710,14 +715,7 @@ class TrafficApp {
         }
 
         if (this.clearButton) {
-            this.clearButton.addEventListener("click", () => {
-                this.search = "";
-                if (this.searchInput) {
-                    this.searchInput.value = "";
-                    this.searchInput.focus();
-                }
-                this.filterData();
-            });
+            this.clearButton.addEventListener("click", () => this.clearSearchState({ focusInput: true }));
         }
 
         if (this.chartsBtn && this.chartsSection) {
@@ -799,10 +797,20 @@ class TrafficApp {
             });
         }
 
-        window.addEventListener("scroll", () => {
+        this.attachResultsDelegation();
+
+        const syncFabVisibility = () => {
             if (!this.fab) return;
             this.fab.classList.toggle("hidden", window.scrollY < 300);
-        });
+            isScrollTicking = false;
+        };
+
+        window.addEventListener("scroll", () => {
+            if (isScrollTicking) return;
+            isScrollTicking = true;
+            window.requestAnimationFrame(syncFabVisibility);
+        }, { passive: true });
+        syncFabVisibility();
 
         document.addEventListener("keydown", event => {
             if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "f" && this.searchInput) {
@@ -811,15 +819,70 @@ class TrafficApp {
             }
 
             if (event.key === "Escape" && this.searchInput && this.searchInput.value) {
-                this.search = "";
-                this.searchInput.value = "";
-                this.filterData();
+                this.clearSearchState();
             }
         });
 
         if (this.themeButton) {
             this.themeButton.addEventListener("click", () => this.toggleTheme());
         }
+    }
+
+    attachResultsDelegation() {
+        if (!this.results) return;
+
+        this.results.addEventListener("click", event => {
+            const actionButton = event.target.closest(".favorite-btn, .copy-btn, .share-btn");
+            const headerBtn = event.target.closest(".card-header");
+            const card = event.target.closest(".card");
+            const itemId = card?.dataset.itemId;
+
+            if (!card || !itemId) return;
+
+            if (actionButton) {
+                event.stopPropagation();
+                const item = this.databaseIndex.get(itemId);
+                if (!item) return;
+
+                if (actionButton.classList.contains("favorite-btn")) {
+                    this.toggleFavorite(itemId);
+                    return;
+                }
+
+                if (actionButton.classList.contains("copy-btn")) {
+                    this.copyInfraction(item);
+                    return;
+                }
+
+                if (actionButton.classList.contains("share-btn")) {
+                    this.shareInfraction(item);
+                }
+
+                return;
+            }
+
+            if (headerBtn) {
+                const isOpen = card.classList.toggle("open");
+                headerBtn.setAttribute("aria-expanded", String(isOpen));
+            }
+        });
+    }
+
+    clearSearchState({ focusInput = false } = {}) {
+        this.search = "";
+
+        if (this.searchInput) {
+            this.searchInput.value = "";
+            if (focusInput) {
+                this.searchInput.focus();
+            }
+        }
+
+        if (this.clearButton) {
+            this.clearButton.classList.add("hidden");
+        }
+
+        this.filterData();
     }
 
     /*==============================================

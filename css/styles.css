@@ -4,8 +4,6 @@
     styles.css v3.0 - FAVORITOS, STATS, BUSCADOR AVANZADO
 ==================================================*/
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 /*==================================================
     VARIABLES GLOBALES
 ==================================================*/
@@ -354,7 +352,7 @@ button, input, .card, .badge, .icon-button {
 }
 
 .clear-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--surface-light);
     color: var(--text);
 }
 
